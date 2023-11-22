@@ -1,0 +1,1395 @@
+.search-tabs-row-os button {
+    background: #e9deff;
+    box-shadow: 0px 4px 33px rgb(0 0 0 / 10%);
+    border-radius: 6px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    width: 100%;
+    max-width: 230px;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: #333333;
+    cursor: pointer;
+  }
+  
+  .search-tabs-row-os button span {
+    display: flex;
+  }
+  
+  .search-tabs-row-os {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+  
+  .search-by-digits-button-os span {
+    padding: 8px;
+    background: #000;
+    border-radius: 50%;
+  }
+  
+  .search-by-digits-button-os span svg path {
+    fill: #fff;
+  }
+  
+  .search-data-row-os {
+    background: #ffffff;
+    box-shadow: 0px 4px 30px rgb(0 0 0 / 10%);
+    border-radius: 21px;
+    padding: 2.5rem;
+    position: relative;
+  }
+  
+  .search-filter-input-field-os {
+    position: relative;
+  }
+  
+  .search-filter-input-field-os label {
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    width: max-content;
+    padding: 4px 6px;
+    z-index: 1;
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    color: #611aeb;
+  }
+  
+  .search-filter-input-field-os label:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 10px;
+    background: #fff;
+    z-index: -1;
+    bottom: 13px;
+    left: 0;
+  }
+  
+  .search-filter-input-field-os input {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    width: 100%;
+    background: #efefef;
+    border-radius: 7px;
+    border: 1px solid #6019eb;
+    height: 54px;
+    padding: 0 1.5rem;
+    text-align: left;
+  }
+  
+  .search-filter-input-field-os input::placeholder {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: rgba(51, 51, 51, 0.5);
+  }
+  
+  .search-default-text-os {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #d80027;
+    padding-top: 1rem;
+  }
+  
+  /* Custom checkbox starts */
+  
+  .container_checkbox-os {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    padding-left: 2rem;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #333333;
+  }
+  
+  .container_checkbox-os input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  .container_checkbox-os .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    border: 2px solid #333333;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  
+  .container_checkbox-os:hover input ~ .checkmark {
+    background-color: transparent;
+    border: 2px solid #333333;
+    border-radius: 5px;
+  }
+  
+  .container_checkbox-os input:checked ~ .checkmark {
+    background-color: #333333;
+    border: 1px solid #333333;
+    border-radius: 5px;
+  }
+  
+  .container_checkbox-os .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  .container_checkbox-os input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  .container_checkbox-os .checkmark:after {
+    left: 6px;
+    top: 1px;
+    width: 3px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  
+  /* Custom checkbox ends */
+  
+  .search-filter-data-os {
+    padding: 2.5rem;
+    background: #ffffff;
+    box-shadow: 0px 4px 33px rgb(0 0 0 / 10%);
+    border-radius: 11px;
+  }
+  
+  .search-filter-checkboxes-row-os {
+    padding-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .recommended-checkbox-os {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 11px;
+    color: #333333;
+    padding: 0.2rem 1.6rem;
+  }
+  
+  .search-tabs-row-os .filter-tab-os.active {
+    background: #6019eb !important;
+    box-shadow: 0px 4px 33px rgb(0 0 0 / 10%) !important;
+    border-radius: 6px !important;
+    color: #fff !important;
+  }
+  
+  .filter-tab-os.active span svg path {
+    fill: #fff;
+  }
+  
+  .filter-tab-os.active span svg path {
+    fill: #fff;
+  }
+  
+  .search-by-digits-button-os.filter-tab-os.active span svg path {
+    fill: #000;
+  }
+  
+  .search-by-digits-button-os.filter-tab-os.active span {
+    background: #fff;
+  }
+  
+  .search-filter-input-data-os {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3%;
+  }
+  
+  .search-by-price-filter-col-1-os {
+    width: 40%;
+  }
+  
+  .search-by-price-filter-col-2-os {
+    width: 40%;
+  }
+  
+  .search-by-price-filter-col-3-os {
+    width: 14%;
+  }
+  
+  .search-filter-input-field-1-os {
+    width: 40%;
+  }
+  
+  .search-filter-input-data-col-1-os {
+    width: 83%;
+  }
+  
+  .search-filter-input-data-col-2-os {
+    width: 40%;
+  }
+  
+  .search-filter-input-data-col-3-os {
+    width: 14%;
+  }
+  
+  .search-default-text-os span {
+    display: flex;
+    margin-bottom: 6px;
+  }
+  
+  .search-by-familyPack-col-3-os {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    color: #611aeb;
+    text-align: left;
+    width: 25%;
+  }
+  
+  .search-by-familyPack-col-4-os {
+    width: 14%;
+  }
+  
+  .search-family-pack-heading-text-os {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000;
+    padding-bottom: 1rem;
+  }
+  
+  .search-by-familyPack-col-2-os {
+    width: 46%;
+  }
+  .search-by-familyPack-col-2-os select {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    width: 100%;
+    background: #efefef;
+    border-radius: 7px;
+    border: 1px solid #6019eb;
+    height: 54px;
+    padding: 0 0.5rem;
+  }
+  
+  .search-by-familyPack-col-1-os {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    color: #611aeb;
+    width: 6%;
+  }
+  
+  .filter-content-os {
+    display: none;
+  }
+  
+  .filter-content-os.active {
+    display: block;
+  }
+  
+  /* Range slider starts */
+  .range-slider {
+    width: 100%;
+    position: relative;
+  }
+  
+  .myRange {
+    background: #e5e5e5;
+    -webkit-appearance: none;
+    width: 100%;
+  }
+  
+  .myRange:focus {
+    outline: none;
+  }
+  
+  .myRange::before,
+  .myRange::after {
+    position: absolute;
+    top: 2rem;
+    color: #333;
+    font-size: 14px;
+    line-height: 1;
+    padding: 3px 5px;
+    background-color: transparent;
+    border-radius: 4px;
+  }
+  
+  .myRange::before {
+    left: 0;
+    content: "";
+  }
+  
+  .myRange::after {
+    right: 0;
+    content: "";
+  }
+  
+  #myRange::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: linear-gradient(
+      90deg,
+      #611aeb var(--range-progress),
+      #e5e5e5 var(--range-progress)
+    );
+    border-radius: 1rem;
+    position: relative;
+  }
+  
+  #myRange1::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: linear-gradient(
+      90deg,
+      #611aeb var(--range-progress1),
+      #e5e5e5 var(--range-progress1)
+    );
+    border-radius: 1rem;
+    position: relative;
+  }
+  
+  #myRange::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 0.25rem solid #611aeb;
+    box-shadow: 0 1px 3px rgba(0, 0, 255, 0.3);
+    border-radius: 50%;
+    background: #611aeb;
+    cursor: pointer;
+    height: 16px;
+    width: 16px;
+    transform: translateY(calc(-72% + 8px));
+    position: relative;
+    top: -3px;
+  }
+  
+  #myRange1::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 0.25rem solid #611aeb;
+    box-shadow: 0 1px 3px rgba(0, 0, 255, 0.3);
+    border-radius: 50%;
+    background: #611aeb;
+    cursor: pointer;
+    height: 16px;
+    width: 16px;
+    transform: translateY(calc(-72% + 8px));
+    position: relative;
+    top: -3px;
+  }
+  
+  .tooltip {
+    position: absolute;
+    top: -2.25rem;
+  }
+  
+  .tooltip span {
+    position: absolute;
+    text-align: center;
+    display: block;
+    line-height: 1;
+    padding: 0.125rem 0.25rem;
+    color: #fff;
+    border-radius: 0.125rem;
+    background: #6ba132;
+    font-size: 1.25rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    display: none;
+  }
+  
+  .tooltip span:before {
+    position: absolute;
+    content: "";
+    left: 50%;
+    bottom: -8px;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border: 4px solid transparent;
+    border-top-color: #6ba132;
+  }
+  
+  /* Range slider ends */
+  
+  .search-filter-price-range-slider-data-os {
+    /* width: 36%; */
+  }
+  
+  .search-filter-price-range-slider-min-max-values-os {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 0;
+  }
+  
+  .search-filter-price-range-slider-heading-os {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    color: #611aeb;
+  }
+  
+  .search-filter-price-range-slider-min-max-values-os > div {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    color: #611aeb;
+  }
+  
+  /* .mobile-categories-section-os {
+      display: none;
+  } */
+  
+  .search-filter-input-field-1-os {
+    width: 83%;
+  }
+  
+  .search-by-digits-filter-subFilter-os {
+    padding-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .search-filter-radio-button-content-1 {
+    display: none;
+  }
+  
+  .search-filter-radio-button-content-1.active {
+    display: block;
+  }
+  
+  .search-filter-basic-search-col-1-os {
+    width: 83%;
+  }
+  
+  .search-filter-basic-search-col-2-os {
+    width: 14%;
+  }
+  
+  .search-filter-advance-search-heading-os {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    color: #333333;
+    padding-bottom: 1rem;
+  }
+  
+  .search-filter-advance-search-row-1-os {
+    display: flex;
+    align-items: flex-start;
+    gap: 3%;
+    flex-wrap: wrap;
+  }
+  
+  .search-filter-advance-search-col-1-os,
+  .search-filter-advance-search-col-2-os,
+  .search-filter-advance-search-col-3-os {
+    width: 31.3%;
+    padding-bottom: 2rem;
+  }
+  
+  .search-filter-advance-search-col-4-os,
+  .search-filter-advance-search-col-5-os {
+    width: 48.5%;
+    padding-bottom: 0.5rem;
+  }
+  
+  .search-filter-advance-search-col-6-os,
+  .search-filter-advance-search-col-7-os {
+    width: 48.5%;
+    padding-bottom: 1rem;
+  }
+  
+  .search-filter-advance-search-col-8-os {
+    max-width: 150px;
+    width: 100%;
+    height: auto;
+  }
+  
+  .filter-advance-search-alert-message-os {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+    color: #ff002e;
+    width: 100%;
+    padding-bottom: 1.5rem;
+  }
+  
+  /* Search radio button style starts */
+  /* Hide default radio buttons */
+  .search-section-os-1 input[type="radio"] {
+    display: none;
+  }
+  
+  /* Style the custom radio buttons */
+  .search-section-os-1 .custom-radio {
+    display: inline-block;
+    position: relative;
+    padding-left: 28px;
+    margin-right: 15px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #333333;
+  }
+  
+  /* Style the dot */
+  .search-section-os-1 .custom-radio .dot {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: transparent;
+    border: 2px solid #333333;
+    border-radius: 5px;
+  }
+  
+  /* Style the checked dot */
+  .search-section-os-1 input[type="radio"]:checked + .custom-radio .dot {
+    background-color: #333333;
+    border: 1px solid #333333;
+    border-radius: 5px;
+  }
+  
+  .search-section-os-1 input[type="radio"]:checked + .custom-radio .dot:after {
+    position: absolute;
+    content: "";
+    left: 6px;
+    top: 2px;
+    width: 4px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  /* Search radio button style ends */
+  
+  /* Search digits style starts */
+  .search-by-exact-digits-search-btn-os {
+    max-width: 150px;
+    width: 100%;
+  }
+  
+  .search-by-exact-digits-row-os {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .search-by-exact-digits-input-os input[type="number"] {
+    width: 60px;
+    height: 50px;
+    line-height: 1;
+    padding: 4px 8px;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    appearance: textfield;
+    -webkit-appearance: textfield;
+    border: 2px solid #6019eb;
+    color: #000;
+    border-radius: 4px;
+    background: #efefef;
+  }
+  .search-by-exact-digits-input-os {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .search-by-exact-digits-heading-os {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    color: #611aeb;
+    padding-bottom: 0.8rem;
+  }
+  
+  /* Search digits style ends */
+  .search-by-most-contains-col-2-os {
+    width: 14%;
+  }
+  
+  .search-by-most-contains-col-1-os {
+    width: 83%;
+  }
+  
+  .search-by-most-contains-row-os {
+    display: flex;
+    align-items: center;
+    gap: 3%;
+    flex-wrap: wrap;
+  }
+  
+  /* Mobile filter style starts */
+  .MobileSearch-filter-tabs-row-os {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2.5%;
+  }
+  
+  .MobileSearch-filter-tabs-col-1-os {
+    display: flex;
+    flex-direction: column;
+    /* width: 23%; */
+    width: 31.5%;
+    align-items: center;
+    padding-bottom: 1.5rem;
+    position: relative;
+    text-decoration: none;
+  }
+  
+  .MobileSearch-filter-tabs-col-1-os.active:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 8px;
+    background: #7435ee;
+    bottom: 0;
+    border-radius: 20px 20px 0 0;
+  }
+  
+  .MobileSearch-filter-tabs-col-1-os img {
+    height: 35px;
+    display: flex;
+  }
+  
+  .MobileSearch-section-os {
+    display: none;
+  }
+  
+  .MobileSearch-filter-tabs-col-1-os h4 {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    color: #3d3d3d;
+    padding-top: 12px;
+    margin: 0;
+  }
+  
+  .MobileSearch-filter-tabs-data-os {
+    border-bottom: 0.751663px solid #b9b9b9;
+    margin-bottom: 1rem;
+  }
+  
+  .MobileSearch-filter-search-by-digits-filters-row-os button {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
+    text-align: center;
+    color: #333333;
+    border: 0.751663px solid #c5c5c5;
+    border-radius: 4.50998px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 4px;
+    width: 18%;
+  }
+  
+  .MobileSearch-filter-search-by-digits-filters-row-os button span {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    color: #333333;
+    word-break: break-all;
+  }
+  
+  button.MobileSearch-filter-button-1-os.active {
+    background: #e9deff;
+    border: 1px solid #e9deff;
+    box-shadow: 0px 3.00665px 24.8049px rgb(0 0 0 / 10%);
+    border-radius: 4.50998px;
+  }
+  
+  .MobileSearch-filter-search-by-digits-heading-os > div img {
+    width: 16px;
+  }
+  
+  .MobileSearch-filter-search-by-digits-heading-os > div {
+    padding: 4px;
+    background: #6019eb;
+    border-radius: 1.50333px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .MobileSearch-filter-search-by-digits-heading-os {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #3d3d3d;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 1rem;
+    display: none;
+  }
+  
+  .MobileSearch-filter-search-by-digits-filters-row-os {
+    display: flex;
+    justify-content: center;
+    gap: 2%;
+    padding: 0 0 1.5rem;
+    /* border-top: 0.751663px solid #B9B9B9; */
+    border-bottom: 0.751663px solid #b9b9b9;
+  }
+  
+  .MobileSearch-filter-search-by-digits-filter-1-os {
+    padding-top: 1.5rem;
+    display: none;
+  }
+  
+  .MobileSearch-filter-search-by-digits-filter-1-os.active {
+    display: block;
+  }
+  
+  .search-filter-search-number-btn-os {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 20px;
+    text-align: center;
+    color: #ffffff;
+    background: #6019eb;
+    border-radius: 0px 0px 6.0133px 6.0133px;
+    display: flex;
+    width: 100%;
+    padding: 12px 1rem;
+    align-items: center;
+    justify-content: center;
+    border: none;
+  }
+  
+  .MobileSearch-filter-search-by-digits-row-os {
+    background: #ffffff;
+    border: 1px solid #b1b1b1;
+    box-shadow: 0px 3.00665px 7.51663px rgb(0 0 0 / 13%);
+    border-radius: 6.0133px 6.0133px 0 0;
+    padding: 1.5rem 1rem;
+  }
+  
+  .MobileSearch-filter-content-data-os {
+    display: none;
+    padding-bottom: 3rem;
+  }
+  
+  .MobileSearch-filter-content-data-os.active {
+    display: block;
+  }
+  
+  .mobile-global-search-selector-data-os {
+    border: 0.751663px solid #6019eb;
+    border-radius: 5.26164px;
+    padding: 8px 12px;
+    margin: 8px 0;
+  }
+  .search-filter-search-number-btn-os-1 {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 20px;
+    text-align: center;
+    color: #ffffff;
+    background: #6019eb;
+    border-radius: 0px 0px 6px 6px;
+    display: flex;
+    width: 100%;
+    padding: 12px 1rem;
+    align-items: center;
+    justify-content: center;
+    border: none;
+  }
+  
+  /* Mobile filter style ends */
+  
+  /* price range popup starts */
+  .priceRange-popup-all-data-row-os {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.71);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1.5rem;
+    z-index: 11;
+  }
+  .priceRange-popup-row-os {
+    background: #efefef;
+    border-radius: 25px;
+    padding: 3rem 1rem;
+    width: 600px;
+    position: relative;
+  }
+  .priceRange-popup-cross-btn-os {
+    display: flex;
+    position: absolute;
+    top: -24px;
+    right: -12px;
+    background: transparent;
+    border: none;
+  }
+  .priceRange-popup-heading-os {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 119.5%;
+    color: #6019eb;
+    text-align: center;
+    border-bottom: 1px solid #a0a0a0;
+    padding-bottom: 12px;
+  }
+  .priceRange-popup-heading-1-os {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    color: #616161;
+    text-align: center;
+    padding: 1.5rem 0;
+  }
+  .priceRange-input-os input {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: rgba(0, 0, 0, 0.8706);
+    background: #ffffff;
+    border: 1px solid #d7d7d7;
+    border-radius: 12px;
+    width: 100%;
+    padding: 0.8rem 1rem;
+    height: 48px;
+  }
+  .priceRange-form-row-os {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px 2%;
+    flex-wrap: wrap;
+    padding-bottom: 1.5rem;
+  }
+  .priceRange-input-os {
+    width: 45%;
+  }
+  .priceRange-popup-submit-btn-os {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 119.5%;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+    background: #6019eb;
+    border-radius: 8.98785px;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    width: 130px;
+    height: 46px;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+  }
+  .priceRange-popup-submit-btn-os:hover {
+    opacity: 0.8;
+  }
+  .priceRange-form-os {
+    padding: 0 3rem;
+  }
+  /* price range popup ends */
+  
+  .filter-tags-row-os {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 2rem;
+  }
+  .filter-tags-heading-os {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14.7187px;
+    line-height: 17px;
+    color: #333333;
+  }
+  .filter-tags-list-os {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  .filter-tags-list-os > div {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14.7187px;
+    line-height: 17px;
+    color: #414040;
+    background: #ddcbff;
+    border-radius: 5.25667px;
+    padding: 8px;
+    min-width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .filter-tags-list-os > div > button {
+    display: flex;
+    position: absolute;
+    right: -8px;
+    top: -10px;
+    border: none;
+    background: transparent;
+  }
+  .filter-tags-list-os > div > button svg {
+    width: 20px;
+    height: auto;
+  }
+  
+  @media only screen and (max-width: 1600px) {
+    .search-by-exact-digits-input-os input[type="number"] {
+      width: 55px;
+    }
+    .search-data-row-os {
+      padding: 2rem;
+    }
+  }
+  
+  @media screen and (max-width: 1028px) {
+    .search-data-row-os {
+      width: 95%;
+      margin: -3rem auto 5rem;
+    }
+    .search-by-familyPack-col-3-os1 {
+      width: 8%;
+    }
+  
+    .search-filter-advance-search-col-1-os,
+    .search-filter-advance-search-col-2-os,
+    .search-filter-advance-search-col-3-os {
+      width: 48.5%;
+      padding-bottom: 2rem;
+    }
+  
+    .search-filter-advance-search-col-4-os {
+      padding-bottom: 2rem;
+    }
+  
+    .search-filter-advance-search-col-5-os {
+      width: 100%;
+    }
+  }
+  
+  @media screen and (max-width: 991px) {
+    .search-filter-input-field-os {
+      position: relative;
+    }
+  
+    .search-filter-price-range-slider-data-os {
+      width: 48%;
+    }
+  
+    .search-filter-input-data-os {
+      /* gap: 1rem; */
+    }
+  
+    .search-filter-advance-search-col-1-os,
+    .search-filter-advance-search-col-2-os,
+    .search-filter-advance-search-col-3-os {
+      width: 31.3%;
+    }
+  
+    .search-filter-advance-search-col-4-os,
+    .search-filter-advance-search-col-5-os {
+      width: 48.5%;
+      padding-bottom: 1rem;
+    }
+  
+    .search-filter-advance-search-col-6-os,
+    .search-filter-advance-search-col-7-os {
+      width: 48.5%;
+      padding-bottom: 2rem;
+    }
+  
+    .search-filter-advance-search-col-8-os {
+      max-width: 100%;
+    }
+  }
+  
+  @media screen and (max-width: 1028px) {
+    .search-by-familyPack-col-1-os {
+      width: 10%;
+    }
+    .search-by-familyPack-col-2-os {
+      width: 42%;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .search-tabs-row-os {
+      flex-wrap: wrap;
+    }
+    .search-data-row-os {
+      margin: 1rem auto 5rem;
+    }
+  }
+  
+  @media screen and (max-width: 767px) {
+    .search-data-row-os {
+      margin: 5rem auto 5rem;
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    .search-filter-input-field-os {
+      position: relative;
+    }
+  
+    .search-filter-price-range-slider-data-os {
+      width: 100%;
+    }
+  
+    .search-data-row-os {
+      margin: 3rem auto;
+      width: 100%;
+      padding: 1.5rem;
+      display: none;
+    }
+  
+    .search-tabs-row-os button {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  
+    .search-filter-data-os {
+      padding: 1.5rem 1rem;
+    }
+  
+    .search-filter-input-field-os input {
+      font-size: 14px;
+      line-height: 18px;
+      height: 50px;
+      padding: 0 1rem;
+    }
+  
+    .search-filter-input-field-os label {
+      position: absolute;
+      top: -12px;
+      left: 12px;
+      width: max-content;
+      padding: 4px 6px;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  
+    .MobileSearch-section-os {
+      display: block;
+      padding-top: 2rem;
+    }
+  
+    .search-section-os input[type="radio"]:checked + .custom-radio .dot {
+      border: 1px solid #333333;
+    }
+  
+    .search-section-os .custom-radio .dot {
+      border: 2px solid #333333;
+    }
+  
+    .search-section-os .custom-radio {
+      font-size: 14px;
+      line-height: 20px;
+      margin-right: 0px;
+    }
+  
+    .search-filter-checkboxes-row-os {
+      padding: 2rem 0 0;
+    }
+  
+    .search-filter-input-data-col-2-os {
+      width: 100%;
+      padding-top: 1.5rem;
+    }
+  
+    .search-section-os-1 .custom-radio .dot {
+      border: 2px solid #333333;
+    }
+  
+    .search-section-os-1 input[type="radio"]:checked + .custom-radio .dot {
+      border: 1px solid #333333;
+    }
+  
+    .search-filter-input-field-os input::placeholder {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  
+    .search-section-os-1 .custom-radio {
+      font-size: 12px;
+      line-height: 16px;
+      margin-right: 0;
+    }
+  
+    .search-section-os {
+      display: none;
+    }
+  
+    .search-by-exact-digits-input-os {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+      gap: 1rem 4%;
+    }
+  
+    .search-by-exact-digits-input-os input[type="number"] {
+      width: 16.5%;
+      font-size: 16px;
+      line-height: 20px;
+      margin-right: 0;
+      padding: 4px;
+    }
+  
+    .search-by-exact-digits-heading-os {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  
+    .search-by-most-contains-col-1-os {
+      width: 100%;
+    }
+  
+    .search-by-price-filter-col-1-os {
+      width: 48.5%;
+    }
+  
+    .search-by-price-filter-col-2-os {
+      width: 48.5%;
+    }
+  
+    .search-by-price-filter-col-3-os {
+      width: 100%;
+    }
+  
+    .search-by-familyPack-col-1-os {
+      font-size: 12px;
+      line-height: 16px;
+      width: 12%;
+    }
+  
+    .search-by-familyPack-col-2-os {
+      width: 37%;
+    }
+  
+    .search-by-familyPack-col-3-os {
+      width: 45%;
+      font-size: 12px;
+      line-height: 16px;
+      text-align: left;
+    }
+  
+    .search-by-familyPack-col-4-os {
+      width: 100%;
+    }
+  
+    .search-family-pack-heading-text-os {
+      font-size: 12px;
+      line-height: 16px;
+      padding-bottom: 1.5rem;
+    }
+  
+    .search-filter-input-data-os {
+      gap: 1rem 3%;
+      background: #ffffff;
+      border: 1px solid #b1b1b1;
+      box-shadow: 0px 3.00665px 7.51663px rgb(0 0 0 / 13%);
+      border-radius: 6px;
+    }
+    .search-filter-input-data-row-os {
+      width: 100%;
+      display: flex;
+      gap: 3%;
+      flex-wrap: wrap;
+      padding: 1.5rem 1rem 0;
+    }
+    .priceRange-popup-row-os {
+      width: 100%;
+    }
+    .priceRange-popup-heading-os {
+      font-size: 22px;
+      line-height: 24px;
+    }
+    .priceRange-popup-heading-1-os {
+      font-size: 18px;
+      line-height: 24px;
+    }
+    .priceRange-input-os {
+      width: 100%;
+    }
+    .priceRange-popup-submit-btn-os {
+      width: 100%;
+    }
+    .priceRange-form-os {
+      padding: 0 1rem;
+    }
+    button.priceRange-popup-cross-btn-os SVG {
+      width: 35px;
+    }
+    .search-filter-advance-search-col-1-os,
+    .search-filter-advance-search-col-2-os,
+    .search-filter-advance-search-col-3-os {
+      width: 48.5%;
+    }
+    .search-filter-advance-search-col-4-os,
+    .search-filter-advance-search-col-5-os {
+      padding-bottom: 2rem;
+    }
+    .GoogleRefference-page .MobileSearch-filter-tabs-row-os {
+      justify-content: center;
+    }
+    .GoogleRefference-page .MobileSearch-filter-tabs-col-1-os {
+      padding-bottom: 1rem;
+    }
+    .GoogleRefference-page .MobileSearch-filter-search-by-digits-row-os {
+      padding: 1.5rem 1rem 1rem;
+    }
+    .GoogleRefference-page .MobileSearch-section-os {
+      padding-top: 1rem;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .MobileSearch-filter-search-by-digits-filters-row-os button {
+      font-size: 11px;
+      line-height: 15px;
+    }
+  
+    .MobileSearch-filter-search-by-digits-filters-row-os button span {
+      font-size: 10px;
+      line-height: 14px;
+    }
+  
+    .MobileSearch-filter-tabs-col-1-os h4 {
+      font-size: 10px;
+      line-height: 16px;
+    }
+  
+    .MobileSearch-filter-search-by-digits-heading-os {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  
+    .search-filter-input-field-os label {
+      font-size: 10px;
+    }
+  
+    .search-filter-price-range-slider-heading-os {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  
+    .search-filter-price-range-slider-min-max-values-os {
+      padding: 6px 0 0;
+    }
+  
+    .search-filter-advance-search-heading-os {
+      font-size: 14px;
+      line-height: 18px;
+    }
+  
+    .filter-advance-search-alert-message-os {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+  

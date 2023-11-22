@@ -1,0 +1,89 @@
+.Recommendations-section-os {
+    display: none;
+  }
+  .Recommendations-col-1-os h4 {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 11.0571px;
+    line-height: 13px;
+    text-align: center;
+    color: #3d3d3d;
+  }
+  .Recommendations-col-1-os {
+    width: 33.33%;
+  }
+  .Recommendations-col-1-os a {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .Recommendations-row-os {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    max-height: 110px;
+    transition: 0.3s;
+  }
+  .Recommendations-row-os.sliderOpen {
+    max-height: 400px;
+  }
+  .recommendations-slide-arrow-os {
+    display: flex;
+    position: absolute;
+    bottom: -12px;
+    cursor: pointer;
+    z-index: 0;
+    width: 100%;
+    justify-content: center;
+    transition: 0.3s;
+  }
+  .recommendations-slide-arrow-os svg {
+    transition: 0.3s;
+    transform: rotate(180deg);
+  }
+  .recommendations-slide-arrow-os.active svg {
+    transform: rotate(0deg);
+    transition: 0.3s;
+  }
+  .Recommendations-main-row-os {
+    padding: 1rem 0 1.5rem;
+    background: #ffffff;
+    border: 1px solid #b1b1b1;
+    box-shadow: 0px 3.00665px 7.51663px rgb(0 0 0 / 13%);
+    border-radius: 6.0133px;
+    position: relative;
+  }
+  .Recommendations-heading-os {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13.71px;
+    line-height: 16px;
+    color: #3d3d3d;
+    padding: 0 1rem 0.5rem;
+  }
+  
+  @media screen and (max-width: 991px) {
+    .banner-col-2-os a img {
+      max-width: 74%;
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    .Recommendations-section-os {
+      display: block;
+      padding-bottom: 3rem;
+    }
+    .Recommendations-col-image-os {
+      display: flex;
+    }
+    .Recommendations-col-image-os img {
+      height: 90px;
+      width: auto;
+      /* filter: invert(11%) sepia(89%) saturate(7335%) hue-rotate(265deg) brightness(92%) contrast(100%); */
+    }
+  }
+  

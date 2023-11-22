@@ -1,0 +1,70 @@
+.pages-os {
+    position: relative;
+  }
+  .getVipApp-os {
+    position: fixed;
+    transform: rotate(90deg);
+    bottom: 25%;
+    left: -39px;
+    z-index: 9;
+  }
+  .getVipApp-os a {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 20px;
+    text-align: center;
+    color: #ffffff;
+    background: linear-gradient(180deg, #611aec 0%, #d15a48 100%);
+    border-radius: 8px;
+    display: flex;
+    width: max-content;
+    padding: 12px 1rem;
+    text-decoration: none;
+  }
+  .getVipApp-os a:hover {
+    opacity: 0.8;
+  }
+  .register-popup-os {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 23;
+    display: none;
+    top: 0;
+  }
+  .register-popup-os.active {
+    display: block;
+  }
+  
+  .signIn-password-popup-os {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 23;
+    display: none;
+    top: 0;
+  }
+  .signIn-password-popup-os.active {
+    display: block;
+  }
+  .signIn-otp-popup-os {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 23;
+    display: none;
+    top: 0;
+  }
+  
+  .signIn-otp-popup-os.active {
+    display: block;
+  }
+  
+  @media screen and (max-width: 576px) {
+    .getVipApp-os {
+      display: none;
+    }
+  }
+  

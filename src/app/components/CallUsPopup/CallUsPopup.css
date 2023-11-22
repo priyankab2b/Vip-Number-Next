@@ -1,0 +1,86 @@
+/* Contactus popup starts */
+.MobileHeader-contact-us-content-heading-os {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11.75px;
+    line-height: 14px;
+    color: #611aeb;
+    padding: 0 1rem 1rem;
+  }
+  .MobileHeader-contact-us-content-list-os li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 0.34px solid #a8a8a8;
+    padding: 1rem;
+  }
+  .MobileHeader-contact-us-content-list-os li:last-child {
+    padding-bottom: 0;
+  }
+  .MobileHeader-contact-us-content-col-1-os {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .MobileHeader-whatsapp-contact {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .MobileHeader-contact-us-section-os {
+    background: #ffffff;
+    border: 1px solid #ceb7fc;
+    box-shadow: 0px 4px 16px rgb(0 0 0 / 14%);
+    border-radius: 5px;
+    padding: 1rem 0;
+  }
+  .MobileHeader-contact-us-pop-os {
+    position: absolute;
+    right: 0;
+    top: 60px;
+    width: 400px;
+    z-index: 11;
+  }
+  .contact-us-profile-alphabet-os {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 9.7983px;
+    line-height: 11px;
+    color: #611aeb;
+    padding: 4px 6px;
+    border: 1px solid #611aeb;
+    border-radius: 50%;
+  }
+  .contact-us-profile-name-contact-num-os .contact-us-profile-name-os {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10.16525px;
+    line-height: 10px;
+    color: #4b4b4b;
+    display: flex;
+    padding-bottom: 4px;
+  }
+  .contact-us-profile-name-contact-num-os .contact-us-profile-contact-num-os {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12.7983px;
+    line-height: 11px;
+    color: #6019eb;
+    display: flex;
+  }
+  .MobileHeader-whatsapp-contact button {
+    display: flex;
+    padding: 4px;
+    background: #f4f4f9;
+    border-radius: 3px;
+  }
+  .MobileHeader-whatsapp-contact button img,
+  .whats-app-icon-os img {
+    width: 18px;
+    height: auto;
+    display: flex;
+  }

@@ -1,0 +1,197 @@
+.footer-links-row-os {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 4rem 0;
+    gap: 2rem 5.33%;
+  }
+  .footer-section-os {
+    border-top: 4px solid #6019eb;
+    border-bottom: 1.04px solid #6019eb;
+  }
+  .footer-links-row-os > div {
+    width: 21%;
+  }
+  .NewsLetter-search-os {
+    padding-top: 5rem;
+  }
+  .footer-quickLinks-os {
+  }
+  .footer-section-os ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .footer-links-heading-os {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 16.6957px;
+    line-height: 20px;
+    text-transform: uppercase;
+    color: #6019eb;
+    padding-bottom: 12px;
+  }
+  .footer-links-row-os ul li a,
+  .footer-links-row-os ul li {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 38px;
+    text-transform: uppercase;
+    color: #333333;
+    text-decoration: none;
+    display: flex;
+  }
+  .footer-links-row-os ul li a:hover,
+  .footer-links-row-os ul li:hover {
+    color: #000;
+  }
+  .footer-getInTouch-links-os ul li {
+    line-height: 24px;
+    padding-bottom: 1.5rem;
+    width: 80%;
+  }
+  
+  .footer-links-subHeading-os {
+    font-weight: 500;
+    padding: 12px 0 4px;
+  }
+  .footer-brand-image-os a img {
+    display: flex;
+    max-width: 80%;
+  }
+  .footer-categories-links-list-os li a {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16.6957px;
+    line-height: 29px;
+    text-transform: uppercase;
+    color: #333333;
+    text-decoration: none;
+  }
+  .footer-categories-links-row-os {
+    padding-top: 1.5rem;
+  }
+  .footer-copyRight-col-2-os span {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16.6957px;
+    line-height: 20px;
+    text-transform: uppercase;
+    color: #333333;
+  }
+  .footer-copyRight-col-2-os {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .footer-copyRight-row-os {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+  }
+  .footer-copyRight-accept-cards-os {
+    display: flex;
+  }
+  .footer-copyRight-accept-cards-row-os {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .footer-getInTouch-links-os ul li:first-child {
+    padding: 0;
+  }
+  
+  .footer-col-4-os.footer-termsPolicies-Links-os {
+    display: flex;
+    justify-content: center;
+  }
+  .NewsLetter-col-2-os {
+    padding-top: 2rem;
+  }
+  .footer-getInTouch-list-os {
+    /* display: flex;
+    flex-direction: column;
+    align-items: flex-end; */
+  }
+  .desktopFooter-main-os {
+    display: block;
+  }
+  .footer-getInTouch-address-os {
+    line-height: 24px !important;
+  }
+  .footer-getInTouch-contact-data-os {
+    padding: 0 !important;
+  }
+  .footer-getInTouch-contact-data-os a {
+    /* line-height: 24px !important;
+    display: flex; */
+  }
+  .footer-getInTouch-phone-email-os span {
+    text-transform: lowercase;
+  }
+  .footer-categories-links-list-os a {
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .footer-categories-links-list-os a:hover {
+    text-decoration: underline;
+  }
+  .footer-getInTouch-phone-whats-app-os {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .footer-cities-links-list-os a:hover {
+    color: #000;
+    text-decoration: underline
+  }
+  .footer-cities-links-list-os a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    line-height: 24px;
+  }
+  
+  @media screen and (max-width: 1028px) {
+    .footer-getInTouch-links-os ul li {
+      width: 100%;
+      word-break: break-word;
+    }
+    .footer-links-row-os > div {
+      width: 29.5%;
+    }
+  }
+  @media screen and (max-width: 991px) {
+    .footer-col-4-os.footer-termsPolicies-Links-os {
+      justify-content: flex-start;
+    }
+    .footer-links-row-os > div {
+      width: 47%;
+    }
+    .footer-links-row-os {
+      gap: 2rem 6%;
+    }
+  }
+  
+  @media screen and (max-width: 767px) {
+    .footer-links-row-os > div {
+      width: 50%;
+    }
+    .footer-main-os {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .desktopFooter-main-os {
+      display: none;
+    }
+  }
+  
