@@ -44,7 +44,7 @@
     border-radius: unset;
   }
   .register-main-heading-os {
-    font-family: "Roboto", sans-serif;
+font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 40px;
@@ -56,7 +56,7 @@
     margin-bottom: 1rem;
   }
   .register-heading-os {
-    font-family: "Roboto", sans-serif;
+font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: 300;
     font-size: 25px;
@@ -69,7 +69,7 @@
     padding-bottom: 1rem;
   }
   .register-checkbox-os label {
-    font-family: "Roboto", sans-serif;
+font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: 300;
     font-size: 14px;
@@ -96,7 +96,7 @@
       opacity: 0.8;
   } */
   .already-have-account-os {
-    font-family: "Roboto", sans-serif;
+font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: 300;
     font-size: 20px;
@@ -144,7 +144,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-family: "Roboto", sans-serif;
+font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 16px;

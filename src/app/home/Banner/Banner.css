@@ -12,7 +12,7 @@
 
 .banner-col-1-os a,
 .banner-col-2-os a {
-    font-family: "Roboto", sans-serif;
+font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 17.8882px;
@@ -37,7 +37,7 @@
 }
 
 .banner-col-1-os p {
-    font-family: "Roboto", sans-serif;
+font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 26.9772px;
@@ -48,7 +48,7 @@
 }
 
 .banner-col-1-os h2 {
-    font-family: "Roboto", sans-serif;
+font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: 800;
     font-size: 54.0319px;
@@ -129,7 +129,7 @@
 }
 
 .banner-col-2-os h1 {
-    font-family: "Poppins";
+    font-family: "Poppins", sans-serif;;
     font-style: normal;
     font-weight: 500;
     font-size: 48px;
@@ -170,7 +170,7 @@
 }
 
 .banner-policies-content-os {
-    font-family: "Roboto", sans-serif;
+font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 24px;

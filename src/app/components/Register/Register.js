@@ -8,7 +8,7 @@ import { MyRegisterSignInContext } from "../../contexts/MyRegisterSignInContext/
 // import { useNavigate } from "react-router-dom";
 import { NotificationManager } from "react-notifications";
 import { AppStateContext } from "../../contexts/AppStateContext/AppStateContext";
-import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 const Register = () => {
   const [firstName, setFitstName] = useState("");
@@ -30,7 +30,7 @@ const Register = () => {
   const [statusMessage, setStatusMessage] = useState("");
   const [otpSent, setOtpSent] = useState(false);
   const [session, setSession] = useState("");
-  const navigate = usePathname();
+  const navigate = useRouter();
   // Gmail and Yahoo suggestion
   const [suggestionEmail, setSuggestionEmail] = useState("");
   // register data usecontext
@@ -228,13 +228,13 @@ const Register = () => {
                 addToCart(
                   cartCache,
                   () => {
-                    navigate(redirectTo);
+                    navigate.push(redirectTo);
                     setRedirectTo(null);
                   },
                   response?.data?.data?.token
                 );
               } else {
-                navigate(redirectTo);
+                navigate.push(redirectTo);
                 setRedirectTo(null);
               }
             }

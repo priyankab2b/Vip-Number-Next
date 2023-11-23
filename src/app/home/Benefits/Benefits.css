@@ -1,0 +1,52 @@
+.benefits-row-os {
+    display: flex;
+    justify-content: center;
+    gap: 3.5rem;
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .benefits-row-os > div {
+    width: 13%;
+  }
+  .benefits-section-os {
+    padding-bottom: 5rem;
+  }
+  
+  @media screen and (max-width: 1600px) {
+    .benefits-row-os {
+      max-width: 100%;
+    }
+  }
+  @media screen and (max-width: 1028px) {
+    .benefits-row-os {
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .benefits-row-os > div {
+      width: 17%;
+    }
+  }
+  @media screen and (max-width: 991px) {
+    .benefits-row-os > div {
+      width: 29%;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .benefits-row-os > div {
+      width: 45%;
+    }
+  }
+  @media screen and (max-width: 576px) {
+    .benefit-card-col-os {
+      padding: 2rem 1rem;
+      min-height: unset;
+    }
+    .benefits-row-os {
+      max-width: 100%;
+      gap: 1rem;
+    }
+    .benefits-section-os {
+      padding-bottom: 4rem;
+    }
+  }  

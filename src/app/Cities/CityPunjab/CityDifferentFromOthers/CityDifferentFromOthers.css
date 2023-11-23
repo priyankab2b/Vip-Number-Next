@@ -1,0 +1,97 @@
+.CityDifferentFromOthers-heading-os {
+    text-align: center;
+    padding-bottom: 3rem;
+}
+
+/* .CityCard-col-os p:last-child {
+    padding-bottom: 0;
+} */
+.CityCard-col-os p {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    color: #333333;
+    padding-bottom: 2rem;
+}
+.CityCard-col-os h3 {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 48px;
+    color: #6019EB;
+    margin-bottom: 2rem;
+}
+.CityCard-col-1-os {
+    background: #F0E8FF;
+}
+.CityCard-col-2-os {
+    background: #FFE3DD;
+}
+.CityCard-col-3-os {
+    background: #F0E8FF;
+}
+.CityCard-col-4-os {
+    background: #CEE7FF;
+}
+.CityCard-col-5-os {
+    background: #F0E8FF;
+}
+.CityCard-col-os {
+    width: 30%;
+    padding: 3rem 1.5rem;
+    border-radius: 30px;
+}
+.CityDifferentFromOthers-row-os {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem 3.33%;
+}
+
+@media screen and (max-width: 1600px) {
+    .CityCard-col-os h3 {
+        font-size: 28px;
+        line-height: 35px;
+    }    
+}
+
+@media screen and (max-width: 1028px) {
+    .CityCard-col-os h3 {
+        font-size: 24px;
+        line-height: 32px;
+        margin-bottom: 1rem;
+    }
+    .CityCard-col-os p {
+        padding-bottom: 1rem;
+    }
+    .CityCard-col-os {
+        width: 48%;
+    }
+    .CityDifferentFromOthers-row-os {
+        gap: 2rem 3.33%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .CityCard-col-os h3 {
+        font-size: 20px;
+        line-height: 24px;
+    }
+    .CityCard-col-os p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .CityDifferentFromOthers-heading-os {
+        padding-bottom: 2rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .CityCard-col-os {
+        width: 100%;
+        text-align: center;
+    }    
+}

@@ -1,7 +1,7 @@
 "use client"
 import { useContext, useState, useEffect } from "react";
 import "./Header.css";
-import { usePathname } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
 import axios from "axios";
@@ -19,7 +19,7 @@ import LogoutModal from "../LogoutModal/LogoutModal";
 
 const Header = () => {
     const [wBalance, setWBalance] = useState(0);
-    const navigate = usePathname();
+    const navigate = useRouter();
     // register popup context
     const { setActiveRegisterForm, setActiveSignInWithOtp } = useContext(
         MyRegisterSignInContext
@@ -242,7 +242,7 @@ const Header = () => {
                                             className="loggedIn-data-os"
                                             onClick={() => {
                                                 if (getName()) {
-                                                    navigate("/profile");
+                                                    navigate.push("/profile");
                                                 }
                                             }}
                                         >
@@ -301,7 +301,7 @@ const Header = () => {
                                                             className="header-login-logout-popup-col-os"
                                                             onClick={() => {
                                                                 if (getName()) {
-                                                                    navigate("/profile");
+                                                                    navigate.push("/profile");
                                                                 }
                                                             }}
                                                         >
@@ -355,20 +355,18 @@ const Header = () => {
 
                             <button
                                 type="button"
-                                className={`header-cart-os animation `}
-                                // ${cartAnimation === "buyNow-os" ? "shake" : "" }
+                                className={`header-cart-os animation ${cartAnimation === "buyNow-os" ? "shake" : ""}`}
                                 onClick={() => {
-                                    // if (getName()) {
-                                    //     navigate("/cart");
-                                    // } else {
-                                    //     setActiveSignInWithOtp(true);
-                                    // }
+                                    if (getName()) {
+                                        navigate.push("/cart");
+                                    } else {
+                                        setActiveSignInWithOtp(true);
+                                    }
                                 }}
                             >
                                 <span className="cart-tooltip-os">Cart</span>
                                 <span className="cart-wishlist-count-os">
-                                    {/* {cartItems?.length} */}
-                                    1
+                                    {cartItems?.length}
                                 </span>
                                 <svg
                                     width="23"
@@ -385,20 +383,18 @@ const Header = () => {
                             </button>
                             <button
                                 type="button"
-                                className={`header-login-add-favourite-os animation`}
-                                //  ${cartAnimation === "wishlist-os" ? "shake" : "" }
+                                className={`header-login-add-favourite-os animation ${cartAnimation === "wishlist-os" ? "shake" : ""}`}
                                 onClick={() => {
-                                    // if (getName()) {
-                                    //     navigate("/wishlist");
-                                    // } else {
-                                    //     setActiveSignInWithOtp(true);
-                                    // }
+                                    if (getName()) {
+                                        navigate.push("/wishlist");
+                                    } else {
+                                        setActiveSignInWithOtp(true);
+                                    }
                                 }}
                             >
                                 <span className="cart-wishlist-os">Wishlist</span>
                                 <span className="cart-wishlist-count-os">
-                                    {/* {wishListItem?.length} */}
-                                    1
+                                    {wishListItem?.length}
                                 </span>
                                 <svg
                                     width="20"
@@ -421,11 +417,11 @@ const Header = () => {
                             >
                                 <div
                                     onClick={() => {
-                                        // if (getName()) {
-                                        //     setActiveWalletMenu(!activeWalletMenu);
-                                        // } else {
-                                        //     setActiveSignInWithOtp(true);
-                                        // }
+                                        if (getName()) {
+                                            setActiveWalletMenu(!activeWalletMenu);
+                                        } else {
+                                            setActiveSignInWithOtp(true);
+                                        }
                                     }}
                                     className="header-login-wallet-os"
                                 >

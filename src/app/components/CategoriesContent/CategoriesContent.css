@@ -1,0 +1,17 @@
+.CategoriesContent-os h6 {
+    margin: 0;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.CategoriesContent-row-os p {
+    padding-bottom: 1.5rem;
+}
+
+.CategoriesContent-col-os {
+    padding-bottom: 2rem;
+}
+
+.CategoriesContent-list-items-os {
+    padding-bottom: 1.5rem;
+}

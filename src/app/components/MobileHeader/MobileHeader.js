@@ -3,8 +3,7 @@ import React, { useState, useContext, useEffect } from "react";
 import "./MobileHeader.css";
 import Link from 'next/link'
 import Image from 'next/image'
-import { useRouter } from 'next/router'
-import { usePathname } from 'next/navigation'
+import { useRouter, usePathname } from 'next/navigation'
 // import { Link, useNavigate, useLocation } from "react-router-dom";
 import OutsideClickHandler from "react-outside-click-handler";
 import { AppStateContext } from "../../contexts/AppStateContext/AppStateContext";
@@ -32,7 +31,7 @@ import WhatsApp from "../../assets/whats-app-icon.svg";
 // import
 
 const MobileHeader = () => {
-    const navigate = usePathname();
+    const navigate = useRouter();
     const location = usePathname();
     const { setActiveRegisterForm, setActiveSignInWithOtp } = useContext(
         MyRegisterSignInContext
@@ -108,7 +107,7 @@ const MobileHeader = () => {
 
     // Mobile Navbar edit profile button
     const handleProfileEdit = () => {
-        navigate("/profile");
+        navigate.push("/profile");
     };
 
     // NavLinks handle
@@ -140,7 +139,7 @@ const MobileHeader = () => {
 
     const handleClick = () => {
         if (getName()) {
-            navigate("/profile");
+            navigate.push("/profile");
         } else {
             setActiveSignInWithOtp(true);
         }
@@ -156,7 +155,7 @@ const MobileHeader = () => {
         var secondElement = document.querySelector("#mobile-search-id-os");
         var secondElementOffset = secondElement?.offsetTop;
         if (window.location.pathname !== "/") {
-            navigate("/");
+            navigate.push("/");
             console.log("Current Path:", window.location.pathname);
         } else {
             window.scrollTo({
@@ -205,7 +204,7 @@ const MobileHeader = () => {
                                                         className="MobileHeader-user-icon-os"
                                                         onClick={() => {
                                                             if (getName()) {
-                                                                navigate("/profile");
+                                                                navigate.push("/profile");
                                                             } else {
                                                                 setActiveSignInWithOtp(true);
                                                             }
@@ -405,7 +404,7 @@ const MobileHeader = () => {
                                     className="MobileHeader-sideNavbar-profile-name-os"
                                     onClick={() => {
                                         if (getName()) {
-                                            navigate("/profile");
+                                            navigate.push("/profile");
                                         }
                                     }}
                                 >
@@ -556,7 +555,7 @@ const MobileHeader = () => {
                                                 className="MobileHeader-sideNavbar-myAccount-links-col-1-os"
                                                 onClick={() => {
                                                     if (getName()) {
-                                                        navigate("/my-account");
+                                                        navigate.push("/my-account");
                                                     } else {
                                                         setActiveSignInWithOtp(true);
                                                     }

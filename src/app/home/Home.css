@@ -33,7 +33,7 @@
     z-index: 9;
   }
   .homepage-view-cart-col-1-os p {
-    font-family: "Poppins";
+    font-family: "Poppins", sans-serif;;
     font-style: normal;
     font-weight: 500;
     font-size: 13.5464px;
@@ -41,7 +41,7 @@
     color: #ffffff;
   }
   .homepage-view-cart-col-1-os h3 {
-    font-family: "Poppins";
+    font-family: "Poppins", sans-serif;;
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
@@ -76,7 +76,7 @@
     width: 30%;
   }
   .homepage-view-cart-col-2-os a {
-    font-family: "Poppins";
+    font-family: "Poppins", sans-serif;;
     font-style: normal;
     font-weight: 500;
     font-size: 21.3921px;

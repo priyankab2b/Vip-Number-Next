@@ -6,7 +6,7 @@ import StarBorderIcon from "@mui/icons-material/StarBorder";
 import StarHalfIcon from "@mui/icons-material/StarHalf";
 import moment from "moment";
 import { AppStateContext } from "./../../contexts/AppStateContext/AppStateContext";
-import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 // import { useNavigate } from "react-router-dom";
 import { MyRegisterSignInContext } from "../../contexts/MyRegisterSignInContext/MyRegisterSignInContext";
 import { Modal } from "antd";
@@ -43,7 +43,7 @@ const Card = (props) => {
     userProfile,
   } = useContext(AppStateContext);
   const { setActiveSignInWithOtp } = useContext(MyRegisterSignInContext);
-  const navigate = usePathname();
+  const navigate = useRouter();
   const { email, firstname, lastname, mobile } = user?.user || {};
   const [showModal, setShowModal] = useState(false);
 
@@ -135,10 +135,10 @@ const Card = (props) => {
         setRedirectTo("/place-order");
       } else {
         if (cartItems?.some((obj) => obj.number === props?.number)) {
-          navigate("/place-order");
+          navigate.push("/place-order");
         } else {
           addToCart({ ...props, number: props?.number }, () => {
-            navigate("/place-order");
+            navigate.push("/place-order");
           });
         }
       }
@@ -154,10 +154,10 @@ const Card = (props) => {
       setRedirectTo("/place-order");
     } else {
       if (cartItems?.some((obj) => obj.number === props?.number)) {
-        navigate("/place-order");
+        navigate.push("/place-order");
       } else {
         addToCart({ ...props, number: props?.number }, () => {
-          navigate("/place-order");
+          navigate.push("/place-order");
         });
       }
     }
@@ -256,7 +256,7 @@ const Card = (props) => {
           <div
             className="number-card-vipNumber-os"
             onClick={() => {
-              navigate("/pdp?productid=" + props?.product_id);
+              navigate.push("/pdp?productid=" + props?.product_id);
             }}
           >
             {props.productname}

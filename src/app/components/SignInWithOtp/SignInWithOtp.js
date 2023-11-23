@@ -5,8 +5,7 @@ import "../SignInWithPassword/SignInForm/SignInForm.css";
 import RegisterLoginInputField from "../RegisterLoginInputField/RegisterLoginInputField";
 import SubmitButton from "../SubmitButton/SubmitButton";
 // import { Link, useNavigate } from "react-router-dom";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { AppStateContext } from "../../contexts/AppStateContext/AppStateContext";
 import { MyRegisterSignInContext } from "../../contexts/MyRegisterSignInContext/MyRegisterSignInContext";
 import { NotificationManager } from "react-notifications";
@@ -16,7 +15,7 @@ import CountrySelector from "../CountrySelector/CountrySelector";
 const SignInWithOtp = () => {
   const ref = useRef();
   const otpRef = useRef();
-  const navigate = usePathname();
+  const navigate = useRouter();
   const {
     activeSignInWithPassword,
     setActiveSignInWithPassword,
@@ -180,13 +179,13 @@ const SignInWithOtp = () => {
               addToCart(
                 cartCache,
                 () => {
-                  navigate(redirectTo);
+                  navigate.push(redirectTo);
                   setRedirectTo(null);
                 },
                 response?.data?.data?.token
               );
             } else {
-              navigate(redirectTo);
+              navigate.push(redirectTo);
               setRedirectTo(null);
             }
           }

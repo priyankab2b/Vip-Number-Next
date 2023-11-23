@@ -4,12 +4,13 @@ import "./SignInForm.css";
 import RegisterLoginInputField from "../../RegisterLoginInputField/RegisterLoginInputField";
 import SubmitButton from "../../SubmitButton/SubmitButton";
 // import { Link, useNavigate } from "react-router-dom";
-import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { AppStateContext } from "../../../contexts/AppStateContext/AppStateContext";
 import { MyRegisterSignInContext } from "../../../contexts/MyRegisterSignInContext/MyRegisterSignInContext";
+import { useRouter } from "next/router";
 
 const SignInForm = (props) => {
-  const navigate = usePathname();
+  const navigate = useRouter();
   const { setUserDetails } = useContext(AppStateContext);
   const { setActiveSignInWithPassword } = useContext(MyRegisterSignInContext);
   const [mobile, setMobile] = useState("");
@@ -44,7 +45,7 @@ const SignInForm = (props) => {
         setUserDetails(response?.data?.data);
         setActiveSignInWithPassword(false);
         localStorage.setItem("vipcre", JSON.stringify(response?.data?.data));
-        navigate("/");
+        navigate.push("/");
       } catch (error) {
         setError(error.message);
       }

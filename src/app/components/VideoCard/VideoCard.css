@@ -1,0 +1,20 @@
+.VideoTestimonial-col-os-1 {
+    display: flex;
+}
+
+.videoThumbnail-os {
+    position: relative;
+    width: 130%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.playIcon-os {
+    position: absolute;
+    z-index: 111;
+    width: 110px;
+    height: auto;
+    cursor: pointer;
+}

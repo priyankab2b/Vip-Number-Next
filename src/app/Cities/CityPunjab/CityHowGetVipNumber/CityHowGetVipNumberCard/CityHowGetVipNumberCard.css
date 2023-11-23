@@ -1,0 +1,49 @@
+.CityHowGetVipNumberCard-col-os {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    gap: 1rem 0;
+}
+.CityHowGetVipNumberCard-content-os h3 {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 28px;
+    color: #6019EB;
+    margin-bottom: 0.5rem;
+}
+.CityHowGetVipNumberCard-content-os p {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #333333;
+}
+.CityHowGetVipNumberCard-content-os p .bold-os {
+    font-weight: bold;
+}
+.CityHowGetVipNumberCard-content-os p .smaill-text-os {
+    font-size: 13px;
+}
+
+@media screen and (max-width:1028px) {
+    .CityHowGetVipNumberCard-content-os h3 {
+        font-size: 18px;
+        line-height: 24px;
+    }
+    .CityHowGetVipNumberCard-image-os img {
+        max-width: 120px;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width:576px) {
+    .CityHowGetVipNumberCard-image-os img {
+        max-width: 100px;
+    }
+}
