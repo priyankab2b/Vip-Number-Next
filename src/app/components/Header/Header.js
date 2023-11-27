@@ -135,6 +135,7 @@ const Header = () => {
         });
     }, []);
 
+
     return (
         <>
             <div className="header-custom-os"></div>
@@ -198,6 +199,8 @@ const Header = () => {
                                                                                         "-"
                                                                                     ) || "slugVIP"
                                                                                         }`}
+
+                                                                                    // href={`/category`}
                                                                                 >
                                                                                     {element.name}
                                                                                 </Link>

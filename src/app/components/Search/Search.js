@@ -8,6 +8,7 @@ import MobileSearch from "../MobileSearch/MobileSearch";
 import { updateProfile } from "../../Services/Services";
 import { AppStateContext } from "../../contexts/AppStateContext/AppStateContext";
 
+
 const Tag = ({ value, onClick }) => {
   return (
     <div>
@@ -53,9 +54,9 @@ export const AppliedTags = ({ queryParams }) => {
     const route = {
       ...newparams,
     };
-    pathname({
+    router({
       pathname: router?.pathname,
-      search: `?${useSearchParams(route)}`,
+      search: `?${searchParams(route)}`,
     });
   };
   if (!Object.keys(curParams || {})?.length) {
@@ -200,6 +201,7 @@ export const AppliedTags = ({ queryParams }) => {
 };
 
 const Search = ({ queryParams }) => {
+  const searchParams = useSearchParams()
   const pathname = usePathname();
   const router = useRouter();
   const [callCount, setCallCount] = useState(0);
@@ -382,7 +384,7 @@ const Search = ({ queryParams }) => {
 
     pathname({
       pathname: "/search-results",
-      search: `?${useSearchParams(navObj)}`,
+      search: `?${searchParams(navObj)}`,
     });
   };
 

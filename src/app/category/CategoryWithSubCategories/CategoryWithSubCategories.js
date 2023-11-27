@@ -1,15 +1,19 @@
+'use client'
 import React, { useEffect, useState } from "react";
 import Card from "../../components/Card/Card";
 import MainHeading from "../../components/MainHeading/MainHeading";
 import ViewMoreButton from "../../components/ViewMoreButton/ViewMoreButton";
 import axios from "axios";
 import { useGetQueryParams } from "../../utils";
+import '../../home/FeaturedNumber/FeaturedNumber.css'
 
 // Images
 import crownIcon from "../../assets/crown-icon1.svg";
 import brandIcon from "../../assets/VIP-icon-2.svg"; // replace with your loader icon
+import Header from "@/app/components/Header/Header";
 
 const CategoryWithSubCategories = ({ subCategory, id }) => {
+    // const {subCategory, id} = params
     const { queryParams } = useGetQueryParams();
     const [selectedFilter, setSelectedFilter] = useState();
     const [isLoading, setIsLoading] = useState(true);
@@ -18,7 +22,6 @@ const CategoryWithSubCategories = ({ subCategory, id }) => {
     const [url, setUrl] = useState();
     const [dataLoaded, setDataLoaded] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
-    // const [subCategoryList, setSubCategoryList] = useState([]);
 
 
     useEffect(() => {
@@ -108,13 +111,13 @@ const CategoryWithSubCategories = ({ subCategory, id }) => {
             });
     };
 
-    if (isLoading || !id || !subCategory) {
-        return (
-            <div className="loader-os">
-                <img src={brandIcon} alt="Loading..." />
-            </div>
-        );
-    }
+    // if (isLoading || !id || !subCategory) {
+    //     return (
+    //         <div className="loader-os">
+    //             <Image src={brandIcon} alt="Loading..." />
+    //         </div>
+    //     );
+    // }
 
     if (!isLoading && filteredData?.length === 0) {
         return <p style={{ textAlign: "center" }}></p>;
@@ -124,11 +127,12 @@ const CategoryWithSubCategories = ({ subCategory, id }) => {
         <div>
             <section className="SuggestionFeaturedNumber-section-os">
                 <div className="container-os">
+                    <Header />
                     <div className="featured-number-heading-os">
                         <MainHeading MainHeading={subCategory} rightImage={crownIcon} />
                     </div>
                     <div className="featured-number-row-os">
-                        {filteredData.map((items, index) => {
+                        {filteredData && filteredData.map((items, index) => {
                             const formatPriceWithCommas = (price) => {
                                 const options = {
                                     style: "decimal",

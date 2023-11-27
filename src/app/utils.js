@@ -8,6 +8,7 @@ export const useGetQueryParams = () => {
     const param = useParams();
     const [params, setParams] = useState({});
     const [queryParams, setQueryParams] = useState();
+    
     useEffect(() => {
         if (
             JSON.stringify(queryParams) !==
