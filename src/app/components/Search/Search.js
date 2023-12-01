@@ -1,13 +1,15 @@
+"use client"
+
+
 import React, { useState, useEffect, useRef, useContext } from "react";
 import "./Search.css";
 import SearchFilterInput from "../SearchFilterInput/SearchFilterInput";
 import SearchFilterButton from "../SearchFilterButton/SearchFilterButton";
-import { useSearchParams, usePathname, useRouter } from 'next/navigation'
-// import { createSearchParams, useLocation, useNavigate } from "react-router-dom";
+import { useSearchParams, usePathname, useRouter } from "next/navigation";
+import { createSearchParams, useLocation, useNavigate } from "react-router-dom";
 import MobileSearch from "../MobileSearch/MobileSearch";
 import { updateProfile } from "../../Services/Services";
 import { AppStateContext } from "../../contexts/AppStateContext/AppStateContext";
-
 
 const Tag = ({ value, onClick }) => {
   return (
@@ -54,10 +56,17 @@ export const AppliedTags = ({ queryParams }) => {
     const route = {
       ...newparams,
     };
-    router({
-      pathname: router?.pathname,
-      search: `?${searchParams(route)}`,
-    });
+
+
+const queryString = createSearchParams(route).toString();
+router.push(`${location?.pathname}?${queryString}`);
+
+
+// router.push({
+//   pathname: location?.pathname,
+//   search: `?${createSearchParams(route)}`,
+// });
+   
   };
   if (!Object.keys(curParams || {})?.length) {
     return;
@@ -201,7 +210,7 @@ export const AppliedTags = ({ queryParams }) => {
 };
 
 const Search = ({ queryParams }) => {
-  const searchParams = useSearchParams()
+  const searchParams = useSearchParams();
   const pathname = usePathname();
   const router = useRouter();
   const [callCount, setCallCount] = useState(0);
@@ -382,10 +391,14 @@ const Search = ({ queryParams }) => {
     if (!navObj?.max_price) delete navObj.max_price;
 
 
-    pathname({
-      pathname: "/search-results",
-      search: `?${searchParams(navObj)}`,
-    });
+const queryString = createSearchParams(navObj).toString();
+router.push(`/search-results?${queryString}`);
+
+
+    // router.push({
+    //   pathname: "/search-results",
+    //   search: `?${createSearchParams(navObj)}`,
+    // });
   };
 
   const handleFilters = (key, value) => {

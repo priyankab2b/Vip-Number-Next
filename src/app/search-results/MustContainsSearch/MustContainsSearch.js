@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import MainHeading from "../../Shared/MainHeading/MainHeading";
-import crown from "../../../Assets/heading-crown-icon.svg";
-import Card from "../../Shared/Card/Card";
-import ViewMoreButton from "../../Shared/ViewMoreButton/ViewMoreButton";
+import MainHeading from "@/app/components/MainHeading/MainHeading"
+import crown from "@/app/assets/heading-crown-icon.svg";
+import Card from "@/app/components/Card/Card";
+import ViewMoreButton from "@/app/components/ViewMoreButton/ViewMoreButton"
 
 const MustContainsSearch = ({ results, page, nextPage }) => {
   return (

@@ -1,3 +1,4 @@
+"use client"
 import React, { useContext, useEffect, useState } from "react";
 import Header from "../components/Header/Header";
 import MobileHeader from "../components/MobileHeader/MobileHeader";
@@ -32,7 +33,7 @@ import { MyRegisterSignInContext } from "../contexts/MyRegisterSignInContext/MyR
 import axios from "axios";
 // Images
 import RegisterImg1 from "../assets/assurance-register-img.svg";
-import { checkAscendingOrDescendingBy5, checkForSamePattern, count_repeating_digits } from "../../../utils/comman";
+// import { checkAscendingOrDescendingBy5, checkForSamePattern, count_repeating_digits } from "../../../utils/comman";
 export const SearchContext = React.createContext(null);
 
 const BannerText = {
