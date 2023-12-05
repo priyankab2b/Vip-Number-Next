@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
-import MainHeading from "../../Shared/MainHeading/MainHeading";
-import crown from "../../../Assets/heading-crown-icon.svg";
-import Card from "../../Shared/Card/Card";
-import { SearchContext } from "../SearchResult/SearchResult";
-import ViewMoreButton from "../../Shared/ViewMoreButton/ViewMoreButton";
+import MainHeading from "../../components/MainHeading/MainHeading";
+import crown from "../../assets/heading-crown-icon.svg";
+import Card from "../../components/Card/Card";
+import { SearchContext } from "../page";
+import ViewMoreButton from "../../components/ViewMoreButton/ViewMoreButton";
 
 const BasicSearch = ({ nextPage }) => {
   const { besSeach } = useContext(SearchContext);
