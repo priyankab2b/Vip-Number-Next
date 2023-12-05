@@ -2,12 +2,11 @@ import React, { useState, useEffect, useRef, useContext } from "react";
 import "./Search.css";
 import SearchFilterInput from "../SearchFilterInput/SearchFilterInput";
 import SearchFilterButton from "../SearchFilterButton/SearchFilterButton";
-import { useSearchParams, usePathname, useRouter } from 'next/navigation'
+import { useSearchParams, usePathname, useRouter } from "next/navigation";
 // import { createSearchParams, useLocation, useNavigate } from "react-router-dom";
 import MobileSearch from "../MobileSearch/MobileSearch";
 import { updateProfile } from "../../Services/Services";
 import { AppStateContext } from "../../contexts/AppStateContext/AppStateContext";
-
 
 const Tag = ({ value, onClick }) => {
   return (
@@ -201,7 +200,7 @@ export const AppliedTags = ({ queryParams }) => {
 };
 
 const Search = ({ queryParams }) => {
-  const searchParams = useSearchParams()
+  const searchParams = useSearchParams();
   const pathname = usePathname();
   const router = useRouter();
   const [callCount, setCallCount] = useState(0);
@@ -380,7 +379,6 @@ const Search = ({ queryParams }) => {
     };
     if (!navObj?.min_price) delete navObj.min_price;
     if (!navObj?.max_price) delete navObj.max_price;
-
 
     pathname({
       pathname: "/search-results",
