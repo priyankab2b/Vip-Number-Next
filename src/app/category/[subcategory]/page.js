@@ -36,7 +36,7 @@ const Category = ({ Seo }) => {
   const [category, setCategoryId] = useState();
 
 
-  
+
   useEffect(() => {
     if (params?.subcategory && Array.isArray(categoriesData) && categoriesData?.length > 0) {
       for (let index = 0; index < categoriesData.length; index++) {
@@ -48,11 +48,12 @@ const Category = ({ Seo }) => {
       }
     }
   }, [params, categoriesData]);
-  
 
 
 
-  
+
+
+
   return (
     <div className="Category-page-os">
       <Helmet>
@@ -84,12 +85,14 @@ const Category = ({ Seo }) => {
       </SearchContext.Provider>
 
       {category?.id &&
-        categoriesById[category?.id]?.map((subCategory) => {
+        categoriesById[category?.id]?.map((subCategory, index) => {
           return (
             <CategoryWithSubCategories
-            key={subCategory?.id}
+              categoryName={category?.name}
+              categoryId={category?.id}
               subCategory={subCategory?.name}
               id={subCategory?.id}
+              key={index}
             />
           );
         })}

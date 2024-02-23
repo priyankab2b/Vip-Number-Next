@@ -24,7 +24,7 @@ import VideoTestimonial from "../components/VideoTestimonial/VideoTestimonial";
 import RegisterVipNumber from "../home/RegisterVipNumber/RegisterVipNumber";
 import QRVipApp from "../components/QRVipApp/QRVipApp";
 import { NotificationManager } from "react-notifications";
-// import FamilyPackResult from "../FamilyPackResult/FamilyPackResult";
+ import FamilyPackResult from "./FamilyPackResult/FamilyPackResult";
 import FilterTabs from "../components/FilterTabs/FilterTabs";
 import { AppStateContext } from "../contexts/AppStateContext/AppStateContext";
 // import { useNavigate } from "react-router-dom";
@@ -47,8 +47,8 @@ const BannerText = {
   price: {
     price: "Search by Price",
   },
-  family: {
-    family: "Search for Family Pack",
+  family_pack: {
+    family_pack: "Search for Family Pack",
   },
 };
 
@@ -65,6 +65,12 @@ const SearchResults = () => {
   const { setActiveSignInWithOtp } = useContext(MyRegisterSignInContext);
   const [nextPage, setNextPage] = useState();
   const [lazy, setLazy] = useState();
+  const [familyPackParamDigit, setFamilyPackParamDigit] = useState(null);
+
+
+  useEffect(() => {
+    setFamilyPackParamDigit(queryParams?.fp_total);
+  }, [queryParams]);
 
   const resetAll = () => {
     setSearchResults();
@@ -87,7 +93,7 @@ const SearchResults = () => {
         const { min_price, max_price, sort, seller, sum, total } = params;
         params = {
           [params?.basicSearchtype]: params.number,
-          min_price ,
+          min_price,
           max_price,
           sort,
           seller,
@@ -207,7 +213,7 @@ const SearchResults = () => {
     delete params.page;
     if (queryParams?.type === "basic") {
       params.seller = queryParams?.seller;
-      const { min_price , max_price, sort, seller, sum, total } = params;
+      const { min_price, max_price, sort, seller, sum, total } = params;
       params = {
         [params?.basicSearchtype]: params.number,
         min_price,
@@ -267,7 +273,7 @@ const SearchResults = () => {
       <SuggestionBanner
         headingText={
           BannerText?.[queryParams?.searchBy]?.[
-            queryParams?.type || queryParams?.searchBy
+          queryParams?.type || queryParams?.searchBy
           ]
         }
         buttonTitle="Contact Us"
@@ -380,7 +386,9 @@ const SearchResults = () => {
           />
         ) : null}
 
-        {/* <FamilyPackResult /> */}
+        {familyPackParamDigit && (
+          <FamilyPackResult familyPackParamDigit={familyPackParamDigit} />
+        )}
       </SearchContext.Provider>
       <FAQs />
       <OurCustomers />

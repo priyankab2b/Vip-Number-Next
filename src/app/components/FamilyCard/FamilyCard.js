@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
+import { useSearchParams, usePathname, useRouter } from "next/navigation";
 import "./FamilyCard.css";
-import { useRouter } from "next/navigation";
-// import { Link, useNavigate } from "react-router-dom";
-import { AppStateContext } from "../../contexts/AppStateContext/AppStateContext";
-import { MyRegisterSignInContext } from "../../contexts/MyRegisterSignInContext/MyRegisterSignInContext";
+import { Link, useNavigate } from "react-router-dom";
+import { AppStateContext } from "../../../app/contexts/AppStateContext/AppStateContext";
+import { MyRegisterSignInContext } from "../../../app/contexts/MyRegisterSignInContext/MyRegisterSignInContext";
 import moment from "moment";
 import { Modal } from "antd";
 
@@ -11,7 +11,7 @@ const FamilyCard = ({ count, apiData }) => {
     const navigate = useRouter();
     // const { count, apiData } = props;
     const [selectAll, setSelectAll] = useState(false);
-    const [selectedItems, setSelectedItems] = useState([]);
+    const [selectedItems, setSelectedItems] = useState([apiData[0]?.productid]);
     const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
     const [showModal, setShowModal] = useState(false);
     const {
@@ -36,7 +36,7 @@ const FamilyCard = ({ count, apiData }) => {
         if (selectAll) {
             setSelectedItems(apiData.map((item) => item.productid));
         } else {
-            setSelectedItems([]);
+            setSelectedItems([apiData[0]?.productid]);
         }
     }, [apiData, selectAll]);
 
@@ -261,68 +261,72 @@ const FamilyCard = ({ count, apiData }) => {
                             // Render the seller_type and wish list icon for each group
                             const groupItems = groupedData[sellerType];
                             return (
-                                <div key={sellerType} className="item-buttons">
+                                <div key={sellerType} className="number-card-crown-wishlist-data-os">
                                     {sellerType === "PREMIUM" ? (
-                                        <button type="button" className="number-card-crown-os">
-                                            <span>
-                                                <svg
-                                                    width="19"
-                                                    height="17"
-                                                    viewBox="0 0 19 17"
-                                                    fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                >
-                                                    <path
-                                                        d="M1.8377 12.8639L0 1.8377L5.51309 5.51309L9.18848 0L12.8639 5.51309L18.377 1.8377L16.5393 12.8639H1.8377ZM2.86681 16.5393C2.24199 16.5393 1.8377 16.135 1.8377 15.5101V14.7016H16.5393V15.5101C16.5393 16.135 16.135 16.5393 15.5101 16.5393H2.86681Z"
-                                                        fill="#F16C19"
-                                                    />
-                                                </svg>
-                                            </span>
-                                        </button>
-                                    ) : null}
+                                        <>
+                                            <button type="button" className="number-card-crown-os">
+                                                <span>
+                                                    <svg
+                                                        width="19"
+                                                        height="17"
+                                                        viewBox="0 0 19 17"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                    >
+                                                        <path
+                                                            d="M1.8377 12.8639L0 1.8377L5.51309 5.51309L9.18848 0L12.8639 5.51309L18.377 1.8377L16.5393 12.8639H1.8377ZM2.86681 16.5393C2.24199 16.5393 1.8377 16.135 1.8377 15.5101V14.7016H16.5393V15.5101C16.5393 16.135 16.135 16.5393 15.5101 16.5393H2.86681Z"
+                                                            fill="#F16C19"
+                                                        />
+                                                    </svg>
+                                                </span>
+                                            </button>
 
-                                    <button
-                                        type="button"
-                                        className={`number-card-crown-os wishlist-heart-os ${wishListItem?.some((wishItem) =>
-                                            groupItems.some(
-                                                (groupItem) =>
-                                                    groupItem.productname === wishItem.productname
-                                            )
-                                        )
-                                                ? "active"
-                                                : ""
-                                            }`}
-                                        onClick={() => {
-                                            if (getName()) {
-                                                apiData.forEach((it) => {
-                                                    const newname = {
-                                                        product_id: it?.productid,
-                                                        number: parseInt(it?.number),
-                                                        item_loc: "wishlist",
-                                                    };
-                                                    addToWishList(newname);
-                                                });
-                                            } else {
-                                                setActiveSignInWithOtp(true);
-                                            }
-                                        }}
-                                    >
-                                        <span>
-                                            <svg
-                                                width="22"
-                                                height="21"
-                                                viewBox="0 0 22 21"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
+
+                                            <button
+                                                type="button"
+                                                className={`number-card-crown-os wishlist-heart-os ${wishListItem?.some((wishItem) =>
+                                                    groupItems.some(
+                                                        (groupItem) =>
+                                                            groupItem.productname === wishItem.productname
+                                                    )
+                                                )
+                                                        ? "active"
+                                                        : ""
+                                                    }`}
+                                                onClick={() => {
+                                                    if (getName()) {
+                                                        apiData.forEach((it) => {
+                                                            const newname = {
+                                                                product_id: it?.productid,
+                                                                number: parseInt(it?.number),
+                                                                item_loc: "wishlist",
+                                                            };
+                                                            addToWishList(newname);
+                                                        });
+                                                    } else {
+                                                        setActiveSignInWithOtp(true);
+                                                    }
+                                                }}
                                             >
-                                                <path
-                                                    d="M10.7435 18.8793L9.33069 17.5932C4.31279 13.043 1 10.0322 1 6.35892C1 3.34818 3.35793 1 6.35892 1C8.05429 1 9.68145 1.78922 10.7435 3.02665C11.8055 1.78922 13.4327 1 15.1281 1C18.1291 1 20.487 3.34818 20.487 6.35892C20.487 10.0322 17.1742 13.043 12.1563 17.5932L10.7435 18.8793Z"
-                                                    stroke="#6019EB"
-                                                    strokeWidth="2"
-                                                />
-                                            </svg>
-                                        </span>
-                                    </button>
+                                                <span>
+                                                    <svg
+                                                        width="22"
+                                                        height="21"
+                                                        viewBox="0 0 22 21"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                    >
+                                                        <path
+                                                            d="M10.7435 18.8793L9.33069 17.5932C4.31279 13.043 1 10.0322 1 6.35892C1 3.34818 3.35793 1 6.35892 1C8.05429 1 9.68145 1.78922 10.7435 3.02665C11.8055 1.78922 13.4327 1 15.1281 1C18.1291 1 20.487 3.34818 20.487 6.35892C20.487 10.0322 17.1742 13.043 12.1563 17.5932L10.7435 18.8793Z"
+                                                            stroke="#6019EB"
+                                                            strokeWidth="2"
+                                                        />
+                                                    </svg>
+                                                </span>
+                                            </button>
+
+                                        </>
+                                    ) : null}
                                 </div>
                             );
                         })}
@@ -341,34 +345,65 @@ const FamilyCard = ({ count, apiData }) => {
                     </div>
                 </div>
                 <ul className="family-card-list-row-os">
-                    {apiData.map(
-                        (item, index) =>
-                            count >= index + 1 && (
-                                <li key={item.productid}>
-                                    <label className="container_checkbox-os familyPack-selected-checkbox-os">
-                                        <div className="familyPack-selected-checkbox-col-os-1">
-                                            {item.productname}
-                                            <input
-                                                type="checkbox"
-                                                checked={selectedItems.includes(item.productid)}
-                                                onChange={() => handleCheckboxChange(item.productid)}
-                                            />
-                                            <span className="checkmark"></span>
-                                        </div>
+                    {/* {apiData.map(
+            (item, index) =>
+              count >= index + 1 && (
+                <li key={item.productid}>
+                  <label className="container_checkbox-os familyPack-selected-checkbox-os">
+                    <div className="familyPack-selected-checkbox-col-os-1">
+                      {item.productname}
+                      <input
+                        type="checkbox"
+                        checked={selectedItems.includes(item.productid)}
+                        onChange={() => handleCheckboxChange(item.productid)}
+                      />
+                      <span className="checkmark"></span>
+                    </div>
 
-                                        <div className="familyPack-list-selected-price-os">
-                                            {`Rs.${parseFloat(item.unit_price).toLocaleString(
-                                                "en-IN",
-                                                {
-                                                    minimumFractionDigits: 0,
-                                                    maximumFractionDigits: 2,
-                                                }
-                                            )}`}
-                                        </div>
-                                    </label>
-                                </li>
-                            )
-                    )}
+                    <div className="familyPack-list-selected-price-os">
+                      {`Rs.${parseFloat(item.unit_price).toLocaleString(
+                        "en-IN",
+                        {
+                          minimumFractionDigits: 0,
+                          maximumFractionDigits: 2,
+                        }
+                      )}`}
+                    </div>
+                  </label>
+                </li>
+              )
+          )} */}
+
+                    {apiData
+                        .sort((a, b) => a.productname.localeCompare(b.productname))
+                        .map(
+                            (item, index) =>
+                                count >= index + 1 && (
+                                    <li key={item.productid}>
+                                        <label className="container_checkbox-os familyPack-selected-checkbox-os">
+                                            <div className="familyPack-selected-checkbox-col-os-1">
+                                                {item.productname}
+                                                <input
+                                                    type="checkbox"
+                                                    checked={selectedItems.includes(item.productid)}
+                                                    onChange={() => handleCheckboxChange(item.productid)}
+                                                />
+                                                <span className="checkmark"></span>
+                                            </div>
+
+                                            <div className="familyPack-list-selected-price-os">
+                                                {`Rs.${parseFloat(item.unit_price).toLocaleString(
+                                                    "en-IN",
+                                                    {
+                                                        minimumFractionDigits: 0,
+                                                        maximumFractionDigits: 2,
+                                                    }
+                                                )}`}
+                                            </div>
+                                        </label>
+                                    </li>
+                                )
+                        )}
                 </ul>
 
                 <div className="family-card-plan-buyNow-btn-os">

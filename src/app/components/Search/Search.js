@@ -213,6 +213,7 @@ const Search = ({ queryParams }) => {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const router = useRouter();
+  // const navigate = useNavigate()
   const [callCount, setCallCount] = useState(0);
   const [priceWarning, setPriceWarning] = useState(false);
   const [exactPlacementError, setExactPlacementError] = useState(false);
@@ -230,6 +231,7 @@ const Search = ({ queryParams }) => {
   const [showAdvancedWarning, setShowAdvancedWarning] = useState(false);
   const [priceRangeWarning, setPriceRangeWarning] = useState(false);
   const [mustContainedWarning, setmustContainedWarning] = useState(false);
+  const [familyPackValue, setFamilyPackValue] = useState();
   // references
   const filtersRef = useRef(filters);
   const searchByRef = useRef(searchBy);
@@ -588,6 +590,20 @@ router.push(`/search-results?${queryString}`);
   const mostHit = () => {
     setPriceRangePopup(true);
   };
+
+
+  //Family Pack
+  const handleFamilyPack = (e) => {
+    e.preventDefault();
+    setCallCount(callCount + 1);
+    router.push(
+      `/search-results?type=${"family_pack"}&searchBy=${"family_pack"}&fp_total=${familyPackValue}&callCount=${callCount}`
+    );
+    // console.log("Family pack handle", familyPackValue);
+  };
+
+
+
   return (
     <div className="search-section-os-1">
       <section className="search-section-os">
@@ -655,6 +671,38 @@ router.push(`/search-results?${queryString}`);
                   </svg>
                 </span>
                 Search by Price
+              </button>
+
+
+              <button
+                onClick={() => {
+                  setFilters({
+                    searchBy: "family_pack",
+                    min_price: 0,
+                  });
+                  setSearchBy("family_pack");
+                }}
+                className={`search-by-familyPack-button-os ${
+                  searchBy === "family_pack"
+                    ? "filter-tab-os active"
+                    : "filter-tab-os"
+                }`}
+              >
+                <span>
+                  <svg
+                    width="23"
+                    height="23"
+                    viewBox="0 0 23 23"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17.5297 4.96188C16.9304 4.96188 16.4172 4.74832 15.9901 4.3212C15.5637 3.89481 15.3505 3.38197 15.3505 2.7827C15.3505 2.18342 15.5637 1.67022 15.9901 1.24311C16.4172 0.816712 16.9304 0.603516 17.5297 0.603516C18.129 0.603516 18.6422 0.816712 19.0693 1.24311C19.4957 1.67022 19.7089 2.18342 19.7089 2.7827C19.7089 3.38197 19.4957 3.89481 19.0693 4.3212C18.6422 4.74832 18.129 4.96188 17.5297 4.96188ZM16.4401 22.3953V13.6786C16.4401 12.9522 16.2542 12.2985 15.8822 11.7173C15.5096 11.1362 15.0327 10.6822 14.4516 10.3553L15.405 7.54965C15.5503 7.09566 15.8183 6.73246 16.2091 6.46006C16.5992 6.18767 17.0394 6.05147 17.5297 6.05147C18.02 6.05147 18.4602 6.18767 18.8503 6.46006C19.2411 6.73246 19.5091 7.09566 19.6544 7.54965L22.4329 15.8578H19.7089V22.3953H16.4401ZM11.537 10.9546C11.083 10.9546 10.6972 10.7955 10.3798 10.4774C10.0616 10.16 9.90257 9.77424 9.90257 9.32024C9.90257 8.86624 10.0616 8.48053 10.3798 8.16309C10.6972 7.84493 11.083 7.68585 11.537 7.68585C11.9909 7.68585 12.3767 7.84493 12.6941 8.16309C13.0123 8.48053 13.1713 8.86624 13.1713 9.32024C13.1713 9.77424 13.0123 10.16 12.6941 10.4774C12.3767 10.7955 11.9909 10.9546 11.537 10.9546ZM3.90982 4.96188C3.31054 4.96188 2.79771 4.74832 2.37132 4.3212C1.9442 3.89481 1.73064 3.38197 1.73064 2.7827C1.73064 2.18342 1.9442 1.67022 2.37132 1.24311C2.79771 0.816712 3.31054 0.603516 3.90982 0.603516C4.50909 0.603516 5.02193 0.816712 5.44832 1.24311C5.87544 1.67022 6.089 2.18342 6.089 2.7827C6.089 3.38197 5.87544 3.89481 5.44832 4.3212C5.02193 4.74832 4.50909 4.96188 3.90982 4.96188ZM1.73064 22.3953V14.7682H0.0962524V8.23065C0.0962524 7.63137 0.309812 7.11818 0.736932 6.69106C1.16332 6.26466 1.67616 6.05147 2.27543 6.05147H5.5442C6.14348 6.05147 6.65631 6.26466 7.08271 6.69106C7.50983 7.11818 7.72339 7.63137 7.72339 8.23065V14.7682H6.089V22.3953H1.73064ZM9.90257 22.3953V18.037H8.81298V13.6786C8.81298 13.2246 8.97206 12.8389 9.29022 12.5215C9.60765 12.2033 9.99337 12.0442 10.4474 12.0442H12.6265C13.0805 12.0442 13.4663 12.2033 13.7837 12.5215C14.1018 12.8389 14.2609 13.2246 14.2609 13.6786V18.037H13.1713V22.3953H9.90257Z"
+                      fill="#333333"
+                    />
+                  </svg>
+                </span>
+                Family Pack
               </button>
             </div>
             <div
@@ -1522,6 +1570,84 @@ router.push(`/search-results?${queryString}`);
                   />
                 </div>
               </div>
+            </div>
+            
+
+            {/* search Field */}
+
+            <div
+              className={`search-filter-data-os ${
+                searchBy === "family_pack"
+                  ? "filter-content-os active"
+                  : "filter-content-os"
+              }`}
+            >
+              <div className="search-family-pack-heading-text-os">
+                How much Similar Numbers do you want for your family or
+                Business?
+              </div>
+              <form
+                onSubmit={handleFamilyPack}
+                className="search-filter-input-data-os"
+              >
+                <div className="search-by-familyPack-col-1-os">I Want</div>
+                <div className="search-by-familyPack-col-2-os">
+                  <SearchFilterInput
+                    inputLabel="Quantity"
+                    inputType="text"
+                    placeHolder="2-9"
+                    inputOnChange={(e) => {
+                      const inputValue = e.target.value;
+                      const numericRegex = /^$|^[2-9]$/; // Allow empty string or a single digit
+
+                      if (numericRegex.test(inputValue)) {
+                        setPriceWarning(false);
+                        setFamilyPackValue(inputValue);
+                        handleFilters(
+                          "family_pack",
+                          parseInt(inputValue) || null
+                        );
+                      } else {
+                        setPriceWarning(true);
+                      }
+                    }}
+                    inputValue={familyPackValue}
+                    ref={inputRef}
+                  />
+
+                  {/* <SearchFilterInput
+                    inputLabel="Quantity"
+                    inputType="text"
+                    placeHolder="2-9"
+                    inputOnChange={(e) => {
+                      const inputValue = e.target.value;
+                      const numericRegex = /^$|^[2-9]$/; // Allow empty string or a single digit
+
+                      if (numericRegex.test(inputValue) || inputValue === "") {
+                        setPriceWarning(false);
+                        setFamilyPackValue(inputValue);
+                        handleFilters(
+                          "family_pack",
+                          inputValue === "" ? null : parseInt(inputValue)
+                        );
+                      } else {
+                        setPriceWarning(true);
+                      }
+                    }}
+                    inputValue={familyPackValue}
+                    inputRef={inputRef}
+                  /> */}
+                </div>
+                <div className="search-by-familyPack-col-3-os">
+                  SIMILAR VIP MOBILE NUMBER
+                </div>
+                <div className="search-by-familyPack-col-4-os">
+                  <SearchFilterButton
+                    // onClick={() => handlePriceRange("search-digit-family-os")}
+                    onClick={handleFamilyPack}
+                  />
+                </div>
+              </form>
             </div>
 
             {/* Search Tags */}
