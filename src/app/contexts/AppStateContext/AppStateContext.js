@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { useEffect } from "react";
 import { createContext, useState } from "react";
 import {
@@ -31,8 +31,8 @@ const AppStateContextProvider = ({ children }) => {
   const [routeScroll, setRouteScroll] = useState(true);
   const [Seo, setSeo] = useState({});
   const [relatedNumbers, setRelatedNumbers] = useState([]);
-  const {token = null} = user || {};
-
+  const { token = null } = user || {};
+  const [currentUrl, setCurrentUrl] = useState("");
 
   useEffect(() => {
     setUserDetails(JSON.parse(localStorage.getItem("vipcre")));
@@ -40,23 +40,22 @@ const AppStateContextProvider = ({ children }) => {
   }, []);
 
   useEffect(() => {
-      axios
-        .get("https://admin.leafymango.com/web/meta/tags", {
-          // headers: {
-          //   // authorization: `Bearer ${user.token}`,
-          // },
-        })
-        .then((response) => {
-          const obj = {};
-          response?.data?.data?.map((dta) => {
-            obj[dta.page] = dta;
-            return obj;
-          });
-
-          setSeo(obj);
-        })
-        .catch((error) => {
+    axios
+      .get("https://admin.leafymango.com/web/meta/tags", {
+        // headers: {
+        //   // authorization: `Bearer ${user.token}`,
+        // },
+      })
+      .then((response) => {
+        const obj = {};
+        response?.data?.data?.map((dta) => {
+          obj[dta.page] = dta;
+          return obj;
         });
+
+        setSeo(obj);
+      })
+      .catch((error) => {});
   }, []);
 
   const checkUser = () => {
@@ -73,19 +72,13 @@ const AppStateContextProvider = ({ children }) => {
       updateWishlist(() => {});
 
       getProfile(user?.token)?.then((res) => {
-        localStorage?.setItem(
-          "vip_minprice",
-          res?.contact_cf?.user_min_price
-        );
-        localStorage?.setItem(
-          "vip_maxprice",
-          res?.contact_cf?.user_max_price
-        );
+        localStorage?.setItem("vip_minprice", res?.contact_cf?.user_min_price);
+        localStorage?.setItem("vip_maxprice", res?.contact_cf?.user_max_price);
         localStorage?.setItem(
           "vip_hidePopup",
           res?.contact_cf?.user_blocked_price || false
         );
-        
+
         setUserProfile(res);
       });
     }
@@ -155,7 +148,7 @@ const AppStateContextProvider = ({ children }) => {
       console.error("An error occurred during logout:", error);
     }
   };
-  
+
   const removeFromCart = (indexToRemove) => {
     deleteCartAndWishList(indexToRemove, user?.token).then((res) => {
       updateCart(() => {});
@@ -261,7 +254,9 @@ const AppStateContextProvider = ({ children }) => {
         Seo,
         relatedNumbers,
         setRelatedNumbers,
-        categoriesById
+        categoriesById,
+        currentUrl,
+        setCurrentUrl,
       }}
     >
       {children}

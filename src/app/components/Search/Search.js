@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, useContext } from "react";
 import "./Search.css";
 import SearchFilterInput from "../SearchFilterInput/SearchFilterInput";
 import SearchFilterButton from "../SearchFilterButton/SearchFilterButton";
-import { useSearchParams, usePathname, useRouter } from 'next/navigation'
+import { useSearchParams, usePathname, useRouter } from "next/navigation";
 // import { createSearchParams, useLocation, useNavigate } from "react-router-dom";
 import MobileSearch from "../MobileSearch/MobileSearch";
 import { updateProfile } from "../../Services/Services";
@@ -33,6 +33,7 @@ const Tag = ({ value, onClick }) => {
 };
 
 export const AppliedTags = ({ queryParams }) => {
+  const searchParams = useSearchParams();
   const pathname = usePathname();
   const router = useRouter();
   const curParams = { ...queryParams };
@@ -54,7 +55,7 @@ export const AppliedTags = ({ queryParams }) => {
     const route = {
       ...newparams,
     };
-    router({
+    router.push({
       pathname: router?.pathname,
       search: `?${searchParams(route)}`,
     });
@@ -201,7 +202,7 @@ export const AppliedTags = ({ queryParams }) => {
 };
 
 const Search = ({ queryParams }) => {
-  const searchParams = useSearchParams()
+  const searchParams = useSearchParams();
   const pathname = usePathname();
   const router = useRouter();
   const [callCount, setCallCount] = useState(0);
@@ -229,6 +230,9 @@ const Search = ({ queryParams }) => {
   // auto-focus
   const inputRef = useRef(null);
   const inputRef1 = useRef(null);
+
+  // console.log("queryParamsqueryParams :", queryParams)
+  // console.log("searchParams :", searchParams)
 
   useEffect(() => {
     inputRef.current.focus();
@@ -381,11 +385,13 @@ const Search = ({ queryParams }) => {
     if (!navObj?.min_price) delete navObj.min_price;
     if (!navObj?.max_price) delete navObj.max_price;
 
-
-    pathname({
+    router.push({
       pathname: "/search-results",
       search: `?${searchParams(navObj)}`,
+      
     });
+
+    // router.push("/search-results");
   };
 
   const handleFilters = (key, value) => {
@@ -393,6 +399,7 @@ const Search = ({ queryParams }) => {
       ...filters,
       [key]: value,
     });
+    console.log("filtersfiltersfilters : ", value)
   };
 
   const handleFiltersOnSwitching = (obj) => {
@@ -523,6 +530,8 @@ const Search = ({ queryParams }) => {
     }
     setPriceWarning(false);
     setPriceRangePopup(true);
+    router.push("/search-results")
+    // console.log("object")
   };
 
   const basicHit = () => {
@@ -760,7 +769,7 @@ const Search = ({ queryParams }) => {
                       : "search-filter-radio-button-content-1"
                   }`}
                 >
-                  <div className="search-filter-input-data-os">
+                  <for className="search-filter-input-data-os">
                     <div className="search-filter-input-data-col-1-os">
                       <SearchFilterInput
                         inputLabel="Enter Digits Here"
@@ -788,7 +797,7 @@ const Search = ({ queryParams }) => {
                         }}
                       />
                     </div>
-                  </div>
+                  </for>
                 </div>
 
                 <div

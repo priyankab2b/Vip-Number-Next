@@ -10,7 +10,6 @@ const page = () => {
     <div>
       <Header />
       <MobileHeader />
-      About page
       <Card />
       <MobileFooter />
       <Footer />

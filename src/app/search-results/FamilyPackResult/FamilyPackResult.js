@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import MainHeading from "../../Shared/MainHeading/MainHeading";
+import MainHeading from "../../components/MainHeading/MainHeading";
 // import './FamilyMemberOffers.css';
-import FamilyCard from "../../Shared/FamilyCard/FamilyCard";
-import { FamilyPackArrayDummyData } from "../../Home/FamilyPack/FamlyDummyData";
+import FamilyCard from "../../components/FamilyCard/FamilyCard";
+import { FamilyPackArrayDummyData } from "../../home/FamilyPack/FamlyDummyData";
 
 // Images
-import Crown from "../../../Assets/crown-icon1.svg";
-import BuyNowButton from "../../Shared/BuyNowButton/BuyNowButton";
+import Crown from "../../assets/crown-icon1.svg";
+import BuyNowButton from "../../components/BuyNowButton/BuyNowButton";
 
 const FamilyPackResult = () => {
   const [numFamilyMembers, setNumFamilyMembers] = useState(1);

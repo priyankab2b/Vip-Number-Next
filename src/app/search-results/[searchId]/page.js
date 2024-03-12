@@ -258,6 +258,7 @@ const SearchResults = () => {
       }
     });
   };
+  
 
   return (
     <div className="SearchResult-page-os">
