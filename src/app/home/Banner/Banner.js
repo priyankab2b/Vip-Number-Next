@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React from "react";
 import "./Banner.css";
 import BannerSlider from "react-slick";
@@ -7,9 +7,10 @@ import BannerSlider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Link from "next/link";
-
+// import { useRouter } from "next/navigation";
 
 const Banner = ({ bannerText }) => {
+  // const navigate = useRouter();
 
   let settings = {
     dots: false,
@@ -31,14 +32,16 @@ const Banner = ({ bannerText }) => {
       },
     ],
   };
+  // const handleTest = () => {
+  //   navigate.push("/search-results");
+  // }
 
   return (
     <div className="homepage-banner-section-os">
       <div className="container-os">
         <div className="banner-slider-os">
           <BannerSlider className="banner-row-os" {...settings}>
-            <div className="banner-col-2-os">
-            </div>
+            <div className="banner-col-2-os"></div>
             <div className="banner-col-1-os">
               <h2>{bannerText || "VIP NUMBER SHOP"}</h2>
               <p>Apka Number, Apki Pehchaan</p>

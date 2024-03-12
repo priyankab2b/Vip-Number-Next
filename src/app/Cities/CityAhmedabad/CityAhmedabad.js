@@ -7,7 +7,7 @@ import MobileFooter from "../../Shared/MobileFooter/MobileFooter";
 import Footer from "../../Shared/Footer/Footer";
 import CityBanner from "../CityPunjab/CityBanner/CityBanner";
 import QRVipApp from "../../Shared/QRVipApp/QRVipApp";
-import RegisterVipNumber from "../../Home/RegisterVipNumber/RegisterVipNumber";
+import RegisterVipNumber from "../../home/RegisterVipNumber/RegisterVipNumber";
 import PunjabLeading from "../CityPunjab/PunjabLeading/PunjabLeading";
 import CityFavouriteNumber from "../CityPunjab/CityFavouriteNumber/CityFavouriteNumber";
 import CityDifferentFromOthers from "../CityPunjab/CityDifferentFromOthers/CityDifferentFromOthers";
@@ -18,6 +18,7 @@ import CityFaqs from "../CityPunjab/CityFaqs/CityFaqs";
 import { CityPunjabTestimonials } from "../CityFaqsArray/CityFaqsArray";
 import { CityAhmedabadFaqs } from "../CityFaqsArray/CityFaqsArray";
 import { Helmet } from "react-helmet";
+
 
 // Image
 import RegisterImg from "../../../Assets/vip-number-register-img.svg";
