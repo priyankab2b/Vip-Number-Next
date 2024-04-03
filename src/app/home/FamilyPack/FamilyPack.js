@@ -11,38 +11,46 @@ import FamilyPackSlider from "react-slick";
 // Images
 import crown from "../../Assets/heading-crown-icon.svg";
 import ViewMoreButton from "../../Shared/ViewMoreButton/ViewMoreButton";
-
+import brandIcon from "../../Assets/VIP-icon-2.svg";
 
 //Pagination data per page
-const ITEMS_PER_PAGE = 16;
+const ITEMS_PER_PAGE = 4;
 const FamilyPack = () => {
-  const [count, setCount] = useState(2);
+  const [count, setCount] = useState(3);
   const [apiData, setApiData] = useState({});
   const [currentPage, setCurrentPage] = useState(1);
+  const [isLoading, setIsLoading] = useState(true);
 
-//Load data per page function
-  const loadMoreData =  () => {
+  //Load data per page function
+  const loadMoreData = () => {
+    //setIsLoading(true);
     setCurrentPage((prevPage) => prevPage + 1);
-  }
+  };
 
-
-//Api data structure
+  //Api data structure
   useEffect(() => {
+    // Reset API data when the count changes
     setApiData({});
+  }, [count]);
+
+  //Api data structure
+  useEffect(() => {
     axios
-      .get(`https://admin.leafymango.com/web/familypack?fp_total=${count}&paginate=${ITEMS_PER_PAGE}&page=${currentPage}`)
+      .get(
+        `https://admin.leafymango.com/web/familypack?fp_total=${count}&paginate=${ITEMS_PER_PAGE}&page=${currentPage}`
+      )
       .then((response) => {
         //setApiData(response.data);
         setApiData((prevData) => ({
           ...prevData,
-          ...response.data
+          ...response.data,
         }));
-        
+        setIsLoading(false);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
       });
-  }, [count,currentPage]);
+  }, [count, currentPage]);
 
   // slider
   const FamilyPackSettings = {
@@ -83,12 +91,11 @@ const FamilyPack = () => {
     ],
   };
 
+  // Convert apiData to an array of items
+  const apiDataArray = Object.values(apiData);
 
-   // Convert apiData to an array of items
-   const apiDataArray = Object.values(apiData);
-
-   // Check if there are more items to load
-   const hasMoreData = apiDataArray.length > currentPage * ITEMS_PER_PAGE;
+  // Check if there are more items to load
+  const hasMoreData = apiDataArray.length > currentPage * ITEMS_PER_PAGE;
 
   return (
     <section className="FamilyPack-section-os">
@@ -106,7 +113,10 @@ const FamilyPack = () => {
             <div className="FamilyPack-variant-selector-os">
               <select
                 value={count}
-                onChange={(e) => setCount(Number(e?.target?.value))}
+                onChange={(e) => {
+                  setIsLoading(true);
+                  setCount(Number(e?.target?.value));
+                }}
               >
                 {Array.from({ length: 8 }, (_, i) => (
                   <option key={i + 2} value={i + 2}>
@@ -116,22 +126,51 @@ const FamilyPack = () => {
               </select>
             </div>
           </div>
-         
-          <div className="FamilyPack-plan-row-os">
-          {apiDataArray.slice(0, currentPage * ITEMS_PER_PAGE).map((groupItems, index) => (
 
-              <FamilyCard
-                key={index}
-                count={count}
-                apiData={groupItems} // Pass the group's data as a prop
-              />
-            ))}
-          </div>
-          {hasMoreData && (
-          <div className="default-viewMore-btn-os">
-          <ViewMoreButton title={"Load more"} onClick={loadMoreData}/>
-        </div>
-        )}
+          {isLoading ? (
+            <div className="loader-os">
+              <img src={brandIcon} alt="" />
+            </div>
+          ) : (
+            <>
+              {/* <div className="FamilyPack-plan-row-os">
+                {apiDataArray.length != 0 ? {} : ""}
+                {apiDataArray
+                  .slice(0, currentPage * ITEMS_PER_PAGE)
+                  .map((groupItems, index) => (
+                    <FamilyCard
+                      key={index}
+                      count={count}
+                      apiData={groupItems} // Pass the group's data as a prop
+                    />
+                  ))}
+              </div> */}
+
+              <div className="FamilyPack-plan-row-os">
+                {apiDataArray.length !== 0 ? (
+                  apiDataArray
+                    .slice(0, currentPage * ITEMS_PER_PAGE)
+                    .map((groupItems, index) => (
+                      <FamilyCard
+                        key={index}
+                        count={count}
+                        apiData={groupItems} // Pass the group's data as a prop
+                      />
+                    ))
+                ) : (
+                  <p className="data-not-found-message-os">
+                    No family pack found
+                  </p>
+                )}
+              </div>
+
+              {hasMoreData && (
+                <div className="default-viewMore-btn-os">
+                  <ViewMoreButton title={"Load more"} onClick={loadMoreData} />
+                </div>
+              )}
+            </>
+          )}
         </div>
       </div>
     </section>

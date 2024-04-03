@@ -40,6 +40,8 @@ import CityHowGetVipNumberImg2 from "../Assets/CityHowGetVipNumber-img-2.png";
 import CityHowGetVipNumberImg3 from "../Assets/CityHowGetVipNumber-img-3.png";
 import CityHowGetVipNumberImg4 from "../Assets/CityHowGetVipNumber-img-4.png";
 import CityHowGetVipNumberImg5 from "../Assets/CityHowGetVipNumber-img-5.png";
+import TabNumbers from "../Shared/TabNumbers/TabNumbers";
+import DeliveryProcess from "../Shared/DeliveryProcess/DeliveryProcess/DeliveryProcess";
 
 const Homepage = () => {
   const { user, setRedirectTo, currentUrl } = useContext(AppStateContext);
@@ -65,7 +67,6 @@ const Homepage = () => {
   // console.log("navigate.asPath ::", navigate.asPath)
   // console.log("currentUrl ::", currentUrl)
 
-
   return (
     <div className="homepage-os">
       <head>
@@ -83,12 +84,43 @@ const Homepage = () => {
           <Search />
           <Recommendations />
         </div>
-        <Award />
+        <FamilyPack />
+        {/* <Award /> */}
         <VipNumberShopSlider />
-        <VIPNumberSlider />
+        <div className="desktop-content-os">
+          <CityHowGetVipNumber
+            headingPart1="Delivery Process for"
+            headingPart2="VIP Number"
+            headingPart3="?"
+            image1={CityHowGetVipNumberImg1}
+            image2={CityHowGetVipNumberImg2}
+            image3={CityHowGetVipNumberImg3}
+            image4={CityHowGetVipNumberImg4}
+            image5={CityHowGetVipNumberImg5}
+            heading1="Pay"
+            heading2="Get UPC"
+            heading3="Do MNP"
+            heading4="Activation"
+            heading5="Money Back Assurity"
+            text1="to place an Order."
+            text2="UPC will be delivered through SMS, Whatsapp & Email."
+            text3="Start the MNP process at the nearest retail shop to get the SIM."
+            text4="Get your SIM activated in 4-5 days"
+            text5="if you face any problem with the UPC."
+            boldText="100% Money Back"
+            smallText="(18-25 days for Assam and J&K)."
+          />
+        </div>
+
+        <div className="mobile-content-os pt-4">
+          <DeliveryProcess sectionStyle={"customPropClass"} />
+        </div>
+        <TabNumbers />
         <Benefits />
+        <Categories />
         {/* <VipNumberApp /> */}
         <VipNumberShopSliderImages1 />
+        <VIPNumberSlider />
         <FeaturedNumber />
         <RegisterVipNumber
           image={RegisterImg}
@@ -102,31 +134,8 @@ const Homepage = () => {
             user?.token && navigate.push("/suggestion-for-you");
           }}
         />
-        <Categories />
-        <FamilyPack />
         {/* <PurchaseVipNumber /> */}
-        <CityHowGetVipNumber
-          headingPart1="Delivery Process for"
-          headingPart2="VIP Number"
-          headingPart3="?"
-          image1={CityHowGetVipNumberImg1}
-          image2={CityHowGetVipNumberImg2}
-          image3={CityHowGetVipNumberImg3}
-          image4={CityHowGetVipNumberImg4}
-          image5={CityHowGetVipNumberImg5}
-          heading1="Pay"
-          heading2="Get UPC"
-          heading3="Do MNP"
-          heading4="Activation"
-          heading5="Money Back Assurity"
-          text1="to place an Order."
-          text2="UPC will be delivered through SMS, Whatsapp & Email."
-          text3="Start the MNP process at the nearest retail shop to get the SIM."
-          text4="Get your SIM activated in 4-5 days"
-          text5="if you face any problem with the UPC."
-          boldText="100% Money Back"
-          smallText="(18-25 days for Assam and J&K)."
-        />
+
         <FAQs />
         <OurCustomers />
         <VideoTestimonial />
