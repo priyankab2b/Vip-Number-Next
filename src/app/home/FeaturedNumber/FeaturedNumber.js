@@ -5,9 +5,9 @@ import MainHeading from "../../Shared/MainHeading/MainHeading";
 import CardSlider from "react-slick";
 
 // Images
-import crown from "../../assets/heading-crown-icon.svg";
+import crown from "../../Assets/heading-crown-icon.svg";
 import Card from "../../Shared/Card/Card";
-import brandIcon from "../../assets/VIP-icon-2.svg";
+import brandIcon from "../../Assets/VIP-icon-2.svg";
 import ViewMoreButton from "../../Shared/ViewMoreButton/ViewMoreButton";
 
 const ITEMS_PER_PAGE = 36;
@@ -82,7 +82,7 @@ const FeaturedNumber = () => {
         {platinumData && platinumData.length > 0 ? (
           <div className="featured-number-row-os">
             {/* <h3>PLATINUM</h3> */}
-            {platinumData.map((product) => {
+            {platinumData.map((product, index) => {
               const vipNumbers = product.productname.split("-").join("");
               const total = vipNumbers
                 .split("")
@@ -115,7 +115,7 @@ const FeaturedNumber = () => {
               const formattedPrice = formatPriceWithCommas(product.unit_price);
               return (
                 <Card
-                  key={product.productid}
+                  key={product.index}
                   product_id={product.productid}
                   productname={product.productname}
                   number={product.number}

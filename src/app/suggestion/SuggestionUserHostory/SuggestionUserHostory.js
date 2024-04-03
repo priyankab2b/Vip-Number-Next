@@ -7,8 +7,8 @@ import { AppStateContext } from "../../contexts/AppStateContext/AppStateContext"
 import BuyNowButton from "../../Shared/BuyNowButton/BuyNowButton";
 
 // Image
-import brandIcon from "../../assets/VIP-icon-2.svg";
-import crown from "../../assets/heading-crown-icon.svg";
+import brandIcon from "../../Assets/VIP-icon-2.svg";
+import crown from "../../Assets/heading-crown-icon.svg";
 
 const ITEMS_PER_PAGE = 36;
 

@@ -8,10 +8,10 @@ import { AppliedTags } from "../Search/Search";
 import Image from "next/image";
 
 // Images
-import icon1 from "../../assets/mobile-search-icon-1.svg";
-import icon2 from "../../assets/mobile-search-icon-2.svg";
-import icon4 from "../../assets/mobile-search-icon-4.svg";
-import miniIcon from "../../assets/seach-with-digits-heading-icon.svg";
+import icon1 from "../../Assets/mobile-search-icon-1.svg";
+import icon2 from "../../Assets/mobile-search-icon-2.svg";
+import icon4 from "../../Assets/mobile-search-icon-4.svg";
+import miniIcon from "../../Assets/seach-with-digits-heading-icon.svg";
 
 const MobileSearch = ({ queryParams }) => {
   const pathname = usePathname();

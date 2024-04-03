@@ -8,9 +8,9 @@ import "slick-carousel/slick/slick-theme.css";
 import OurCustomerCard from "../../Shared/OurCustomerCard/OurCustomerCard";
 
 // Image
-import crown from "../../assets/heading-crown-icon.svg";
+import crown from "../../Assets/heading-crown-icon.svg";
 // import faqsIcon from '../../../Assets/faqs-icon.svg';
-import quoteIcon from "../../assets/quotes.png";
+import quoteIcon from "../../Assets/quotes.png";
 
 const OurCustomers = () => {
     // slider

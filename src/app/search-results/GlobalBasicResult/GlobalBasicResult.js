@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import MainHeading from "../../Shared/MainHeading/MainHeading";
-import crown from "../../assets/heading-crown-icon.svg";
+import crown from "../../Assets/heading-crown-icon.svg";
 import Card from "../../Shared/Card/Card";
 import ViewMoreButton from "../../Shared/ViewMoreButton/ViewMoreButton";
 

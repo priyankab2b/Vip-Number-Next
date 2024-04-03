@@ -14,7 +14,7 @@ import QRVipApp from "../Shared/QRVipApp/QRVipApp";
 import RegisterVipNumber from "../home/RegisterVipNumber/RegisterVipNumber";
 
 // Image
-import RegisterImg1 from "../assets/assurance-register-img.svg";
+import RegisterImg1 from "../Assets/assurance-register-img.svg";
 
 const ProductDetails = () => {
     return (

@@ -6,11 +6,11 @@ import MainHeading from "../../Shared/MainHeading/MainHeading";
 import VideoSlider from "react-slick";
 
 // Images
-import thumnailImg1 from "../../assets/VideoTestimonial-thumbanil-1.jpg";
-import thumnailImg2 from "../../assets/VideoTestimonial-thumbanil-2.png";
-import thumnailImg3 from "../../assets/VideoTestimonial-thumbanil-3.jpg";
-import thumnailImg4 from "../../assets/VideoTestimonial-thumbanil-4.jpg";
-import crown from "../../assets/heading-crown-icon.svg";
+import thumnailImg1 from "../../Assets/VideoTestimonial-thumbanil-1.jpg";
+import thumnailImg2 from "../../Assets/VideoTestimonial-thumbanil-2.png";
+import thumnailImg3 from "../../Assets/VideoTestimonial-thumbanil-3.jpg";
+import thumnailImg4 from "../../Assets/VideoTestimonial-thumbanil-4.jpg";
+import crown from "../../Assets/heading-crown-icon.svg";
 
 const VideoTestimonial = () => {
     // VideoCard Array

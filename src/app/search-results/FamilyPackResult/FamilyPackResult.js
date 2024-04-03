@@ -5,7 +5,7 @@ import FamilyCard from "../../Shared/FamilyCard/FamilyCard";
 import { FamilyPackArrayDummyData } from "../../home/FamilyPack/FamlyDummyData";
 
 // Images
-import Crown from "../../assets/crown-icon1.svg";
+import Crown from "../../Assets/crown-icon1.svg";
 import BuyNowButton from "../../Shared/BuyNowButton/BuyNowButton";
 
 const FamilyPackResult = () => {

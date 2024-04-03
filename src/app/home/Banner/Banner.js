@@ -2,24 +2,43 @@
 import React from "react";
 import "./Banner.css";
 import BannerSlider from "react-slick";
-// import Slider from "react-slick";
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Link from "next/link";
+// import Link from "next/link";
 // import { useRouter } from "next/navigation";
 
-const Banner = ({ bannerText }) => {
-  // const navigate = useRouter();
+// Images
+// import bannerImg from "../../../Assets/VIP-number-shop-award-banner.png";
+import bannerImg from "../../Assets/homepage-new-banner-280324.png";
+// import bannerImg2 from "../../Assets/banner_1.jpg";
+import bannerImg1 from "../../Assets/postpre.png";
+import Image from "next/image";
+// import bannerImg3 from "../../../Assets/banner-bg11.png";
 
-  let settings = {
+const Banner = ({ bannerText }) => {
+  const bannerImageArray = [
+    {
+      image: bannerImg,
+    },
+    {
+      image: bannerImg1,
+    },
+    // {
+    //   image: bannerImg2,
+    // },
+    // {
+    //   image: bannerImg3,
+    // },
+  ];
+
+  var settings = {
     dots: false,
     arrows: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    // autoplay: true,
+    autoplay: true,
     responsive: [
       {
         breakpoint: 576,
@@ -32,20 +51,17 @@ const Banner = ({ bannerText }) => {
       },
     ],
   };
-  // const handleTest = () => {
-  //   navigate.push("/search-results");
-  // }
 
   return (
-    <div className="homepage-banner-section-os">
+    <section className="homepage-banner-section-os">
       <div className="container-os">
         <div className="banner-slider-os">
           <BannerSlider className="banner-row-os" {...settings}>
-            <div className="banner-col-2-os"></div>
+            {/* <div className="banner-col-2-os"></div>
             <div className="banner-col-1-os">
               <h2>{bannerText || "VIP NUMBER SHOP"}</h2>
               <p>Apka Number, Apki Pehchaan</p>
-              <Link href="/">
+              <Link to="/contact">
                 Contact Us
                 <span>
                   <svg
@@ -63,11 +79,19 @@ const Banner = ({ bannerText }) => {
                   </svg>
                 </span>
               </Link>
-            </div>
+            </div> */}
+            {bannerImageArray.map((items, index) => {
+              return (
+                <div className="banner-col-os" key={index}>
+                  {/* <img src={items?.image} alt={items?.image} /> */}
+                  <Image src={items?.image} alt={items?.image} />
+                </div>
+              );
+            })}
           </BannerSlider>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

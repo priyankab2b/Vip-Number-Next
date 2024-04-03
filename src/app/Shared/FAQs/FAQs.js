@@ -8,8 +8,8 @@ import FaqCard from "../../Shared/FaqCard/FaqCard";
 import ViewMoreButton from "../ViewMoreButton/ViewMoreButton";
 
 // Image
-import crown from "../../assets/heading-crown-icon.svg";
-import faqsIcon from "../../assets/faqs-icon-1.svg";
+import crown from "../../Assets/heading-crown-icon.svg";
+import faqsIcon from "../../Assets/faqs-icon-1.svg";
 
 const FAQs = () => {
     const [faqs, setFaqs] = useState({ status: "", message: "", data: [] });

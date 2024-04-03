@@ -4,7 +4,7 @@ import MainHeading from "../../Shared/MainHeading/MainHeading";
 import ViewMoreButton from "../../Shared/ViewMoreButton/ViewMoreButton";
 
 // Images
-import crownIcon from "../../assets/crown-icon1.svg";
+import crownIcon from "../../Assets/crown-icon1.svg";
 
 const Category786 = () => {
     const Category00786Array = [

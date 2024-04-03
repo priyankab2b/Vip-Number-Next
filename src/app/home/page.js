@@ -33,13 +33,13 @@ import Head from "next/head";
 export const SearchContext = createContext(null);
 
 // Image
-import RegisterImg from "../assets/vip-number-register-img.svg";
-import RegisterImg1 from "../assets/assurance-register-img.svg";
-import CityHowGetVipNumberImg1 from "../assets/CityHowGetVipNumber-img-1.png";
-import CityHowGetVipNumberImg2 from "../assets/CityHowGetVipNumber-img-2.png";
-import CityHowGetVipNumberImg3 from "../assets/CityHowGetVipNumber-img-3.png";
-import CityHowGetVipNumberImg4 from "../assets/CityHowGetVipNumber-img-4.png";
-import CityHowGetVipNumberImg5 from "../assets/CityHowGetVipNumber-img-5.png";
+import RegisterImg from "../Assets/vip-number-register-img.svg";
+import RegisterImg1 from "../Assets/assurance-register-img.svg";
+import CityHowGetVipNumberImg1 from "../Assets/CityHowGetVipNumber-img-1.png";
+import CityHowGetVipNumberImg2 from "../Assets/CityHowGetVipNumber-img-2.png";
+import CityHowGetVipNumberImg3 from "../Assets/CityHowGetVipNumber-img-3.png";
+import CityHowGetVipNumberImg4 from "../Assets/CityHowGetVipNumber-img-4.png";
+import CityHowGetVipNumberImg5 from "../Assets/CityHowGetVipNumber-img-5.png";
 
 const Homepage = () => {
   const { user, setRedirectTo, currentUrl } = useContext(AppStateContext);

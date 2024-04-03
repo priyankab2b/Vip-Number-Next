@@ -7,8 +7,8 @@ import axios from "axios";
 import BuyNowButton from "../../Shared/BuyNowButton/BuyNowButton";
 
 // Images
-import crownIcon from "../../assets/crown-icon1.svg";
-import brandIcon from "../../assets/VIP-icon-2.svg";
+import crownIcon from "../../Assets/crown-icon1.svg";
+import brandIcon from "../../Assets/VIP-icon-2.svg";
 
 const SuggestionRelatedNumber = () => {
     const [relatedNumbers, setRelatedNumbers] = useState([]);

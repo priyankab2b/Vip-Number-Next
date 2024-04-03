@@ -13,8 +13,8 @@ import { useGetQueryParams } from "../../utils";
 import ViewMoreButton from "../../Shared/ViewMoreButton/ViewMoreButton";
 
 // Images
-import crownIcon from "../../assets/crown-icon1.svg";
-import brandIcon from "../../assets/VIP-icon-2.svg";
+import crownIcon from "../../Assets/crown-icon1.svg";
+import brandIcon from "../../Assets/VIP-icon-2.svg";
 
 const SearchFilterInput = (props) => {
     const event = () => { };

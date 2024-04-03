@@ -9,19 +9,19 @@ import Image from 'next/image'
 
 // Images
 // import cardsImg from "../../../Assets/footer-cards-img.png";
-import cardsImg1 from "../../assets/footer-cards-img-1.png";
-import cardsImg2 from "../../assets/footer-cards-img-2.png";
-import cardsImg3 from "../../assets/footer-cards-img-3.png";
-import cardsImg4 from "../../assets/footer-cards-img-4.png";
-import cardsImg5 from "../../assets/footer-cards-img-5.png";
-import facebookIcon from "../../assets/footer-facebook.png";
-import instagramIcon from "../../assets/footer-instagram.png";
-import twitterIcon from "../../assets/footer-twitter.png";
-import linkedInIcon from "../../assets/footer-linkeId.png";
-import pintrestIcon from "../../assets/footer-pintrest.png";
-import youtubeIcon from "../../assets/footer-youtube.png";
-import brandImg from "../../assets/desktop-footer-logo.svg";
-import WhatsApp from "../../assets/whats-app-icon.svg";
+import cardsImg1 from "../../Assets/footer-cards-img-1.png";
+import cardsImg2 from "../../Assets/footer-cards-img-2.png";
+import cardsImg3 from "../../Assets/footer-cards-img-3.png";
+import cardsImg4 from "../../Assets/footer-cards-img-4.png";
+import cardsImg5 from "../../Assets/footer-cards-img-5.png";
+import facebookIcon from "../../Assets/footer-facebook.png";
+import instagramIcon from "../../Assets/footer-instagram.png";
+import twitterIcon from "../../Assets/footer-twitter.png";
+import linkedInIcon from "../../Assets/footer-linkeId.png";
+import pintrestIcon from "../../Assets/footer-pintrest.png";
+import youtubeIcon from "../../Assets/footer-youtube.png";
+import brandImg from "../../Assets/desktop-footer-logo.svg";
+import WhatsApp from "../../Assets/whats-app-icon.svg";
 
 // import { Link } from 'react-router-dom';
 

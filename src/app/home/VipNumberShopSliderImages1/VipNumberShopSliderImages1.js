@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Link from "next/link";
 // Images
-import brandIcon from "../../assets/VIP-icon-2.svg";
+import brandIcon from "../../Assets/VIP-icon-2.svg";
 
 const VipNumberShopSliderImages1 = () => {
     const [images, setImages] = useState([]);

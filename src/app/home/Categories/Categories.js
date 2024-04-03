@@ -11,8 +11,8 @@ import Link from "next/link";
 import Image from "next/image";
 
 // Image
-import crown from "../../assets/heading-crown-icon.svg";
-import brandIcon from "../../assets/VIP-icon-2.svg";
+import crown from "../../Assets/heading-crown-icon.svg";
+import brandIcon from "../../Assets/VIP-icon-2.svg";
 
 // slider
 const categoriesSliderSettings = {

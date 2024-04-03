@@ -31,7 +31,7 @@
   }
   
   .VipNumberSlider-slider-row-os .slick-prev {
-    background-image: url("../../assets/banner-arrow-left.png");
+    background-image: url("../../Assets/banner-arrow-left.png");
   }
   .VipNumberSlider-slider-row-os .slick-prev {
     left: -50px;
@@ -40,7 +40,7 @@
     right: -50px;
   }
   .VipNumberSlider-slider-row-os .slick-next {
-    background-image: url("../../assets/banner-arrow-right.png");
+    background-image: url("../../Assets/banner-arrow-right.png");
   }
   .VipNumberSlider-slider-row-os .slick-next,
   .VipNumberSlider-slider-row-os .slick-prev {
@@ -53,14 +53,14 @@
   }
   .VipNumberSlider-slider-row-os .slick-prev:hover,
   .VipNumberSlider-slider-row-os .slick-prev:focus {
-    background-image: url("../../assets/banner-arrow-left.png");
+    background-image: url("../../Assets/banner-arrow-left.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
   }
   .VipNumberSlider-slider-row-os .slick-next:hover,
   .VipNumberSlider-slider-row-os .slick-next:focus {
-    background-image: url("../../assets/banner-arrow-right.png");
+    background-image: url("../../Assets/banner-arrow-right.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
