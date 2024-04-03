@@ -1,15 +1,14 @@
-"use client"
+"use client";
 // import { Roboto } from 'next/font/google'
 // import head component
-import Head from 'next/head';
-import './globals.css';
-import AppStateContextProvider from './contexts/AppStateContext/AppStateContext';
-import MyRegisterSignInContextProvider from './contexts/MyRegisterSignInContext/MyRegisterSignInContext';
-import Index from './index';
-import { useRouter, usePathname } from "next/navigation";
+import Head from "next/head";
+import "./globals.css";
+import AppStateContextProvider from "./contexts/AppStateContext/AppStateContext";
+import MyRegisterSignInContextProvider from "./contexts/MyRegisterSignInContext/MyRegisterSignInContext";
+import Index from "./index";
+// import { useRouter, usePathname } from "next/navigation";
 
 // const roboto = Roboto({ subsets: ['latin'], variable: "--font-roboto", weight: ['300', '400', '500', '700', '900'] });
-
 
 // export const metadata = {
 //   title: 'Vip-Number Next App',
@@ -17,13 +16,13 @@ import { useRouter, usePathname } from "next/navigation";
 // };
 
 export default function RootLayout({ children }) {
-  const navigate = useRouter();
-  const pathname = usePathname();
+  // const navigate = useRouter();
+  // const pathname = usePathname();
 
-  const currentUrl = typeof window !== "undefined" ? window.location.href : "";
-  console.log("navigate.asPath ::", navigate.asPath)
-  console.log("currentUrl ::", currentUrl)
-  console.log("pathname ::", pathname)
+  // const currentUrl = typeof window !== "undefined" ? window.location.href : "";
+  // console.log("navigate.asPath ::", navigate.asPath);
+  // console.log("currentUrl ::", currentUrl);
+  // console.log("pathname ::", pathname);
   return (
     <html lang="en">
       <Head>
