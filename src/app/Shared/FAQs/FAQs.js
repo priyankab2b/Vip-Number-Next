@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 // import { useNavigate } from "react-router-dom";
 import { useRouter } from "next/navigation";
 import "./FAQs.css";
-import MainHeading from "../../components/MainHeading/MainHeading";
-import MainSubHeading from "../../components/MainSubHeading/MainSubHeading";
-import FaqCard from "../../components/FaqCard/FaqCard";
+import MainHeading from "../../Shared/MainHeading/MainHeading";
+import MainSubHeading from "../../Shared/MainSubHeading/MainSubHeading";
+import FaqCard from "../../Shared/FaqCard/FaqCard";
 import ViewMoreButton from "../ViewMoreButton/ViewMoreButton";
 
 // Image

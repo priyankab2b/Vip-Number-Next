@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import "../../components/WishlistNumberData/WishlistNumberData.css";
+import "../../Shared/WishlistNumberData/WishlistNumberData.css";
 import "./CartProductData.css";
 import { AppStateContext } from "./../../contexts/AppStateContext/AppStateContext";
 

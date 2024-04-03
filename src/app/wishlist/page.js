@@ -1,10 +1,10 @@
 'use client'
 import React, { useState } from "react";
-import QRVipApp from "../components/QRVipApp/QRVipApp";
-import Footer from "../components/Footer/Footer";
-import Header from "../components/Header/Header";
-import MobileFooter from "../components/MobileFooter/MobileFooter";
-import MobileHeader from "../components/MobileHeader/MobileHeader";
+import QRVipApp from "../Shared/QRVipApp/QRVipApp";
+import Footer from "../Shared/Footer/Footer";
+import Header from "../Shared/Header/Header";
+import MobileFooter from "../Shared/MobileFooter/MobileFooter";
+import MobileHeader from "../Shared/MobileHeader/MobileHeader";
 import WishlistBanner from "./WishlistBanner/WishlistBanner";
 import WishListNumber from "./WishListNumber/WishListNumber";
 

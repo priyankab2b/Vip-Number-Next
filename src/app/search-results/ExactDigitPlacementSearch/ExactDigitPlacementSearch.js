@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import MainHeading from "../../components/MainHeading/MainHeading";
+import MainHeading from "../../Shared/MainHeading/MainHeading";
 import crown from "../../assets/heading-crown-icon.svg";
-import Card from "../../components/Card/Card";
-import ViewMoreButton from "../../components/ViewMoreButton/ViewMoreButton";
+import Card from "../../Shared/Card/Card";
+import ViewMoreButton from "../../Shared/ViewMoreButton/ViewMoreButton";
 
 const ExactDigitPlacementSearch = ({ results, nextPage }) => {
   return (

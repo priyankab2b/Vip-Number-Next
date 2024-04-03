@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import "./Card.css";
-import '../../components/BuyNowButton/BuyNowButton.css'
+import '../../Shared/BuyNowButton/BuyNowButton.css'
 import StarIcon from "@mui/icons-material/Star";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import StarHalfIcon from "@mui/icons-material/StarHalf";

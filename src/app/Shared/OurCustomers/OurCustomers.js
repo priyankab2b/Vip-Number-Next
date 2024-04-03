@@ -1,11 +1,11 @@
 import React from "react";
 import "./OurCustomers.css";
-import MainHeading from "../../components/MainHeading/MainHeading";
-import MainSubHeading from "../../components/MainSubHeading/MainSubHeading";
+import MainHeading from "../../Shared/MainHeading/MainHeading";
+import MainSubHeading from "../../Shared/MainSubHeading/MainSubHeading";
 import CustomerSlider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import OurCustomerCard from "../../components/OurCustomerCard/OurCustomerCard";
+import OurCustomerCard from "../../Shared/OurCustomerCard/OurCustomerCard";
 
 // Image
 import crown from "../../assets/heading-crown-icon.svg";

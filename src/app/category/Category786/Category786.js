@@ -1,7 +1,7 @@
 import React from "react";
-import Card from "../../components/Card/Card";
-import MainHeading from "../../components/MainHeading/MainHeading";
-import ViewMoreButton from "../../components/ViewMoreButton/ViewMoreButton";
+import Card from "../../Shared/Card/Card";
+import MainHeading from "../../Shared/MainHeading/MainHeading";
+import ViewMoreButton from "../../Shared/ViewMoreButton/ViewMoreButton";
 
 // Images
 import crownIcon from "../../assets/crown-icon1.svg";

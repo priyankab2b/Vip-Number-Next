@@ -1,16 +1,16 @@
 'use client'
 import React from "react";
 import PdpProduct from "./PdpProduct/PdpProduct";
-import Footer from "../components/Footer/Footer";
-import Header from "../components/Header/Header";
-import MobileFooter from "../components/MobileFooter/MobileFooter";
-import MobileHeader from "../components/MobileHeader/MobileHeader";
+import Footer from "../Shared/Footer/Footer";
+import Header from "../Shared/Header/Header";
+import MobileFooter from "../Shared/MobileFooter/MobileFooter";
+import MobileHeader from "../Shared/MobileHeader/MobileHeader";
 import RelatedNumber from "./RelatedNumber/RelatedNumber";
-import FAQs from "../components/FAQs/FAQs";
-import OurCustomers from "../components/OurCustomers/OurCustomers";
-import VideoTestimonial from "../components/VideoTestimonial/VideoTestimonial";
-import PurpleBgColor from "../components/PurpleBgColor/PurpleBgColor";
-import QRVipApp from "../components/QRVipApp/QRVipApp";
+import FAQs from "../Shared/FAQs/FAQs";
+import OurCustomers from "../Shared/OurCustomers/OurCustomers";
+import VideoTestimonial from "../Shared/VideoTestimonial/VideoTestimonial";
+import PurpleBgColor from "../Shared/PurpleBgColor/PurpleBgColor";
+import QRVipApp from "../Shared/QRVipApp/QRVipApp";
 import RegisterVipNumber from "../home/RegisterVipNumber/RegisterVipNumber";
 
 // Image

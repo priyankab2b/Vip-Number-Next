@@ -1,12 +1,12 @@
 'use client'
 import React, { useState } from "react";
 import "./Cart.css";
-import Header from "../components/Header/Header";
-import MobileHeader from "../components/MobileHeader/MobileHeader";
+import Header from "../Shared/Header/Header";
+import MobileHeader from "../Shared/MobileHeader/MobileHeader";
 import WishlistBanner from "../wishlist/WishlistBanner/WishlistBanner";
-import QRVipApp from "../components/QRVipApp/QRVipApp";
-import Footer from "../components/Footer/Footer";
-import MobileFooter from "../components/MobileFooter/MobileFooter";
+import QRVipApp from "../Shared/QRVipApp/QRVipApp";
+import Footer from "../Shared/Footer/Footer";
+import MobileFooter from "../Shared/MobileFooter/MobileFooter";
 import CartProductList from "./CartProductList/CartProductList";
 
 const Cart = () => {

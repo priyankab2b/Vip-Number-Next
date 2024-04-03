@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Card from "../../components/Card/Card";
-import MainHeading from "../../components/MainHeading/MainHeading";
-import ViewMoreButton from "../../components/ViewMoreButton/ViewMoreButton";
+import Card from "../../Shared/Card/Card";
+import MainHeading from "../../Shared/MainHeading/MainHeading";
+import ViewMoreButton from "../../Shared/ViewMoreButton/ViewMoreButton";
 import axios from "axios";
 import { useGetQueryParams } from "../../utils";
 import "../../home/FeaturedNumber/FeaturedNumber.css";
@@ -10,7 +10,7 @@ import "../../home/FeaturedNumber/FeaturedNumber.css";
 // Images
 import crownIcon from "../../assets/crown-icon1.svg";
 import brandIcon from "../../assets/VIP-icon-2.svg"; // replace with your loader icon
-import Header from "@/app/components/Header/Header";
+import Header from "@/app/Shared/Header/Header";
 
 const CategoryWithSubCategories = ({
   subCategory,

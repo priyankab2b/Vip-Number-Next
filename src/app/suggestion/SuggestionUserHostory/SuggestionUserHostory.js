@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
-import MainHeading from "../../components/MainHeading/MainHeading";
-import Card from "../../components/Card/Card";
+import MainHeading from "../../Shared/MainHeading/MainHeading";
+import Card from "../../Shared/Card/Card";
 import "../SuggestionFeaturedNumber/SuggestionFeaturedNumber.css";
 import { getProfile } from "../../Services/Services";
 import { AppStateContext } from "../../contexts/AppStateContext/AppStateContext";
-import BuyNowButton from "../../components/BuyNowButton/BuyNowButton";
+import BuyNowButton from "../../Shared/BuyNowButton/BuyNowButton";
 
 // Image
 import brandIcon from "../../assets/VIP-icon-2.svg";

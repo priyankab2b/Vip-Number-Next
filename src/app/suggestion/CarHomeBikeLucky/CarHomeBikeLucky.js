@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import MainHeading from "../../components/MainHeading/MainHeading";
+import MainHeading from "../../Shared/MainHeading/MainHeading";
 import "./CarHomeBikeLucky.css";
-import Card from "../../components/Card/Card";
-import SearchFilterButton from "../../components/SearchFilterButton/SearchFilterButton";
+import Card from "../../Shared/Card/Card";
+import SearchFilterButton from "../../Shared/SearchFilterButton/SearchFilterButton";
 import OutsideClickHandler from "react-outside-click-handler";
 import {
     SearchAPI,
@@ -10,7 +10,7 @@ import {
     updateProfile,
 } from "../../Services/Services";
 import { useGetQueryParams } from "../../utils";
-import ViewMoreButton from "../../components/ViewMoreButton/ViewMoreButton";
+import ViewMoreButton from "../../Shared/ViewMoreButton/ViewMoreButton";
 
 // Images
 import crownIcon from "../../assets/crown-icon1.svg";

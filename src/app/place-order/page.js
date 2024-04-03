@@ -1,8 +1,8 @@
 'use client'
 import React from "react";
 import "./OrderPlacement.css";
-import Header from "../components/Header/Header";
-import MobileFooter from "../components/MobileFooter/MobileFooter";
+import Header from "../Shared/Header/Header";
+import MobileFooter from "../Shared/MobileFooter/MobileFooter";
 import OrderPlacementTabs from "./OrderPlacementTabs/OrderPlacementTabs";
 
 const OrderPlacement = () => {

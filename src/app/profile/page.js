@@ -1,8 +1,8 @@
 'use client'
 import React, { useState, useContext, useEffect, useCallback } from "react";
 import "./Profile.css";
-import Header from "../components/Header/Header";
-import MobileHeader from "../components/MobileHeader/MobileHeader";
+import Header from "../Shared/Header/Header";
+import MobileHeader from "../Shared/MobileHeader/MobileHeader";
 import { AppStateContext } from "../contexts/AppStateContext/AppStateContext";
 // import { Link, useNavigate } from "react-router-dom";
 import Link from "next/link";
@@ -10,8 +10,8 @@ import { useRouter } from "next/navigation";
 import { NotificationManager } from "react-notifications";
 import axios from "axios";
 import { getProfile, updateProfile } from "../Services/Services";
-import LogoutModal from "../components/LogoutModal/LogoutModal";
-import DeleteModal from "../components/DeleteModal/DeleteModal";
+import LogoutModal from "../Shared/LogoutModal/LogoutModal";
+import DeleteModal from "../Shared/DeleteModal/DeleteModal";
 import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
 // Add these imports
 import DatePicker from "react-datepicker";

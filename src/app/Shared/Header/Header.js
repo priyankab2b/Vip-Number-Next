@@ -8,7 +8,7 @@ import axios from "axios";
 import { getProfile } from "../../Services/Services";
 // Images
 import BrandImg from "../../Assets/VIP-logo-1.svg";
-import CallUsPopup from "../../components/CallUsPopup/CallUsPopup";
+import CallUsPopup from "../../Shared/CallUsPopup/CallUsPopup";
 import { AppStateContext } from "../../contexts/AppStateContext/AppStateContext";
 import { MyRegisterSignInContext } from "../../contexts/MyRegisterSignInContext/MyRegisterSignInContext";
 import OutsideClickHandler from "react-outside-click-handler";
