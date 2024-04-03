@@ -23,7 +23,7 @@ import SuggestionRelated from "./SuggestionRelated/SuggestionRelated";
 import { Helmet } from "react-helmet";
 
 // Images
-import RegisterImg1 from "../assets/assurance-register-img.svg";
+import RegisterImg1 from "../Assets/assurance-register-img.svg";
 
 export const SearchContext = React.createContext(null);
 const Suggestion = ({ Seo }) => {

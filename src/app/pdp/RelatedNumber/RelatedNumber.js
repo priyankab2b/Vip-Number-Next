@@ -3,7 +3,7 @@ import axios from "axios";
 import "./RelatedNumber.css";
 import MainHeading from "../../Shared/MainHeading/MainHeading";
 import Card from "../../Shared/Card/Card";
-import crown from "../../assets/heading-crown-icon.svg";
+import crown from "../../Assets/heading-crown-icon.svg";
 import { useGetQueryParams } from "../../utils";
 import ViewMoreButton from "../../Shared/ViewMoreButton/ViewMoreButton";
 

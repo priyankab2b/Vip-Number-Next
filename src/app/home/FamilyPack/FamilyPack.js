@@ -9,7 +9,7 @@ import FamilyCard from "../../Shared/FamilyCard/FamilyCard";
 import FamilyPackSlider from "react-slick";
 
 // Images
-import crown from "../../assets/heading-crown-icon.svg";
+import crown from "../../Assets/heading-crown-icon.svg";
 import ViewMoreButton from "../../Shared/ViewMoreButton/ViewMoreButton";
 
 

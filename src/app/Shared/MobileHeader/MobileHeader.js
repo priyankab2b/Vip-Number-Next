@@ -14,20 +14,20 @@ import ListIcon from "@mui/icons-material/Style";
 import CallUsPopup from "../CallUsPopup/CallUsPopup";
 
 // Images
-import callIcon from "../../assets/mobile-header-call-icon.svg";
-import brand1 from "../../assets/VIP-logo-1.svg";
-import userIcon from "../../assets/mobile-user-icon.svg";
-import backArrow from "../../assets/mobile-header-arrow.svg";
-import blankIcon from "../../assets/profile-user-black.png";
-import navLinkcon1 from "../../assets/mobile-navLink-icon1.svg";
-import navLinkcon2 from "../../assets/mobile-navLink-icon2.svg";
-import navLinkcon3 from "../../assets/mobile-navLink-icon3.svg";
-import navLinkcon4 from "../../assets/mobile-navLink-icon4.svg";
-import navLinkcon5 from "../../assets/mobile-navLink-icon5.svg";
-import navLinkcon6 from "../../assets/mobile-navLink-icon6.svg";
-import navLinkcon7 from "../../assets/mobile-navLink-icon7.svg";
-import SearchIcon from "../../assets/search-icon-header.png";
-import WhatsApp from "../../assets/whats-app-icon.svg";
+import callIcon from "../../Assets/mobile-header-call-icon.svg";
+import brand1 from "../../Assets/VIP-logo-1.svg";
+import userIcon from "../../Assets/mobile-user-icon.svg";
+import backArrow from "../../Assets/mobile-header-arrow.svg";
+import blankIcon from "../../Assets/profile-user-black.png";
+import navLinkcon1 from "../../Assets/mobile-navLink-icon1.svg";
+import navLinkcon2 from "../../Assets/mobile-navLink-icon2.svg";
+import navLinkcon3 from "../../Assets/mobile-navLink-icon3.svg";
+import navLinkcon4 from "../../Assets/mobile-navLink-icon4.svg";
+import navLinkcon5 from "../../Assets/mobile-navLink-icon5.svg";
+import navLinkcon6 from "../../Assets/mobile-navLink-icon6.svg";
+import navLinkcon7 from "../../Assets/mobile-navLink-icon7.svg";
+import SearchIcon from "../../Assets/search-icon-header.png";
+import WhatsApp from "../../Assets/whats-app-icon.svg";
 // import
 
 const MobileHeader = () => {

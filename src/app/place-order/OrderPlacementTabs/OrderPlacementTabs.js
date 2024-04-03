@@ -5,17 +5,17 @@ import { AppStateContext } from "../../contexts/AppStateContext/AppStateContext"
 import Image from "next/image";
 
 // Images
-import Payment2 from "../../assets/payment2.svg";
-import Payment3 from "../../assets/payment3.svg";
-import Payment4 from "../../assets/payment4.svg";
-import Payment5 from "../../assets/payment5.svg";
-import Payment6 from "../../assets/payment6.svg";
-import QRImg from "../../assets/QR-code.png";
-import QRImg1 from "../../assets/QR-code1.jpg";
-import QRImg2 from "../../assets/QR-code2.png";
-import QRImg3 from "../../assets/QR-code3.png";
-import QRImg4 from "../../assets/QR-code4.png";
-import brandIcon from "../../assets/VIP-icon-2.svg";
+import Payment2 from "../../Assets/payment2.svg";
+import Payment3 from "../../Assets/payment3.svg";
+import Payment4 from "../../Assets/payment4.svg";
+import Payment5 from "../../Assets/payment5.svg";
+import Payment6 from "../../Assets/payment6.svg";
+import QRImg from "../../Assets/QR-code.png";
+import QRImg1 from "../../Assets/QR-code1.jpg";
+import QRImg2 from "../../Assets/QR-code2.png";
+import QRImg3 from "../../Assets/QR-code3.png";
+import QRImg4 from "../../Assets/QR-code4.png";
+import brandIcon from "../../Assets/VIP-icon-2.svg";
 
 import axios from "axios";
 import {

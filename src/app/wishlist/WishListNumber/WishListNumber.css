@@ -14,7 +14,7 @@
 .WishListNumber-variant-selector-os select {
     appearance: none;
     padding: 6px 12px;
-    background-image: url("../../assets/selectArrow.svg");
+    background-image: url("../../Assets/selectArrow.svg");
     background-size: 16px 12px;
     background-repeat: no-repeat;
     background-position: center;

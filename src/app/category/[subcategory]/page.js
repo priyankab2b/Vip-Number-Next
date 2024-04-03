@@ -22,7 +22,7 @@ import "../../home/Home.css";
 // import axios from 'axios';
 
 // Images
-import RegisterImg1 from "../../assets/assurance-register-img.svg";
+import RegisterImg1 from "../../Assets/assurance-register-img.svg";
 import Head from "next/head";
 
 export const SearchContext = React.createContext(null);

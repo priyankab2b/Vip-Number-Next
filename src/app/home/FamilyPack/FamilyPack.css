@@ -9,7 +9,7 @@
 .FamilyPack-section-os .slick-prev {
     width: 60px;
     height: 60px;
-    background-image: url('../../assets/slider-left-arrow.png');
+    background-image: url('../../Assets/slider-left-arrow.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -21,7 +21,7 @@
 .FamilyPack-section-os .slick-next {
     width: 60px;
     height: 60px;
-    background-image: url('../../assets/slider-right-arrow.png');
+    background-image: url('../../Assets/slider-right-arrow.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -67,7 +67,7 @@
     cursor: pointer;
     appearance: none;
     padding: 4px 24px 4px 8px;
-    background-image: url("../../assets/selectArrow.svg");
+    background-image: url("../../Assets/selectArrow.svg");
     background-size: 12px 12px;
     background-repeat: no-repeat;
     background-position: 80% 50%;

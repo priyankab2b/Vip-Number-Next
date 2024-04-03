@@ -8,8 +8,8 @@ import { useGetQueryParams } from "../../utils";
 import "../../home/FeaturedNumber/FeaturedNumber.css";
 
 // Images
-import crownIcon from "../../assets/crown-icon1.svg";
-import brandIcon from "../../assets/VIP-icon-2.svg"; // replace with your loader icon
+import crownIcon from "../../Assets/crown-icon1.svg";
+import brandIcon from "../../Assets/VIP-icon-2.svg"; // replace with your loader icon
 import Header from "@/app/Shared/Header/Header";
 
 const CategoryWithSubCategories = ({

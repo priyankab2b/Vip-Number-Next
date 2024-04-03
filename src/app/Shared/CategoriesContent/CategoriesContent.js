@@ -1,7 +1,7 @@
 import React from "react";
 import MainHeading from "../MainHeading/MainHeading";
 import "./CategoriesContent.css";
-import crown from "../../assets/heading-crown-icon.svg";
+import crown from "../../Assets/heading-crown-icon.svg";
 
 const CategoriesContent = ({ id, HTMLContent }) => {
     // console.log("HTMLContent idddddddddddddddd", id);

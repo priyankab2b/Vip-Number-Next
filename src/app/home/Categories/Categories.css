@@ -7,7 +7,7 @@
 .Categories-row-os .slick-prev {
     width: 50px;
     height: 50px;
-    background-image: url('../../assets/slider-left-arrow.png');
+    background-image: url('../../Assets/slider-left-arrow.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -19,7 +19,7 @@
 .Categories-row-os .slick-next {
     width: 50px;
     height: 50px;
-    background-image: url('../../assets/slider-right-arrow.png');
+    background-image: url('../../Assets/slider-right-arrow.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

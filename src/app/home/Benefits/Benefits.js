@@ -3,11 +3,11 @@ import "./Benefits.css";
 import BenefitCard from "../../Shared/BenefitCard/BenefitCard";
 
 // Images
-import no_fear from "../../assets/no-fear.svg";
-import reason_to_trust from "../../assets/reason-to-trust.svg";
-import fake_claims from "../../assets/fake-claims.svg";
-import trust_satisfaction from "../../assets/trust-satisfaction.svg";
-import no_risk from "../../assets/no-risk.svg";
+import no_fear from "../../Assets/no-fear.svg";
+import reason_to_trust from "../../Assets/reason-to-trust.svg";
+import fake_claims from "../../Assets/fake-claims.svg";
+import trust_satisfaction from "../../Assets/trust-satisfaction.svg";
+import no_risk from "../../Assets/no-risk.svg";
 
 const Benefits = () => {
   return (

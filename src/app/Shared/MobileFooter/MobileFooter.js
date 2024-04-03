@@ -7,22 +7,22 @@ import Image from "next/image";
 
 // Images
 // import brandIcon from '../../../Assets/mobile-footer-brand.svg';
-import brandIcon from "../../assets/VIP-icon-2.svg";
-import headphoneIcon from "../../assets/mobile-footer-headphone-icon.svg";
-import locationIcon from "../../assets/mobile-footer-location-icon.svg";
-import facebookIcon from "../../assets/mobileFooter-Facebook.png";
-import instagramIcon from "../../assets/mobileFooter-Instagram.png";
-import twitterIcon from "../../assets/mobileFooter-Twitter.png";
-import card from "../../assets/mobile-footer-cards.png";
-import card1 from "../../assets/footer-cards-img-1.png";
-import card2 from "../../assets/footer-cards-img-2.png";
-import card3 from "../../assets/footer-cards-img-3.png";
-import card4 from "../../assets/footer-cards-img-4.png";
-import card5 from "../../assets/footer-cards-img-5.png";
-import linkedInIcon from "../../assets/footer-linkeId.png";
-import pintrestIcon from "../../assets/footer-pintrest.png";
-import youtubeIcon from "../../assets/footer-youtube.png";
-import WhatsApp from "../../assets/whats-app-icon.svg";
+import brandIcon from "../../Assets/VIP-icon-2.svg";
+import headphoneIcon from "../../Assets/mobile-footer-headphone-icon.svg";
+import locationIcon from "../../Assets/mobile-footer-location-icon.svg";
+import facebookIcon from "../../Assets/mobileFooter-Facebook.png";
+import instagramIcon from "../../Assets/mobileFooter-Instagram.png";
+import twitterIcon from "../../Assets/mobileFooter-Twitter.png";
+import card from "../../Assets/mobile-footer-cards.png";
+import card1 from "../../Assets/footer-cards-img-1.png";
+import card2 from "../../Assets/footer-cards-img-2.png";
+import card3 from "../../Assets/footer-cards-img-3.png";
+import card4 from "../../Assets/footer-cards-img-4.png";
+import card5 from "../../Assets/footer-cards-img-5.png";
+import linkedInIcon from "../../Assets/footer-linkeId.png";
+import pintrestIcon from "../../Assets/footer-pintrest.png";
+import youtubeIcon from "../../Assets/footer-youtube.png";
+import WhatsApp from "../../Assets/whats-app-icon.svg";
 
 const MobileFooter = () => {
   const [activeAccordion, setActiveAccordion] = useState("");

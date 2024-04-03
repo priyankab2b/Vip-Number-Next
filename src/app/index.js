@@ -24,8 +24,8 @@ export default function Index({ children }) {
     setLoading(false);
   }, [pathname]);
 
-  console.log("currentUrl ::", currentUrl);
-  console.log("pathname ::", pathname);
+  // console.log("currentUrl ::", currentUrl);
+  // console.log("pathname ::", pathname);
 
   return (
     <>

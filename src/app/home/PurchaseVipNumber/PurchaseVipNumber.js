@@ -5,7 +5,7 @@ import PurchaseNumberCard from "../../Shared/PurchaseNumberCard/PurchaseNumberCa
 import VipSlider from "react-slick";
 
 // images
-import crown from "../../assets/heading-crown-icon.svg";
+import crown from "../../Assets/heading-crown-icon.svg";
 // import Purchase1 from "../../../Assets/purchase1.svg"
 
 const PurchaseVipNumber = () => {

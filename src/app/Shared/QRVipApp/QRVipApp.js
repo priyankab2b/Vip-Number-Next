@@ -3,8 +3,8 @@ import "./QRVipApp.css";
 import Image from "next/image";
 
 // Images
-import rightImg from "../../assets/QRVipApp-right-img.svg";
-import QRCodeImg from "../../assets/QRVipApp-QR.png";
+import rightImg from "../../Assets/QRVipApp-right-img.svg";
+import QRCodeImg from "../../Assets/QRVipApp-QR.png";
 
 const QRVipApp = () => {
     return (

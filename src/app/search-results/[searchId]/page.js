@@ -32,7 +32,7 @@ import { useRouter } from "next/navigation";
 import { MyRegisterSignInContext } from "../contexts/MyRegisterSignInContext/MyRegisterSignInContext";
 import axios from "axios";
 // Images
-import RegisterImg1 from "../assets/assurance-register-img.svg";
+import RegisterImg1 from "../Assets/assurance-register-img.svg";
 import { checkAscendingOrDescendingBy5, checkForSamePattern, count_repeating_digits } from "../utils/comman";
 export const SearchContext = React.createContext(null);
 

@@ -1,6 +1,6 @@
 import React from "react";
-import WhatsApp from "../../assets/whats-app-icon.svg";
-import callIcon1 from "../../assets/call-icon.svg";
+import WhatsApp from "../../Assets/whats-app-icon.svg";
+import callIcon1 from "../../Assets/call-icon.svg";
 import Link from 'next/link'
 import Image from 'next/image'
 import '../MobileHeader/MobileHeader.css';

@@ -3,7 +3,7 @@ import "./Award.css";
 import Image from "next/image";
 
 // Images
-import AwardImg from "../../assets/award-banner-for-mobile.jpg";
+import AwardImg from "../../Assets/award-banner-for-mobile.jpg";
 
 const Award = () => {
   return (

@@ -3,12 +3,12 @@ import "./VipNumberSlider.css";
 import '../FeaturedNumber/FeaturedNumber.css'
 import "../../Shared/ViewMoreButton/ViewMoreButton.css";
 import MainHeading from "../../Shared/MainHeading/MainHeading";
-import crown from "../../assets/heading-crown-icon.svg";
+import crown from "../../Assets/heading-crown-icon.svg";
 import Card from "../../Shared/Card/Card";
 import CardSlider from "react-slick";
 
 // Images
-import brandIcon from "../../assets/VIP-icon-2.svg";
+import brandIcon from "../../Assets/VIP-icon-2.svg";
 import ViewMoreButton from "../../Shared/ViewMoreButton/ViewMoreButton";
 
 const VIPNumberSlider = () => {

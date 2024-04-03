@@ -59,7 +59,7 @@
     .featured-number-mobile-data-os .slick-prev {
       width: 60px;
       height: 60px;
-      background-image: url('../../assets/slider-left-arrow.png');
+      background-image: url('../../Assets/slider-left-arrow.png');
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
@@ -70,7 +70,7 @@
     .featured-number-mobile-data-os .slick-next {
       width: 60px;
       height: 60px;
-      background-image: url("../../assets/slider-right-arrow.png");
+      background-image: url("../../Assets/slider-right-arrow.png");
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
