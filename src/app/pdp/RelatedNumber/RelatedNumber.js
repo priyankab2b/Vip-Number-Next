@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import "./RelatedNumber.css";
-import MainHeading from "../../components/MainHeading/MainHeading";
-import Card from "../../components/Card/Card";
+import MainHeading from "../../Shared/MainHeading/MainHeading";
+import Card from "../../Shared/Card/Card";
 import crown from "../../assets/heading-crown-icon.svg";
 import { useGetQueryParams } from "../../utils";
-import ViewMoreButton from "../../components/ViewMoreButton/ViewMoreButton";
+import ViewMoreButton from "../../Shared/ViewMoreButton/ViewMoreButton";
 
 const RelatedNumber = () => {
     const [nexturl, setNexturl] = useState();

@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
-import MainHeading from "../../components/MainHeading/MainHeading";
-import MainSubHeading from "../../components/MainSubHeading/MainSubHeading";
+import MainHeading from "../../Shared/MainHeading/MainHeading";
+import MainSubHeading from "../../Shared/MainSubHeading/MainSubHeading";
 import "./FamilyPack.css";
 import axios from "axios";
-import FamilyCard from "../../components/FamilyCard/FamilyCard";
+import FamilyCard from "../../Shared/FamilyCard/FamilyCard";
 
 // Slider
 import FamilyPackSlider from "react-slick";
 
 // Images
 import crown from "../../assets/heading-crown-icon.svg";
-import ViewMoreButton from "../../components/ViewMoreButton/ViewMoreButton";
+import ViewMoreButton from "../../Shared/ViewMoreButton/ViewMoreButton";
 
 
 //Pagination data per page

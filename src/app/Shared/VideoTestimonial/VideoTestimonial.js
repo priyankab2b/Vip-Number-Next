@@ -1,7 +1,7 @@
 import React from "react";
 import "./VideoTestimonial.css";
-import VideoCard from "../../components/VideoCard/VideoCard";
-import MainHeading from "../../components/MainHeading/MainHeading";
+import VideoCard from "../../Shared/VideoCard/VideoCard";
+import MainHeading from "../../Shared/MainHeading/MainHeading";
 // Slider
 import VideoSlider from "react-slick";
 

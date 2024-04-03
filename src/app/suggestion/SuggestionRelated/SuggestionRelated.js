@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import MainHeading from "../../components/MainHeading/MainHeading";
+import MainHeading from "../../Shared/MainHeading/MainHeading";
 import "../SuggestionFeaturedNumber/SuggestionFeaturedNumber.css";
 import "../../home/FeaturedNumber/FeaturedNumber.css";
-import Card from "../../components/Card/Card";
+import Card from "../../Shared/Card/Card";
 import axios from "axios";
-import BuyNowButton from "../../components/BuyNowButton/BuyNowButton";
+import BuyNowButton from "../../Shared/BuyNowButton/BuyNowButton";
 
 // Images
 import crownIcon from "../../assets/crown-icon1.svg";

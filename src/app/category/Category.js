@@ -1,23 +1,23 @@
 // 'use client'
 // import React, { useState, useEffect, useContext } from "react";
-// import Footer from "../components/Footer/Footer";
-// import Header from "../components/Header/Header";
-// import MobileFooter from "../components/MobileFooter/MobileFooter";
-// import MobileHeader from "../components/MobileHeader/MobileHeader";
+// import Footer from "../Shared/Footer/Footer";
+// import Header from "../Shared/Header/Header";
+// import MobileFooter from "../Shared/MobileFooter/MobileFooter";
+// import MobileHeader from "../Shared/MobileHeader/MobileHeader";
 // import SuggestionBanner from "../suggestion/SuggestionBanner/SuggestionBanner";
-// import Search from "../components/Search/Search";
-// import FAQs from "../components/FAQs/FAQs";
-// import OurCustomers from "../components/OurCustomers/OurCustomers";
-// import VideoTestimonial from "../components/VideoTestimonial/VideoTestimonial";
-// import QRVipApp from "../components/QRVipApp/QRVipApp";
+// import Search from "../Shared/Search/Search";
+// import FAQs from "../Shared/FAQs/FAQs";
+// import OurCustomers from "../Shared/OurCustomers/OurCustomers";
+// import VideoTestimonial from "../Shared/VideoTestimonial/VideoTestimonial";
+// import QRVipApp from "../Shared/QRVipApp/QRVipApp";
 // import RegisterVipNumber from "../home/RegisterVipNumber/RegisterVipNumber";
 
 // import { useGetQueryParams } from "../utils";
 // import CategoryWithSubCategories from "./CategoryWithSubCategories/CategoryWithSubCategories";
 // import { Helmet } from "react-helmet";
 // import { AppStateContext } from "../contexts/AppStateContext/AppStateContext";
-// import FilterTabsCat from "../components/FilterTabs/FilterTabsCat";
-// import CategoriesContent from "../components/CategoriesContent/CategoriesContent";
+// import FilterTabsCat from "../Shared/FilterTabs/FilterTabsCat";
+// import CategoriesContent from "../Shared/CategoriesContent/CategoriesContent";
 // // import axios from 'axios';
 
 // // Images

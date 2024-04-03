@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Categories.css";
-import CategoriesCard from "../../components/CategoriesCard/CategoriesCard";
-import MainHeading from "../../components/MainHeading/MainHeading";
+import CategoriesCard from "../../Shared/CategoriesCard/CategoriesCard";
+import MainHeading from "../../Shared/MainHeading/MainHeading";
 import CategorySlider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";

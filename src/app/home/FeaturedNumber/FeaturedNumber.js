@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./FeaturedNumber.css";
-import MainHeading from "../../components/MainHeading/MainHeading";
+import MainHeading from "../../Shared/MainHeading/MainHeading";
 import CardSlider from "react-slick";
 
 // Images
 import crown from "../../assets/heading-crown-icon.svg";
-import Card from "../../components/Card/Card";
+import Card from "../../Shared/Card/Card";
 import brandIcon from "../../assets/VIP-icon-2.svg";
-import ViewMoreButton from "../../components/ViewMoreButton/ViewMoreButton";
+import ViewMoreButton from "../../Shared/ViewMoreButton/ViewMoreButton";
 
 const ITEMS_PER_PAGE = 36;
 

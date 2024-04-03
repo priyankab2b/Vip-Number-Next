@@ -1,7 +1,7 @@
 import React from "react";
 import "./PurchaseVipNumber.css";
-import MainHeading from "../../components/MainHeading/MainHeading";
-import PurchaseNumberCard from "../../components/PurchaseNumberCard/PurchaseNumberCard";
+import MainHeading from "../../Shared/MainHeading/MainHeading";
+import PurchaseNumberCard from "../../Shared/PurchaseNumberCard/PurchaseNumberCard";
 import VipSlider from "react-slick";
 
 // images

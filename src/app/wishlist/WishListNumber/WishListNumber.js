@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import WishlistNumberData from "../../components/WishlistNumberData/WishlistNumberData";
+import WishlistNumberData from "../../Shared/WishlistNumberData/WishlistNumberData";
 import "./WishListNumber.css";
 import Link from "next/link";
 import { AppStateContext } from "../../contexts/AppStateContext/AppStateContext";

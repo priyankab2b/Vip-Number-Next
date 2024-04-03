@@ -1,9 +1,9 @@
 import React from 'react'
 import Card from './card'
-import Header from '../components/Header/Header'
-import MobileHeader from '../components/MobileHeader/MobileHeader'
-import MobileFooter from '../components/MobileFooter/MobileFooter'
-import Footer from '../components/Footer/Footer'
+import Header from '../Shared/Header/Header'
+import MobileHeader from '../Shared/MobileHeader/MobileHeader'
+import MobileFooter from '../Shared/MobileFooter/MobileFooter'
+import Footer from '../Shared/Footer/Footer'
 
 const page = () => {
   return (

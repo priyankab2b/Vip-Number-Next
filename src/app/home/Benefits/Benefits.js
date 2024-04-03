@@ -1,6 +1,6 @@
 import React from "react";
 import "./Benefits.css";
-import BenefitCard from "../../components/BenefitCard/BenefitCard";
+import BenefitCard from "../../Shared/BenefitCard/BenefitCard";
 
 // Images
 import no_fear from "../../assets/no-fear.svg";

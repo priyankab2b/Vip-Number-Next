@@ -2,10 +2,10 @@
 
 import { useContext, useEffect, useState } from "react";
 import "./index.css";
-import Register from "./components/Register/Register";
+import Register from "./Shared/Register/Register";
 import { MyRegisterSignInContext } from "./contexts/MyRegisterSignInContext/MyRegisterSignInContext";
-import SignInWithPassword from "./components/SignInWithPassword/SignInWithPassword";
-import SignInWithOtp from "./components/SignInWithOtp/SignInWithOtp";
+import SignInWithPassword from "./Shared/SignInWithPassword/SignInWithPassword";
+import SignInWithOtp from "./Shared/SignInWithOtp/SignInWithOtp";
 import { useRouter, usePathname } from "next/navigation";
 import { AppStateContext } from "./contexts/AppStateContext/AppStateContext";
 

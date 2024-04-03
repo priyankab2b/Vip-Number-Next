@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import MainHeading from "../../components/MainHeading/MainHeading";
+import MainHeading from "../../Shared/MainHeading/MainHeading";
 import "../VipNumberShopSlider/VipNumberShopSlider.css";
 import VipSlider from "react-slick";
 import "slick-carousel/slick/slick.css";
