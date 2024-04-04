@@ -54,10 +54,15 @@ export const AppliedTags = ({ queryParams }) => {
     const route = {
       ...newparams,
     };
+    // router.push({
+    //   pathname: router?.pathname,
+    //   search: `?${searchParams(route)}`,
+    // });
     router.push({
       pathname: router?.pathname,
-      search: `?${searchParams(route)}`,
+      search: `?${nextQueryString}`,
     });
+    
   };
   if (!Object.keys(curParams || {})?.length) {
     return;
@@ -209,6 +214,7 @@ const Search = ({ queryParams }) => {
   const [exactPlacementError, setExactPlacementError] = useState(false);
   const [showError, setShowError] = useState(false);
   const [showCheckboxWarning, setShowCheckboxWarning] = useState(false);
+  const [nextQueryString, setNextQueryString] = useState();
   // const [searchBy, setSearchBy] = useState(
   //   router.pathname === "/search-your-number" ? "digit" : "price"
   // );
@@ -234,6 +240,10 @@ const Search = ({ queryParams }) => {
   // console.log("queryParams :::", queryParams);
   // console.log("searchParams :::", searchParams);
   console.log("filters :::", filters);
+
+  useEffect(() => {
+    handleQueryString();
+  }, [filters]);
 
   useEffect(() => {
     inputRef.current.focus();
@@ -393,12 +403,12 @@ const Search = ({ queryParams }) => {
     if (!navObj?.max_price) delete navObj.max_price;
 
     console.log("navObj ::", navObj);
-    router.push({
-      pathname: "/search-results",
-      search: `?${searchParams(navObj)}`,
-    });
+    // router.push({
+    //   pathname: "/search-results",
+    //   search: `?${searchParams(navObj)}`,
+    // });
 
-    // router.push("/search-results");
+    router.push(`/search-results?${nextQueryString}`);
   };
 
   const handleFilters = (key, value) => {
@@ -465,8 +475,8 @@ const Search = ({ queryParams }) => {
     } else if (filters?.type === "advanced") {
       if (
         filters?.contains &&
-        filters?.not_contains &&
-        filters?.not_contains === filters?.contains
+        filters?.not_contain &&
+        filters?.not_contain === filters?.contains
       ) {
         setmustContainedWarning(true);
         return false;
@@ -476,7 +486,7 @@ const Search = ({ queryParams }) => {
         (!filters?.any_where || filters?.any_where === "") &&
         (!filters?.end_with || !filters?.end_with === "") &&
         (!filters?.contains || filters?.contains === "") &&
-        (!filters?.not_contains || filters?.not_contains === "") &&
+        (!filters?.not_contain || filters?.not_contain === "") &&
         (!filters?.total || filters?.total === "") &&
         (!filters?.sum || filters?.sum === "")
       ) {
@@ -492,19 +502,19 @@ const Search = ({ queryParams }) => {
     }
   };
 
-  //Price Search Min To Max
-  const priceSunmit = (e) => {
-    e.preventDefault();
-    if (
-      filtersRef?.current?.min_price >= 0 &&
-      filtersRef?.current?.max_price > filtersRef?.current?.min_price
-    ) {
-      setPriceWarning(false);
-      getSearchResults();
-    } else {
-      setPriceWarning(true);
-    }
-  };
+//Price Search Min To Max
+const priceSunmit = (e) => {
+  e.preventDefault();
+  if (
+    filtersRef?.current?.min_price >= 0 &&
+    filtersRef?.current?.max_price > filtersRef?.current?.min_price
+  ) {
+    setPriceWarning(false);
+    getSearchResults();
+  } else {
+    setPriceWarning(true);
+  }
+};
 
   //Basic Search
   const handleSearchBasic = (e) => {
@@ -532,29 +542,26 @@ const Search = ({ queryParams }) => {
   const handlePriceRange = (value) => {};
 
   // Constructing the query string
-  const queryString = Object.keys(filters)
-    .map(
-      (key) => `${encodeURIComponent(key)}=${encodeURIComponent(filters[key])}`
-    )
-    .join("&");
-
-  console.log("queryString ::", queryString);
+  const handleQueryString = () => {
+    const queryString = Object.keys(filters)
+      .map(
+        (key) =>
+          `${encodeURIComponent(key)}=${encodeURIComponent(filters[key])}`
+      )
+      .join("&");
+    setNextQueryString(queryString);
+  };
+  console.log("nextQueryString ::", nextQueryString);
 
   const globalhit = () => {
     console.log("globalhit");
     if (!filters?.number) {
       setPriceWarning(true);
-      console.log("!filters?.number");
-
       return;
     }
-    console.log("globalhit1");
     setPriceWarning(false);
-    console.log("globalhit2");
     // setPriceRangePopup(true);
-    console.log("globalhit3");
-    // router.push("/search-results");
-    router.push(`/search-results?${queryString}`);
+    router.push(`/search-results?${nextQueryString}`);
   };
 
   const basicHit = () => {
@@ -1596,27 +1603,27 @@ const Search = ({ queryParams }) => {
                   />
 
                   {/* <SearchFilterInput
-                  inputLabel="Quantity"
-                  inputType="text"
-                  placeHolder="2-9"
-                  inputOnChange={(e) => {
-                    const inputValue = e.target.value;
-                    const numericRegex = /^$|^[2-9]$/; // Allow empty string or a single digit
+                    inputLabel="Quantity"
+                    inputType="text"
+                    placeHolder="2-9"
+                    inputOnChange={(e) => {
+                      const inputValue = e.target.value;
+                      const numericRegex = /^$|^[2-9]$/; // Allow empty string or a single digit
 
-                    if (numericRegex.test(inputValue) || inputValue === "") {
-                      setPriceWarning(false);
-                      setFamilyPackValue(inputValue);
-                      handleFilters(
-                        "family_pack",
-                        inputValue === "" ? null : parseInt(inputValue)
-                      );
-                    } else {
-                      setPriceWarning(true);
-                    }
-                  }}
-                  inputValue={familyPackValue}
-                  inputRef={inputRef}
-                /> */}
+                      if (numericRegex.test(inputValue) || inputValue === "") {
+                        setPriceWarning(false);
+                        setFamilyPackValue(inputValue);
+                        handleFilters(
+                          "family_pack",
+                          inputValue === "" ? null : parseInt(inputValue)
+                        );
+                      } else {
+                        setPriceWarning(true);
+                      }
+                    }}
+                    inputValue={familyPackValue}
+                    inputRef={inputRef}
+                  /> */}
                 </div>
                 <div className="search-by-familyPack-col-3-os">
                   SIMILAR VIP MOBILE NUMBER
