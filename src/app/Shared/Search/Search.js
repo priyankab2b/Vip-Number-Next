@@ -59,10 +59,10 @@ export const AppliedTags = ({ queryParams }) => {
     //   search: `?${searchParams(route)}`,
     // });
     router.push({
-      pathname: router?.pathname,
-      search: `?${nextQueryString}`,
+      pathname: pathname,
+      search: `?${searchParams(route)}`,
     });
-    
+    console.log("console after add pathname");
   };
   if (!Object.keys(curParams || {})?.length) {
     return;
@@ -240,10 +240,14 @@ const Search = ({ queryParams }) => {
   // console.log("queryParams :::", queryParams);
   // console.log("searchParams :::", searchParams);
   console.log("filters :::", filters);
+  // console.log("router :::", router);
+  // console.log("router.pathname :::", pathname);
 
   useEffect(() => {
     handleQueryString();
   }, [filters]);
+
+  console.log("nextQueryString ::", nextQueryString);
 
   useEffect(() => {
     inputRef.current.focus();
@@ -424,8 +428,8 @@ const Search = ({ queryParams }) => {
     const { min_price = undefined, max_price = undefined } = filters;
     setFilters({
       ...obj,
-      min_price,
-      max_price,
+      // min_price,
+      // max_price,
     });
   };
 
@@ -502,19 +506,19 @@ const Search = ({ queryParams }) => {
     }
   };
 
-//Price Search Min To Max
-const priceSunmit = (e) => {
-  e.preventDefault();
-  if (
-    filtersRef?.current?.min_price >= 0 &&
-    filtersRef?.current?.max_price > filtersRef?.current?.min_price
-  ) {
-    setPriceWarning(false);
-    getSearchResults();
-  } else {
-    setPriceWarning(true);
-  }
-};
+  //Price Search Min To Max
+  const priceSunmit = (e) => {
+    e.preventDefault();
+    if (
+      filtersRef?.current?.min_price >= 0 &&
+      filtersRef?.current?.max_price > filtersRef?.current?.min_price
+    ) {
+      setPriceWarning(false);
+      getSearchResults();
+    } else {
+      setPriceWarning(true);
+    }
+  };
 
   //Basic Search
   const handleSearchBasic = (e) => {
@@ -551,7 +555,6 @@ const priceSunmit = (e) => {
       .join("&");
     setNextQueryString(queryString);
   };
-  console.log("nextQueryString ::", nextQueryString);
 
   const globalhit = () => {
     console.log("globalhit");
@@ -619,7 +622,7 @@ const priceSunmit = (e) => {
   const handleFamilyPack = (e) => {
     e.preventDefault();
     setCallCount(callCount + 1);
-    navigate(
+    router.push(
       `/search-results?type=${"family_pack"}&searchBy=${"family_pack"}&fp_total=${familyPackValue}&callCount=${callCount}`
     );
     // console.log("Family pack handle", familyPackValue);

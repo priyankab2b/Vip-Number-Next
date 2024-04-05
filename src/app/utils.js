@@ -23,9 +23,9 @@ export const useGetQueryParams = () => {
         }
     }, [param, searchParams]);
 
-    console.log("utils queryParams ::", queryParams)
-    console.log("utils params ::", params)
-    console.log("utils param ::", param)
+    // console.log("utils queryParams ::", queryParams)
+    // console.log("utils params ::", params)
+    // console.log("utils param ::", param)
 
     return { queryParams, params };
 };

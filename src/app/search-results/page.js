@@ -66,6 +66,24 @@ const SearchResults = () => {
   const [nextPage, setNextPage] = useState();
   const [lazy, setLazy] = useState();
 
+  // 
+  const [queryParams1, setQueryParams1] = useState({});
+
+  useEffect(() => {
+    // Parse query parameters from window.location.search
+    const searchParams = new URLSearchParams(window.location.search);
+    const params = {};
+    for (const [key, value] of searchParams) {
+      params[key] = value;
+    }
+    setQueryParams1(params);
+  }, []);
+
+  const { type, searchBy, number } = queryParams1;
+  console.log("queryParams1 :::", queryParams1)
+  console.log("queryParams :::", queryParams)
+  
+  // 
   const resetAll = () => {
     setSearchResults();
     setSearchprice();
@@ -74,6 +92,7 @@ const SearchResults = () => {
     setContainSearch();
     SetAdSearch();
   };
+
 
   useEffect(() => {
     if (queryParams) {
