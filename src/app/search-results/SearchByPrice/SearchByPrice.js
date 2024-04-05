@@ -3,12 +3,13 @@ import MainHeading from "../../Shared/MainHeading/MainHeading";
 import crown from "../../Assets/heading-crown-icon.svg";
 import Card from "../../Shared/Card/Card";
 import ViewMoreButton from "../../Shared/ViewMoreButton/ViewMoreButton";
+import "../../home/FeaturedNumber/FeaturedNumber.css";
 
-const SearchByPrice = ({ results, page, nextPage }) => {
+const SearchByPrice = ({ results, page, nextPage, searchNextUrl }) => {
   return (
     <>
       {results.length !== 0 && (
-        <section className="FamilyPack-section-os SearchByPrice-section-os">
+        <section className="SearchByPrice-section-os default-section-os">
           <div className="container-os">
             <div className="featured-number-heading-os">
               <MainHeading
@@ -73,18 +74,23 @@ const SearchByPrice = ({ results, page, nextPage }) => {
                         seller_type={product.seller_type}
                         rtp_date={product.rtp_date}
                         card_btn_text={product.card_btn_text}
+                        compare_at_price={product.compare_at_price}
+                        comingsoon={product.comingsoon}
+                        comingsoon_date={product.comingsoon_date}
                       />
                     );
                   })}
                 </div>
-                <div className="default-loadMore-button-os">
-                  <ViewMoreButton
-                    title="View More"
-                    onClick={() => {
-                      nextPage();
-                    }}
-                  />
-                </div>
+                {results.length > 0 && nextPage && searchNextUrl && (
+                  <div className="default-loadMore-button-os">
+                    <ViewMoreButton
+                      title="View More"
+                      onClick={() => {
+                        nextPage();
+                      }}
+                    />
+                  </div>
+                )}
               </div>
             ) : (
               <p style={{ textAlign: "center" }}>Oops! No data found.</p>

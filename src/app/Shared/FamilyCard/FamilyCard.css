@@ -79,7 +79,7 @@
   margin-top: 12px;
 }
 .family-card-plan-price-os {
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
@@ -87,7 +87,7 @@
   color: #6019eb;
 }
 .family-card-plan-by-selector-os {
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 12.2395px;

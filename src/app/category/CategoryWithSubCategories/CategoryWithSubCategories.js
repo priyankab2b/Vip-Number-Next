@@ -113,7 +113,6 @@ const CategoryWithSubCategories = ({
       });
   };
   // console.log("filteredDatafilteredData1111", filteredData);
-  
 
   if (isLoading || !id || !subCategory) {
     return (
@@ -167,6 +166,8 @@ const CategoryWithSubCategories = ({
                   card_btn_text={items?.card_btn_text}
                   buttonTitle="Buy Now"
                   compare_at_price={items?.compare_at_price}
+                  comingsoon={items?.comingsoon}
+                  comingsoon_date={items?.comingsoon_date}
                 />
               );
             })}

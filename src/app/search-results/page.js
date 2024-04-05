@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useContext, useEffect, useState } from "react";
 import Header from "../Shared/Header/Header";
 import MobileHeader from "../Shared/MobileHeader/MobileHeader";
@@ -24,7 +24,7 @@ import VideoTestimonial from "../Shared/VideoTestimonial/VideoTestimonial";
 import RegisterVipNumber from "../home/RegisterVipNumber/RegisterVipNumber";
 import QRVipApp from "../Shared/QRVipApp/QRVipApp";
 import { NotificationManager } from "react-notifications";
-// import FamilyPackResult from "../FamilyPackResult/FamilyPackResult";
+import FamilyPackResult from "./FamilyPackResult/FamilyPackResult";
 import FilterTabs from "../Shared/FilterTabs/FilterTabs";
 import { AppStateContext } from "../contexts/AppStateContext/AppStateContext";
 // import { useNavigate } from "react-router-dom";
@@ -33,7 +33,11 @@ import { MyRegisterSignInContext } from "../contexts/MyRegisterSignInContext/MyR
 import axios from "axios";
 // Images
 import RegisterImg1 from "../Assets/assurance-register-img.svg";
-import { checkAscendingOrDescendingBy5, checkForSamePattern, count_repeating_digits } from "../utils/comman";
+import {
+  checkAscendingOrDescendingBy5,
+  checkForSamePattern,
+  count_repeating_digits,
+} from "../utils/comman";
 export const SearchContext = React.createContext(null);
 
 const BannerText = {
@@ -47,8 +51,8 @@ const BannerText = {
   price: {
     price: "Search by Price",
   },
-  family: {
-    family: "Search for Family Pack",
+  family_pack: {
+    family_pack: "Search for Family Pack",
   },
 };
 
@@ -60,30 +64,19 @@ const SearchResults = () => {
   const [digit, setDigit] = useState([]);
   const [containSearch, setContainSearch] = useState([]);
   const [adSearch, SetAdSearch] = useState([]);
+  const [familyPack, SetFamilyPack] = useState([]);
   const { user, setRedirectTo, userProfile } = useContext(AppStateContext);
-  const navigate = useRouter();
+  const Router = useRouter();
   const { setActiveSignInWithOtp } = useContext(MyRegisterSignInContext);
   const [nextPage, setNextPage] = useState();
+  const [searchNextUrl, setsSearchNextUrl] = useState();
   const [lazy, setLazy] = useState();
-
-  // 
-  const [queryParams1, setQueryParams1] = useState({});
+  const [familyPackParamDigit, setFamilyPackParamDigit] = useState(null);
 
   useEffect(() => {
-    // Parse query parameters from window.location.search
-    const searchParams = new URLSearchParams(window.location.search);
-    const params = {};
-    for (const [key, value] of searchParams) {
-      params[key] = value;
-    }
-    setQueryParams1(params);
-  }, []);
+    setFamilyPackParamDigit(queryParams?.fp_total);
+  }, [queryParams]);
 
-  const { type, searchBy, number } = queryParams1;
-  console.log("queryParams1 :::", queryParams1)
-  console.log("queryParams :::", queryParams)
-  
-  // 
   const resetAll = () => {
     setSearchResults();
     setSearchprice();
@@ -91,10 +84,13 @@ const SearchResults = () => {
     setDigit();
     setContainSearch();
     SetAdSearch();
+    SetFamilyPack();
   };
 
-
   useEffect(() => {
+    const storedResLength = localStorage.getItem("resLength");
+    const initialBasicChecked =
+      storedResLength && parseInt(storedResLength, 10) <= 2;
     if (queryParams) {
       let params = { ...queryParams };
       delete params.type;
@@ -102,11 +98,12 @@ const SearchResults = () => {
       delete params.callCount;
       delete params.page;
       if (queryParams?.type === "basic") {
-        params.seller = queryParams?.seller || "";
+        params.seller = queryParams?.seller || "PREMIUM";
+        // params.seller = initialBasicChecked ? "BASIC,PREMIUM" : "PREMIUM";
         const { min_price, max_price, sort, seller, sum, total } = params;
         params = {
           [params?.basicSearchtype]: params.number,
-          min_price ,
+          min_price,
           max_price,
           sort,
           seller,
@@ -121,8 +118,10 @@ const SearchResults = () => {
         queryParams?.type === "exactPlacement" ||
         queryParams?.type === "mostContained"
       ) {
-        params.seller = queryParams?.seller || "";
+        params.seller = queryParams?.seller || "PREMIUM";
+        // params.seller = initialBasicChecked ? "BASIC,PREMIUM" : "PREMIUM";
       }
+
       resetAll();
       SearchAPI(
         queryParams?.type || queryParams?.searchBy,
@@ -131,6 +130,13 @@ const SearchResults = () => {
         queryParams?.page,
         setLazy
       )?.then((res) => {
+        // Save the length of the res array in localStorage
+        if (res?.data) {
+          const resLength = res.data.length;
+          localStorage.setItem("resLength", resLength);
+        }
+
+        setsSearchNextUrl(res?.nextURL);
         if (
           res?.bronze?.data?.length === 0 &&
           res?.globalBasic?.data?.length &&
@@ -140,16 +146,22 @@ const SearchResults = () => {
         ) {
           // If following the first pattern same pattern eg. 1234512345
           if (checkForSamePattern(params?.number)) {
-            console.log("fisrt condition check :::")
-            navigate.push(`https://www.vipnumbershop.com/category/customer-care-numbers`)
+            console.log("fisrt condition check :::");
+            Router.push(
+              `https://www.vipnumbershop.com/category/customer-care-numbers`
+            );
           }
           // if following the second conditions repeating eg. 4242424242
           else if (count_repeating_digits(params?.number)) {
-            navigate.push(`https://www.vipnumbershop.com/category/xy-xy-fancy-mobile-number`)
+            Router.push(
+              `https://www.vipnumbershop.com/category/xy-xy-fancy-mobile-number`
+            );
           }
           // if following the third conditions eg. 7071727374
           else if (checkAscendingOrDescendingBy5(params?.number)) {
-            navigate.push(`https://www.vipnumbershop.com/category/ascending-descending-fancy-number`)
+            Router.push(
+              `https://www.vipnumbershop.com/category/ascending-descending-fancy-number`
+            );
           }
         } else {
           updateProfile(
@@ -160,15 +172,16 @@ const SearchResults = () => {
             },
             user?.token
           )
-            .then((res) => { })
+            .then((res) => {})
             .catch((error) => {
               console.error("Error Price Blocked:", error);
             });
-          if (!res) {
+          if (!res && !queryParams?.searchBy === "family_pack") {
             NotificationManager.error(
-              "Something went wrong. Please try again later"
+              "Something went wrong. Please try again laterrrrrrrrr"
             );
           }
+
           setNextPage(res?.nextURL);
           if (queryParams?.type === "advanced") {
             SetAdSearch(res.data);
@@ -186,10 +199,22 @@ const SearchResults = () => {
           } else if (queryParams?.type === "mostContained") {
             setContainSearch(res.data);
           }
+
+          // // family pack search
+          // else if (queryParams?.type === "family_pack") {
+          //   const shouldShowNotification = false;
+
+          //   if (shouldShowNotification) {
+          //     NotificationManager.success("No message");
+          //   }
+          // }
         }
       });
     }
   }, [queryParams, userProfile]);
+  // console.log("useEffect nextPage :", nextPage);
+  // console.log("useEffect searchNextUrl :", searchNextUrl);
+  // console.log("useEffect besSeach :", besSeach);
 
   const globalLazy = (key, url) => {
     let params = { ...queryParams };
@@ -218,6 +243,7 @@ const SearchResults = () => {
         });
       });
   };
+
   const lazyload = () => {
     let params = { ...queryParams };
     delete params.type;
@@ -225,8 +251,8 @@ const SearchResults = () => {
     delete params.callCount;
     delete params.page;
     if (queryParams?.type === "basic") {
-      params.seller = queryParams?.seller;
-      const { min_price , max_price, sort, seller, sum, total } = params;
+      params.seller = queryParams?.seller || "PREMIUM";
+      const { min_price, max_price, sort, seller, sum, total } = params;
       params = {
         [params?.basicSearchtype]: params.number,
         min_price,
@@ -237,6 +263,7 @@ const SearchResults = () => {
         total,
       };
     }
+
     if (
       queryParams?.type === "advanced" ||
       queryParams?.searchBy === "price" ||
@@ -244,7 +271,7 @@ const SearchResults = () => {
       queryParams?.type === "exactPlacement" ||
       queryParams?.type === "mostContained"
     ) {
-      params.seller = queryParams?.seller;
+      params.seller = queryParams?.seller || "PREMIUM";
     }
     SearchAPI(
       queryParams?.type || queryParams?.searchBy,
@@ -258,7 +285,9 @@ const SearchResults = () => {
           "Something went wrong. Please try again later"
         );
       }
+
       setNextPage(res?.nextURL);
+
       if (queryParams?.type === "advanced") {
         SetAdSearch([...adSearch, ...res.data]);
       } else if (queryParams?.type === "basic") {
@@ -274,9 +303,58 @@ const SearchResults = () => {
         setDigit([...digit, ...res.data]);
       } else if (queryParams?.type === "mostContained") {
         setContainSearch([...containSearch, ...res.data]);
+      } else if (queryParams?.type === "family_pack") {
+        SetFamilyPack([...familyPack, ...res.data]);
       }
+      console.log("nextPage :", nextPage);
+      console.log("nextPage :", nextPage);
+      console.log("Resssssssss :", res);
     });
   };
+
+  // const filteredPlatinumData = searchResults?.platinum?.data?.filter((item) => {
+  //   const startWithDigits = queryParams?.start_with?.split(',').map(digit => digit.trim());
+  //   return startWithDigits?.some(digit => item?.number?.startsWith(digit));
+  // });
+
+  const filteredPlatinumData = searchResults?.platinum?.data?.filter((item) => {
+    const startWithDigits = queryParams?.start_with
+      ?.split(",")
+      .map((digit) => digit.trim());
+    if (startWithDigits && startWithDigits.length > 0 && item?.number) {
+      return startWithDigits.some((digit) => item?.number?.startsWith(digit));
+    }
+    return true;
+  });
+
+  const filteredGoldData = searchResults?.gold?.data?.filter((item) => {
+    const startWithDigits = queryParams?.start_with
+      ?.split(",")
+      .map((digit) => digit.trim());
+    if (startWithDigits && startWithDigits.length > 0 && item?.number) {
+      return startWithDigits.some((digit) => item?.number?.startsWith(digit));
+    }
+    return true;
+  });
+
+  const filteredSilverData = searchResults?.silver?.data?.filter((item) => {
+    const startWithDigits = queryParams?.start_with
+      ?.split(",")
+      .map((digit) => digit.trim());
+    if (startWithDigits && startWithDigits.length > 0 && item?.number) {
+      return startWithDigits.some((digit) => item?.number?.startsWith(digit));
+    }
+    return true;
+  });
+  const filteredBronzeData = searchResults?.bronze?.data?.filter((item) => {
+    const startWithDigits = queryParams?.start_with
+      ?.split(",")
+      .map((digit) => digit.trim());
+    if (startWithDigits && startWithDigits.length > 0 && item?.number) {
+      return startWithDigits.some((digit) => item?.number?.startsWith(digit));
+    }
+    return true;
+  });
 
   return (
     <div className="SearchResult-page-os">
@@ -320,11 +398,12 @@ const SearchResults = () => {
             results={adSearch}
             nextPage={lazyload}
             page={"adSearch"}
+            searchNextUrl={nextPage}
           />
         ) : null}
         {searchResults?.platinum?.data?.length >= 0 ? (
           <PlatinumResult
-            results={searchResults.platinum.data}
+            results={filteredPlatinumData}
             nextPage={() => {
               globalLazy("platinum", lazy?.platinum);
             }}
@@ -335,7 +414,7 @@ const SearchResults = () => {
 
         {searchResults?.gold?.data?.length >= 0 ? (
           <GoldResult
-            results={searchResults.gold.data}
+            results={filteredGoldData}
             nextPage={() => {
               globalLazy("gold", lazy?.gold);
             }}
@@ -346,7 +425,7 @@ const SearchResults = () => {
 
         {searchResults?.silver?.data?.length >= 0 ? (
           <SilverResult
-            results={searchResults.silver.data}
+            results={filteredSilverData}
             nextPage={() => {
               globalLazy("silver", lazy?.silver);
             }}
@@ -357,7 +436,7 @@ const SearchResults = () => {
 
         {searchResults?.bronze?.data?.length >= 0 ? (
           <BronzeResult
-            results={searchResults.bronze.data}
+            results={filteredBronzeData}
             nextPage={() => {
               globalLazy("bronze", lazy?.bronze);
             }}
@@ -381,14 +460,19 @@ const SearchResults = () => {
             results={seracPrice}
             page={"seracPrice"}
             nextPage={lazyload}
+            searchNextUrl={nextPage}
           />
         ) : null}
-        {besSeach?.length >= 0 ? <BasicSearch nextPage={lazyload} /> : null}
+        {besSeach?.length >= 0 ? (
+          // <BasicSearch nextPage={lazyload} searchNextUrl={searchNextUrl} />
+          <BasicSearch nextPage={lazyload} searchNextUrl={nextPage} />
+        ) : null}
         {digit?.length ? (
           <ExactDigitPlacementSearch
             results={digit}
             page={"digit"}
             nextPage={lazyload}
+            searchNextUrl={nextPage}
           />
         ) : null}
         {containSearch?.length >= 0 ? (
@@ -396,10 +480,13 @@ const SearchResults = () => {
             results={containSearch}
             page={"containSearch"}
             nextPage={lazyload}
+            searchNextUrl={nextPage}
           />
         ) : null}
 
-        {/* <FamilyPackResult /> */}
+        {familyPackParamDigit && (
+          <FamilyPackResult familyPackParamDigit={familyPackParamDigit} />
+        )}
       </SearchContext.Provider>
       <FAQs />
       <OurCustomers />
@@ -413,7 +500,7 @@ const SearchResults = () => {
         onClick={() => {
           !user?.token && setRedirectTo("/suggestion-for-you");
           !user?.token && setActiveSignInWithOtp(true);
-          user?.token && navigate.push("/suggestion-for-you");
+          user?.token && Router.push("/suggestion-for-you");
         }}
       />
       <QRVipApp />

@@ -1,67 +1,156 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import MainHeading from "../../Shared/MainHeading/MainHeading";
-// import './FamilyMemberOffers.css';
+import MainSubHeading from "../../Shared/MainSubHeading/MainSubHeading";
+import "../../home/FamilyPack/FamilyPack.css";
+import axios from "axios";
 import FamilyCard from "../../Shared/FamilyCard/FamilyCard";
-import { FamilyPackArrayDummyData } from "../../home/FamilyPack/FamlyDummyData";
+import "./FamilyPackResult.css";
+
+// Slider
+import FamilyPackSlider from "react-slick";
 
 // Images
-import Crown from "../../Assets/crown-icon1.svg";
-import BuyNowButton from "../../Shared/BuyNowButton/BuyNowButton";
+import crown from "../../Assets/heading-crown-icon.svg";
+import ViewMoreButton from "../../Shared/ViewMoreButton/ViewMoreButton";
+import { useLocation } from "react-router";
 
-const FamilyPackResult = () => {
-  const [numFamilyMembers, setNumFamilyMembers] = useState(1);
+// Images
+import brandIcon from "../../Assets/VIP-icon-2.svg";
 
-  const handleSelectChange = (event) => {
-    setNumFamilyMembers(parseInt(event.target.value));
+//Pagination data per page
+const ITEMS_PER_PAGE = 36;
+const FamilyPack = ({ familyPackParamDigit }) => {
+  // const [count, setCount] = useState(2);
+  const [apiData, setApiData] = useState({});
+  const [currentPage, setCurrentPage] = useState(1);
+  const [isLoading, setIsLoading] = useState(true);
+
+  //Load data per page function
+  const loadMoreData = () => {
+    setCurrentPage((prevPage) => prevPage + 1);
   };
-  const handleBuyNow = () => {
-    alert("LoadMore is working");
+
+  //Api data structure
+  useEffect(() => {
+    setApiData({});
+    axios
+      .get(
+        `https://admin.leafymango.com/web/familypack?fp_total=${familyPackParamDigit}&paginate=${ITEMS_PER_PAGE}&page=${currentPage}`
+      )
+      .then((response) => {
+        //setApiData(response.data);
+        setApiData((prevData) => ({
+          ...prevData,
+          ...response.data,
+        }));
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }, [familyPackParamDigit, currentPage]);
+
+  // slider
+  const FamilyPackSettings = {
+    dots: false,
+    arrows: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    adaptiveHeight: false,
+    autoplay: true,
+    responsive: [
+      {
+        breakpoint: 1028,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: false,
+          dots: true,
+          arrows: false,
+        },
+      },
+    ],
   };
+
+  // Convert apiData to an array of items
+  const apiDataArray = Object.values(apiData);
+
+  // Check if there are more items to load
+  const hasMoreData = apiDataArray.length > currentPage * ITEMS_PER_PAGE;
+
   return (
-    <>
-      <div className="FamilyPackResult-section-os">
-        <section className="FamilyMemberOffers-section-os">
-          {/* <div className="container-os">
-        <div className="FamilyMemberOffers-heading-data-os">
-            <div className="FamilyPack-select-variants-col-os">Family pack of
-                <div className="FamilyPack-variant-selector-os">
-                    <select onChange={handleSelectChange} >
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                    </select>
-                </div>
-            </div>
-            <div className="FamilyMemberOffers-heading-os">
-                <MainHeading MainHeading='Family Numbers' rightImage={Crown} />
-            </div>
-           
-                <div className="FamilyPack-select-variants-col-os-1">Apply Filters
-                    <div className="FamilyPack-variant-selector-os-1">
-                        <select>
-
-                            <option value="1">Hight to low</option>
-                            <option value="2">Low to high</option>
-                        </select>
-                    </div>
-                </div>
-            </></div><div className="FamilyMemberOffers-data-row-os">
-                {FamilyPackArrayDummyData.slice(0, numFamilyMembers).map((item, index) => (
-                    <FamilyCard key={index} {...item} />
+    <section className="FamilyPack-section-os">
+      <div className="container-os">
+        {/* Family Pack test */}
+        <div className="FamilyPack-heading-os">
+          <MainHeading
+            MainHeading="Family & Business Pack"
+            rightImage={crown}
+          />
+          <MainSubHeading MainSubHeadingText="VIP Numbers are available for Two to Nine family or Business members" />
+        </div>
+        <div className="FamilyPack-select-variants-row-os">
+          {/* <div className="FamilyPack-select-variants-col-os">
+            Family pack of
+            <div className="FamilyPack-variant-selector-os">
+              <select
+                value={count}
+                onChange={(e) => setCount(Number(e?.target?.value))}
+              >
+                {Array.from({ length: 8 }, (_, i) => (
+                  <option key={i + 2} value={i + 2}>
+                    {i + 2}
+                  </option>
                 ))}
-            </div><div className="default-loadMore-button-os">
-                <BuyNowButton buttonTitle='Load More' onclickHandle={handleBuyNow} />
-            </div></>
-                </div> */}
-        </section>
+              </select>
+            </div>
+          </div> */}
+
+          {isLoading ? (
+            <div className="loader-os">
+              <img src={brandIcon} alt="" />
+            </div>
+          ) : (
+            <>
+              <div className="FamilyPack-plan-row-os">
+                {apiDataArray
+                  .slice(0, currentPage * ITEMS_PER_PAGE)
+                  .map((groupItems, index) => (
+                    <FamilyCard
+                      key={index}
+                      count={familyPackParamDigit}
+                      apiData={groupItems} // Pass the group's data as a prop
+                    />
+                  ))}
+              </div>
+              {hasMoreData && (
+                <div className="default-viewMore-btn-os">
+                  <ViewMoreButton title={"Load more"} onClick={loadMoreData} />
+                </div>
+              )}
+            </>
+          )}
+        </div>
       </div>
-    </>
+    </section>
   );
 };
 
-export default FamilyPackResult;
+export default FamilyPack;

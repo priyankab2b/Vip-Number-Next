@@ -3,7 +3,7 @@ import "./Search.css";
 import SearchFilterInput from "../SearchFilterInput/SearchFilterInput";
 import SearchFilterButton from "../SearchFilterButton/SearchFilterButton";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
-// import { createSearchParams, useLocation, useNavigate } from "react-router-dom";
+import { createSearchParams } from "react-router-dom";
 import MobileSearch from "../MobileSearch/MobileSearch";
 import { updateProfile } from "../../Services/Services";
 import { AppStateContext } from "../../contexts/AppStateContext/AppStateContext";
@@ -58,12 +58,11 @@ export const AppliedTags = ({ queryParams }) => {
     //   pathname: router?.pathname,
     //   search: `?${searchParams(route)}`,
     // });
-    router.push({
-      pathname: pathname,
-      search: `?${searchParams(route)}`,
-    });
-    console.log("console after add pathname");
+
+    const queryString = createSearchParams(route).toString();
+    router.push(`${pathname}?${queryString}`);
   };
+
   if (!Object.keys(curParams || {})?.length) {
     return;
   }
@@ -214,7 +213,6 @@ const Search = ({ queryParams }) => {
   const [exactPlacementError, setExactPlacementError] = useState(false);
   const [showError, setShowError] = useState(false);
   const [showCheckboxWarning, setShowCheckboxWarning] = useState(false);
-  const [nextQueryString, setNextQueryString] = useState();
   // const [searchBy, setSearchBy] = useState(
   //   router.pathname === "/search-your-number" ? "digit" : "price"
   // );
@@ -236,18 +234,8 @@ const Search = ({ queryParams }) => {
   // auto-focus
   const inputRef = useRef(null);
   const inputRef1 = useRef(null);
-
-  // console.log("queryParams :::", queryParams);
-  // console.log("searchParams :::", searchParams);
-  console.log("filters :::", filters);
-  // console.log("router :::", router);
-  // console.log("router.pathname :::", pathname);
-
-  useEffect(() => {
-    handleQueryString();
-  }, [filters]);
-
-  console.log("nextQueryString ::", nextQueryString);
+  
+  // console.log("filters :::", filters);
 
   useEffect(() => {
     inputRef.current.focus();
@@ -406,13 +394,15 @@ const Search = ({ queryParams }) => {
     if (!navObj?.min_price) delete navObj.min_price;
     if (!navObj?.max_price) delete navObj.max_price;
 
-    console.log("navObj ::", navObj);
+    
+    const queryString = createSearchParams(navObj).toString();
+    router.push(`/search-results?${queryString}`);
+    // console.log("queryString ::", queryString);
+
     // router.push({
     //   pathname: "/search-results",
     //   search: `?${searchParams(navObj)}`,
     // });
-
-    router.push(`/search-results?${nextQueryString}`);
   };
 
   const handleFilters = (key, value) => {
@@ -545,17 +535,6 @@ const Search = ({ queryParams }) => {
   };
   const handlePriceRange = (value) => {};
 
-  // Constructing the query string
-  const handleQueryString = () => {
-    const queryString = Object.keys(filters)
-      .map(
-        (key) =>
-          `${encodeURIComponent(key)}=${encodeURIComponent(filters[key])}`
-      )
-      .join("&");
-    setNextQueryString(queryString);
-  };
-
   const globalhit = () => {
     console.log("globalhit");
     if (!filters?.number) {
@@ -563,8 +542,7 @@ const Search = ({ queryParams }) => {
       return;
     }
     setPriceWarning(false);
-    // setPriceRangePopup(true);
-    router.push(`/search-results?${nextQueryString}`);
+    setPriceRangePopup(true);
   };
 
   const basicHit = () => {

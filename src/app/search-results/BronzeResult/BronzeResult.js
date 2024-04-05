@@ -3,6 +3,7 @@ import MainHeading from "../../Shared/MainHeading/MainHeading";
 import crown from "../../Assets/heading-crown-icon.svg";
 import Card from "../../Shared/Card/Card";
 import ViewMoreButton from "../../Shared/ViewMoreButton/ViewMoreButton";
+import "../../home/FeaturedNumber/FeaturedNumber.css";
 
 const BronzeResult = ({ results, nextPage, viewLoadMore }) => {
   return (
@@ -78,6 +79,9 @@ const BronzeResult = ({ results, nextPage, viewLoadMore }) => {
                           seller_type={product.seller_type}
                           rtp_date={product.rtp_date}
                           card_btn_text={product.card_btn_text}
+                          compare_at_price={product.compare_at_price}
+                          comingsoon={product.comingsoon}
+                          comingsoon_date={product.comingsoon_date}
                         />
                       );
                     })}

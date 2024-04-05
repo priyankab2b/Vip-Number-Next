@@ -3,6 +3,7 @@ import MainHeading from "../../MainHeading/MainHeading";
 import ViewMoreButton from "../../../Shared/ViewMoreButton/ViewMoreButton";
 import Card from "../../Card/Card";
 import "./TabNumberData.css";
+import "../../../home/FeaturedNumber/FeaturedNumber.css";
 
 // Images
 import crown from "../../../Assets/heading-crown-icon.svg";

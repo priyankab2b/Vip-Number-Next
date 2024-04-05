@@ -129,11 +129,15 @@ const FeaturedNumber = () => {
                   seller_type={product.seller_type}
                   rtp_date={product.rtp_date}
                   buttonTitle="Buy Now"
+                  comingsoon={product.comingsoon}
+                  comingsoon_date={product.comingsoon_date}
                 />
               );
             })}
           </div>
-        ) : ("")}
+        ) : (
+          ""
+        )}
         {/* Mobile slider */}
         <div className="featured-number-mobile-data-os">
           <CardSlider {...cardSliderSettings}>
@@ -187,6 +191,8 @@ const FeaturedNumber = () => {
                     seller_type={product.seller_type}
                     rtp_date={product.rtp_date}
                     buttonTitle="Buy Now"
+                    comingsoon={product.comingsoon}
+                    comingsoon_date={product.comingsoon_date}
                   />
                 );
               })

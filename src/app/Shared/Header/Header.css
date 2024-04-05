@@ -238,6 +238,14 @@
   width: 120px;
   justify-content: center;
 }
+.MobileHeader-whatsapp-contact button {
+  background: #f4f4f9;
+  border-radius: 3px;
+  display: flex;
+  padding: 4px;
+  width: auto;
+  min-height: auto;
+}
 
 .header-section-os {
   display: block;

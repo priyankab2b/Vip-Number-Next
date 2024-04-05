@@ -3,17 +3,26 @@ import MainHeading from "../../Shared/MainHeading/MainHeading";
 import crown from "../../Assets/heading-crown-icon.svg";
 import Card from "../../Shared/Card/Card";
 import ViewMoreButton from "../../Shared/ViewMoreButton/ViewMoreButton";
+import "../../home/FeaturedNumber/FeaturedNumber.css";
 
-const AdvanceSearch = ({ results, page, loadMore, nextPage }) => {
+const AdvanceSearch = ({
+  results,
+  page,
+  loadMore,
+  nextPage,
+  searchNextUrl,
+}) => {
   const [hasMoreResults, setHasMoreResults] = useState(true);
 
   useEffect(() => {
-    setHasMoreResults(results?.length % 10 === 0);
-  }, [results]);
+    // Check if results exist and if nextURL exists in the API response
+    setHasMoreResults(results?.length > 0 && nextPage !== null);
+  }, [results, nextPage]);
+
   return (
     <>
       {results.length !== 0 && (
-        <section className="FamilyPack-section-os AdvanceSearch-section-os">
+        <section className="AdvanceSearch-section-os default-section-os">
           <div className="container-os">
             <div className="featured-number-heading-os">
               <MainHeading
@@ -86,14 +95,27 @@ const AdvanceSearch = ({ results, page, loadMore, nextPage }) => {
                           seller_type={product.seller_type}
                           rtp_date={product.rtp_date}
                           card_btn_text={product.card_btn_text}
+                          compare_at_price={product.compare_at_price}
+                          comingsoon={product.comingsoon}
+                          comingsoon_date={product.comingsoon_date}
                         />
                       );
                     })}
                   </div>
-                  {hasMoreResults && (
+                  {/* {hasMoreResults && (
                     <div className="default-loadMore-button-os">
                       <ViewMoreButton
                         title="View More"
+                        onClick={() => {
+                          nextPage();
+                        }}
+                      />
+                    </div>
+                  )} */}
+                  {results.length > 0 && nextPage && searchNextUrl && (
+                    <div className="default-loadMore-button-os">
+                      <ViewMoreButton
+                        title={"Load more"}
                         onClick={() => {
                           nextPage();
                         }}
