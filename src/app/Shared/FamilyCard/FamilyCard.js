@@ -729,7 +729,7 @@ const FamilyCard = ({ count, apiData }) => {
     <div className="number-card-os family-card-os">
       <div
         className="number-card-main-row-os"
-        style={{ paddingTop: mappedDataRtpDate && timeLefts ? "3rem" : null }}
+        // style={{ paddingTop: mappedDataRtpDate && timeLefts ? "3rem" : null }}
       >
         {mappedDataRtpDate && timeLefts && (
           <div className="number-card-timer-data-os">

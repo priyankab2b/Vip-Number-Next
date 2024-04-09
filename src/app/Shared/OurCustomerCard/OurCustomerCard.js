@@ -7,7 +7,7 @@ const OurCustomerCard = (props) => {
     <div className="OurCustomerCard-os">
       <div className="OurCustomerCard-col-os">
         <div className="OurCustomerCard-image-os">
-          <Image src={props.Image} alt="" />
+          <Image src={props.image} alt="" />
         </div>
         <p>{props.text}</p>
         <h5>{props.name}</h5>

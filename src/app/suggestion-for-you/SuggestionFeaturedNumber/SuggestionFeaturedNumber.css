@@ -43,7 +43,7 @@
   padding: 8px 16px;
   cursor: pointer;
   appearance: none;
-  background-image: url("../../../Assets/selectArrow.svg");
+  background-image: url("../../Assets/selectArrow.svg");
   background-size: 20px 20px;
   background-repeat: no-repeat;
   background-position: 50% 50%;

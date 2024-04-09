@@ -1,6 +1,8 @@
+"use client";
 import React, { useState, useEffect } from "react";
 import MainHeading from "../../Shared/MainHeading/MainHeading";
 import MainSubHeading from "../../Shared/MainSubHeading/MainSubHeading";
+import "../../Shared/Card/Card.css";
 import "./FamilyPack.css";
 import axios from "axios";
 import FamilyCard from "../../Shared/FamilyCard/FamilyCard";

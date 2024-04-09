@@ -1,16 +1,15 @@
 import React from "react";
 import "./OurCustomers.css";
-import MainHeading from "../../Shared/MainHeading/MainHeading";
-import MainSubHeading from "../../Shared/MainSubHeading/MainSubHeading";
 import CustomerSlider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import OurCustomerCard from "../../Shared/OurCustomerCard/OurCustomerCard";
 
 // Image
 import crown from "../../Assets/heading-crown-icon.svg";
 // import faqsIcon from '../../../Assets/faqs-icon.svg';
 import quoteIcon from "../../Assets/quotes.png";
+import MainHeading from "../MainHeading/MainHeading";
+import OurCustomerCard from "../OurCustomerCard/OurCustomerCard";
 
 const OurCustomers = () => {
   // slider
@@ -55,22 +54,22 @@ const OurCustomers = () => {
         <div className="OurCustomers-slider-row-os">
           <CustomerSlider {...CustomerSliderSettings}>
             <OurCustomerCard
-              Image={quoteIcon}
+              image={quoteIcon}
               text="I recently purchased a VIP mobile number from VIP Number Shop. I am very happy by the level of service provided. The process was smooth and easy, and I was able to choose the perfect number for me!"
               name="Sneha Patel"
             />
             <OurCustomerCard
-              Image={quoteIcon}
+              image={quoteIcon}
               text="I highly recommend VIP Number Shop to anyone in search of a unique and personalized VIP mobile number. The website offers a vast selection of options to choose from, and the customer service is exceptional."
               name="Vikram Khanna"
             />
             <OurCustomerCard
-              Image={quoteIcon}
+              image={quoteIcon}
               text="I was hesitant to spend money on a VIP mobile number, but the quality of service and attention to detail I received from VIP Number Shop made it worth every penny. My new number has become a conversation starter among my friends."
               name="Rohini Chakraborty"
             />
             <OurCustomerCard
-              Image={quoteIcon}
+              image={quoteIcon}
               text="I had a fantastic experience purchasing a VIP mobile number from this website. The website was easy to navigate, and the support team was quick to respond to any questions I had. I couldn't be happier with my new number."
               name="Ravi Kumar Reddy"
             />

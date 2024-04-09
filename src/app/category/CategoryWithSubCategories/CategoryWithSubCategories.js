@@ -128,7 +128,7 @@ const CategoryWithSubCategories = ({
 
   return (
     <div>
-      <section className="SuggestionFeaturedNumber-section-os">
+      <section className="SuggestionFeaturedNumber-section-os default-section-os">
         <div className="container-os">
           <div className="featured-number-heading-os">
             <MainHeading MainHeading={subCategory} rightImage={crownIcon} />

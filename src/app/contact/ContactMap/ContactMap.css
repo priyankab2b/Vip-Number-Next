@@ -1,0 +1,31 @@
+.ContactMap-heading-os {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22.46px;
+  line-height: 34px;
+  text-align: center;
+  color: #333333;
+  padding-bottom: 2rem;
+}
+.ContactMap-section-os {
+  padding: 3rem 0 5rem;
+  background: #f7f2ff;
+}
+.ContactMap-row-os iframe {
+  filter: drop-shadow(0px 4px 30px rgba(0, 0, 0, 0.15));
+  border-radius: 11px;
+  border: none;
+  width: 100%;
+  min-height: 600px;
+}
+
+@media screen and (max-width: 576px) {
+  .ContactMap-row-os iframe {
+    width: 100%;
+    min-height: 250px;
+  }
+  .ContactMap-section-os {
+    padding: 3rem 0;
+  }
+}

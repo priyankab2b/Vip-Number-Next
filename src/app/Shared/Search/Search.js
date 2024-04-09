@@ -1,3 +1,4 @@
+"use client"
 import React, { useState, useEffect, useRef, useContext } from "react";
 import "./Search.css";
 import SearchFilterInput from "../SearchFilterInput/SearchFilterInput";

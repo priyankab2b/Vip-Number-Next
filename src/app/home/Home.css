@@ -99,22 +99,7 @@
   bottom: 4px;
   left: 25%;
 }
-.defaultPage-search-section-os {
-  width: 70%;
-  margin: -6rem auto 5rem;
-}
 
-@media only screen and (max-width: 1600px) {
-  .defaultPage-search-section-os {
-    width: 85%;
-  }
-}
-@media screen and (max-width: 1028px) {
-  .defaultPage-search-section-os {
-    width: 95%;
-    margin: -3rem auto 5rem;
-  }
-}
 
 @media screen and (max-width: 991px) {
   .homepage-view-cart-os {
@@ -138,9 +123,5 @@
   .homepage-view-cart-col-2-os a {
     font-size: 16px;
     line-height: 20px;
-  }
-  .defaultPage-search-section-os {
-    margin: 0 auto;
-    width: 100%;
   }
 }

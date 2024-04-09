@@ -36,7 +36,7 @@ const SuggestionFeaturedNumber = () => {
     setCurrentPage((prevPage) => prevPage + 1);
   };
   return (
-    <section className="SuggestionFeaturedNumber-section-os">
+    <section className="SuggestionFeaturedNumber-section-os default-section-os">
       <div className="container-os">
         <div className="SuggestionFeaturedNumber-heading-os">
           <MainHeading MainHeading="Featured Number" rightImage={crownIcon} />

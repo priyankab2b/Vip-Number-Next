@@ -3,7 +3,7 @@ import CityHeading from "../CityHeading/CityHeading";
 import CityParagraph from "../CityParagraph/CityParagraph";
 import "./CityExclusiveCollection.css";
 import CityButton from "../CityButton/CityButton";
-
+import Image from "next/image";
 
 const CityExclusiveCollection = ({
   heading,
@@ -12,7 +12,7 @@ const CityExclusiveCollection = ({
   buttonTitle,
   link,
   image,
-  imageAlt
+  imageAlt,
 }) => {
   return (
     <section className="CityExclusiveCollection-section-os default-section-os">
@@ -26,7 +26,7 @@ const CityExclusiveCollection = ({
           </div>
           {image && (
             <div className="CityExclusiveCollection-col-2-os">
-              <img src={image} alt={imageAlt} />
+              <Image src={image} alt={imageAlt} />
             </div>
           )}
         </div>

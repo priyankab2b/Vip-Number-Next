@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import "../../about/about.css";
 
 const AboutImageWithText = (props) => {
   return (

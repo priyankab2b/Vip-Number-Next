@@ -1,0 +1,118 @@
+.MobileProfileData-heading-os {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16.678px;
+  line-height: 119.5%;
+  text-align: center;
+  color: #ffffff;
+  background: #6019eb;
+  padding: 1rem 0;
+}
+.MobileProfileData-profile-name-data-os {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.MobileProfileData-profile-row-1-os {
+  padding: 1rem 0;
+  background: linear-gradient(360deg, #6019eb -32.52%, #f16c19 228.53%);
+}
+.MobileProfileData-profile-data-col-1-os {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+}
+.MobileProfileData-profile-name-os h3 {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18.8931px;
+  line-height: 119.5%;
+  color: #ffffff;
+}
+.MobileProfileData-profile-name-os span {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  color: #ffffff;
+  display: flex;
+}
+.MobileProfileData-profile-data-col-2-os {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0.5rem;
+  background: #fff;
+}
+.MobileProfileData-location-address-os span {
+  display: flex;
+}
+.MobileProfileData-location-address-os {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15.3943px;
+  line-height: 113.5%;
+  color: #3d3d3d;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.MobileProfileData-profile-data-col-2-os button {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #6019eb;
+  border: 1px solid #6019eb;
+  border-radius: 4px;
+  background: #fff;
+  padding: 4px 1rem;
+}
+.MobileProfileData-profile-row-2-os a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  border-bottom: 1px solid #c8c8c8;
+  padding: 12px 0;
+}
+.MobileProfileData-profile-row-2-os a p {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18.2396px;
+  line-height: 34px;
+  color: #434343;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.MobileProfileData-profile-row-2-os a p span {
+  display: flex;
+}
+.MobileProfileData-profile-row-2-os a div {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18.2396px;
+  line-height: 34px;
+  color: #6019eb;
+}
+.MobileProfileData-section-os {
+  display: none;
+}
+
+@media screen and (max-width: 1199px) {
+  .MobileProfileData-section-os {
+    display: block;
+  }
+}

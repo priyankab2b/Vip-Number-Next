@@ -57,7 +57,7 @@ const SuggestionRelatedNumber = () => {
   return (
     <>
       {relatedNumbers.length !== 0 && (
-        <section className="SuggestionFeaturedNumber-section-os">
+        <section className="SuggestionFeaturedNumber-section-os default-section-os">
           <div className="container-os">
             <div className="SuggestionRelatedNumber-heading-os">
               <MainHeading

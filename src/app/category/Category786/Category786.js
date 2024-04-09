@@ -125,7 +125,7 @@ const Category786 = () => {
   };
   return (
     <div>
-      <section className="SuggestionFeaturedNumber-section-os">
+      <section className="SuggestionFeaturedNumber-section-os default-section-os">
         <div className="container-os">
           <MainHeading MainHeading="786" rightImage={crownIcon} />
           <div className="featured-number-row-os">

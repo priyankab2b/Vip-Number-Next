@@ -149,7 +149,7 @@ const Category00786 = () => {
   };
   return (
     <div>
-      <section className="SuggestionFeaturedNumber-section-os">
+      <section className="SuggestionFeaturedNumber-section-os default-section-os">
         <div className="container-os">
           <div className="SuggestionFeaturedNumber-heading-os">
             <MainHeading MainHeading="00786" rightImage={crownIcon} />

@@ -1,8 +1,8 @@
 import React from "react";
-import "../../../Shared/FAQs/FAQs.css";
-import MainHeading from "../../../Shared/MainHeading/MainHeading";
-import MainSubHeading from "../../../Shared/MainSubHeading/MainSubHeading";
-import FaqCard from "../../../Shared/FaqCard/FaqCard";
+import "../../../../Shared/FAQs/FAQs.css";
+import MainHeading from "../../../../Shared/MainHeading/MainHeading";
+import MainSubHeading from "../../../../Shared/MainSubHeading/MainSubHeading";
+import FaqCard from "../../../../Shared/FaqCard/FaqCard";
 
 // Image
 import crown from "../../../../Assets/heading-crown-icon.svg";

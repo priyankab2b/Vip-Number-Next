@@ -1,227 +1,226 @@
 .MobileFooter-gotQuestions-image-os {
-    min-width: 50px;
+  min-width: 50px;
+}
+.MobileFooter-gotQuestions-addresses-os a {
+  color: #000;
+  text-decoration: none;
+}
+.MobileFooter-gotQuestions-addresses-data-os {
+  display: flex;
+  align-items: center;
+  padding-bottom: 1rem;
+}
+.MobileFooter-gotQuestions-addresses-data-os:last-child {
+  padding: 0;
+}
+.MobileFooter-gotQuestions-col-2-os img {
+  height: 30px;
+  width: auto;
+}
+.MobileFooter-gotQuestions-addresses-data-os span {
+  display: flex;
+  font-size: 14px;
+  line-height: 20px;
+}
+.MobileFooter-gotQuestions-row-os {
+  display: flex;
+  padding: 2rem 0;
+}
+.MobileFooter-gotQuestions-col-1-os {
+  width: 20%;
+  padding-right: 1rem;
+}
+.MobileFooter-gotQuestions-col-2-os {
+  width: 80%;
+}
+.MobileFooter-gotQuestions-col-2-os h2 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18.3005px;
+  line-height: 141.5%;
+  color: #6019eb;
+  padding-bottom: 12px;
+}
+
+.MobileFooter-links-accordion-body-os a {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 38px;
+  text-transform: uppercase;
+  color: #333333;
+  text-decoration: none;
+  display: flex;
+  transition: 0.3s;
+}
+
+.MobileFooter-links-accordion-body-os a:hover {
+  color: #000;
+}
+.MobileFooter-links-accordion-head-os {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16.6957px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: #6019eb;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.MobileFooter-links-accordion-head-os span {
+  width: 16px;
+  height: 16px;
+  border-bottom: 3px solid #6019eb;
+  border-left: 3px solid #6019eb;
+  transform: rotate(-45deg);
+  position: relative;
+  bottom: 4px;
+}
+.MobileFooter-links-accordion-section-os {
+  padding: 1.5rem 0;
+  border-top: 1px solid #6019eb;
+}
+.MobileFooter-links-accordion-body-os {
+  padding: 0 1.5rem 0.5rem;
+  display: none;
+}
+.MobileFooter-links-accordion-body-os.active {
+  display: block;
+}
+.MobileFooter-links-accordion-col-1-os {
+  background: #ffffff;
+  box-shadow: 0px 4px 27px rgb(0 0 0 / 7%);
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+/* .accordionOpen-os {
+    display: none;
+} */
+.arrow-rotated-os span {
+  transform: rotate(135deg);
+  bottom: -4px;
+}
+.MobileFooter-socialMedia-link-row-os {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.MobileFooter-socialMedia-section-os {
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #424242;
+}
+.MobileFooter-coptRight-row-os {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+  gap: 12px;
+}
+.MobileFooter-coptRight-row-os p {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #333333;
+}
+.MobileFooter-coptRight-accept-cards-row-os {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+.MobileFooter-coptRight-data-os {
+  background: #6019eb;
+  padding: 1.5rem 0;
+}
+.MobileFooter-coptRight-text-os {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff;
+  text-align: center;
+}
+.MobileFooter-section-os {
+  display: none;
+}
+.MobileFooter-links-accordion-body-list-os:last-child {
+  padding-bottom: 0;
+}
+.MobileFooter-links-accordion-body-list-os li {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: #333333;
+  padding-bottom: 12px;
+}
+.working-hours-os {
+  font-size: 16.6957px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: #6019eb;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  padding: 12px 0 0;
+}
+.MobileFooter-gotQuestions-addresses-data-os a {
+  color: #000;
+  text-decoration: none;
+}
+@media screen and (max-width: 767px) {
+  footer.MobileFooter-section-os {
+    display: block;
   }
-  .MobileFooter-gotQuestions-addresses-os a {
-    color: #000;
-    text-decoration: none;
-  }
-  .MobileFooter-gotQuestions-addresses-data-os {
-    display: flex;
-    align-items: center;
-    padding-bottom: 1rem;
-  }
-  .MobileFooter-gotQuestions-addresses-data-os:last-child {
-    padding: 0;
-  }
-  .MobileFooter-gotQuestions-col-2-os img {
-    height: 30px;
-    width: auto;
-  }
-  .MobileFooter-gotQuestions-addresses-data-os span {
-    display: flex;
-    font-size: 14px;
-    line-height: 20px;
-  }
-  .MobileFooter-gotQuestions-row-os {
-    display: flex;
-    padding: 2rem 0;
-  }
+}
+
+@media screen and (max-width: 576px) {
   .MobileFooter-gotQuestions-col-1-os {
-    width: 20%;
+    width: 30%;
     padding-right: 1rem;
   }
   .MobileFooter-gotQuestions-col-2-os {
-    width: 80%;
+    width: 70%;
   }
-  .MobileFooter-gotQuestions-col-2-os h2 {
-font-family: "Roboto", sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18.3005px;
-    line-height: 141.5%;
-    color: #6019eb;
-    padding-bottom: 12px;
-  }
-  
-  .MobileFooter-links-accordion-body-os a {
-font-family: "Roboto", sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 38px;
-    text-transform: uppercase;
-    color: #333333;
-    text-decoration: none;
-    display: flex;
-    transition: 0.3s;
-  }
-  
-  .MobileFooter-links-accordion-body-os a:hover {
-    color: #000;
-  }
-  .MobileFooter-links-accordion-head-os {
-font-family: "Roboto", sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16.6957px;
-    line-height: 20px;
-    text-transform: uppercase;
-    color: #6019eb;
-    padding: 1rem 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
-  }
-  .MobileFooter-links-accordion-head-os span {
-    width: 16px;
-    height: 16px;
-    border-bottom: 3px solid #6019eb;
-    border-left: 3px solid #6019eb;
-    transform: rotate(-45deg);
-    position: relative;
-    bottom: 4px;
+  .MobileFooter-gotQuestions-row-os {
+    padding: 0 0 2rem;
   }
   .MobileFooter-links-accordion-section-os {
-    padding: 1.5rem 0;
-    border-top: 1px solid #6019eb;
+    padding: 3rem 0 1.5rem;
   }
-  .MobileFooter-links-accordion-body-os {
-    padding: 0 1.5rem 0.5rem;
-    display: none;
-  }
-  .MobileFooter-links-accordion-body-os.active {
-    display: block;
-  }
-  .MobileFooter-links-accordion-col-1-os {
-    background: #ffffff;
-    box-shadow: 0px 4px 27px rgb(0 0 0 / 7%);
-    border-radius: 4px;
-    margin-bottom: 1rem;
-  }
-  /* .accordionOpen-os {
-      display: none;
-  } */
-  .arrow-rotated-os span {
-    transform: rotate(135deg);
-    bottom: -4px;
-  }
-  .MobileFooter-socialMedia-link-row-os {
+  .MobileFooter-socialMedia-link-row-os a {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
+    max-width: 40px;
   }
-  .MobileFooter-socialMedia-section-os {
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid #424242;
-  }
-  .MobileFooter-coptRight-row-os {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem 0;
-    gap: 12px;
-  }
-  .MobileFooter-coptRight-row-os p {
-font-family: "Roboto", sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 20px;
-    text-align: center;
-    text-transform: uppercase;
-    color: #333333;
-  }
-  .MobileFooter-coptRight-accept-cards-row-os {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
-    flex-wrap: wrap;
-  }
-  .MobileFooter-coptRight-data-os {
+  .mobile-NewsLetter-os {
+    padding: 2.5rem 0;
     background: #6019eb;
-    padding: 1.5rem 0;
+    margin-bottom: 2rem;
   }
-  .MobileFooter-coptRight-text-os {
-font-family: "Roboto", sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 20px;
-    color: #ffffff;
-    text-align: center;
-  }
-  .MobileFooter-section-os {
-    display: none;
-  }
-  .MobileFooter-links-accordion-body-list-os:last-child {
-    padding-bottom: 0;
+  .MobileFooter-links-accordion-body-os a {
+    font-size: 14px;
+    line-height: 32px;
   }
   .MobileFooter-links-accordion-body-list-os li {
-font-family: "Roboto", sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 20px;
-    text-transform: uppercase;
-    color: #333333;
-    padding-bottom: 12px;
+    font-size: 14px;
   }
-  .working-hours-os {
-    font-size: 16.6957px;
-    line-height: 20px;
-    text-transform: uppercase;
-    color: #6019eb;
-font-family: "Roboto", sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    padding: 12px 0 0;
+  .MobileFooter-socialMedia-link-row-os {
+    gap: 1.2rem;
   }
-  .MobileFooter-gotQuestions-addresses-data-os a {
-    color: #000;
-    text-decoration: none;
-  }
-  @media screen and (max-width: 767px) {
-    footer.MobileFooter-section-os {
-      display: block;
-    }
-  }
-  
-  @media screen and (max-width: 576px) {
-    .MobileFooter-gotQuestions-col-1-os {
-      width: 30%;
-      padding-right: 1rem;
-    }
-    .MobileFooter-gotQuestions-col-2-os {
-      width: 70%;
-    }
-    .MobileFooter-gotQuestions-row-os {
-      padding: 0 0 2rem;
-    }
-    .MobileFooter-links-accordion-section-os {
-      padding: 3rem 0 1.5rem;
-    }
-    .MobileFooter-socialMedia-link-row-os a {
-      display: flex;
-      max-width: 40px;
-    }
-    .mobile-NewsLetter-os {
-      padding: 2.5rem 0;
-      background: #6019eb;
-      margin-bottom: 2rem;
-    }
-    .MobileFooter-links-accordion-body-os a {
-      font-size: 14px;
-      line-height: 32px;
-    }
-    .MobileFooter-links-accordion-body-list-os li {
-      font-size: 14px;
-    }
-    .MobileFooter-socialMedia-link-row-os {
-      gap: 1.2rem;
-    }
-  }
-  
+}

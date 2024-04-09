@@ -189,6 +189,9 @@ label {
 a:hover {
   text-decoration: none;
 }
+a {
+  text-decoration: none;
+}
 
 .notification-container {
   top: 70px !important;
@@ -298,9 +301,17 @@ a:hover {
   display: none;
 }
 
+.defaultPage-search-section-os {
+  width: 70%;
+  margin: -6rem auto 5rem;
+}
+
 @media screen and (max-width: 1600px) {
   .container-os {
     max-width: 95%;
+  }
+  .defaultPage-search-section-os {
+    width: 85%;
   }
 
   .search-section-os .custom-radio .dot {
@@ -327,6 +338,10 @@ a:hover {
   .data-not-found-os {
     font-size: 16px;
     line-height: 20px;
+  }
+  .defaultPage-search-section-os {
+    width: 95%;
+    margin: -3rem auto 5rem;
   }
 }
 
@@ -399,6 +414,11 @@ a:hover {
 
   .defaultResult-section-os {
     padding-bottom: 4rem;
+  }
+
+  .defaultPage-search-section-os {
+    margin: 0 auto;
+    width: 100%;
   }
 }
 
