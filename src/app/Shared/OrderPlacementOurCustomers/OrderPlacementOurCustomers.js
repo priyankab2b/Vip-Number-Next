@@ -2,6 +2,7 @@ import React from "react";
 import MainHeading from "../MainHeading/MainHeading";
 import AwardWinnerCard from "../AwardWinner/AwardWinnerCard/AwardWinnerCard";
 import "./OrderPlacementOurCustomers.css";
+import Image from "next/image";
 
 // Images
 import customerImg from "../../Assets/ourCustomers-img-1.png";
@@ -30,7 +31,7 @@ const OrderPlacementOurCustomers = () => {
             <MainHeading MainHeading="& Much More" style={headingStyle} />
           </div>
           <div className="OrderPlacementOurCustomers-row-os-2">
-            <img src={customerImg3} alt="" />
+            <Image src={customerImg3} alt="" />
           </div>
         </div>
       </div>

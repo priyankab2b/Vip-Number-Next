@@ -1,11 +1,12 @@
-'use client';
+"use client";
 import React, { useState, useEffect, useContext } from "react";
 import "./Footer.css";
 import NewsLetter from "../NewsLetter/NewsLetter";
 import { AppStateContext } from "../../contexts/AppStateContext/AppStateContext";
+import { MyRegisterSignInContext } from "../../contexts/MyRegisterSignInContext/MyRegisterSignInContext";
 import { NotificationManager } from "react-notifications";
-import Link from 'next/link'
-import Image from 'next/image'
+import Link from "next/link";
+import Image from "next/image";
 
 // Images
 // import cardsImg from "../../../Assets/footer-cards-img.png";
@@ -35,17 +36,28 @@ const Footer = () => {
   const [email, setEmail] = useState("");
 
   const [category, setCategory] = useState();
+  // console.log("category",category);
   const currentYear = getCurrentYear();
+  const { setActiveSignInWithOtp } = useContext(MyRegisterSignInContext);
+  const myDataString = localStorage.getItem("vipcre");
+  let contactid = "";
+  if (myDataString) {
+    const myData = JSON.parse(myDataString);
+    contactid = myData.user.contact_cf.contactid;
+  }
 
-  // whats app redirect
   const openWhatsApp = () => {
     window.open("https://api.whatsapp.com/send?phone=916009160092");
   };
 
   const submitNewsletter = (e) => {
     e.preventDefault();
+    if (!contactid || contactid === "") {
+      setActiveSignInWithOtp(true);
+      return;
+    }
     const url = "https://admin.leafymango.com/web/newsletter";
-    const payload = { email: email };
+    const payload = { email: email, contactid: contactid };
 
     fetch(url, {
       method: "POST",
@@ -86,6 +98,7 @@ const Footer = () => {
       setCategory(categoriesData);
     }
   }, [categoriesData]);
+
   return (
     <footer className="desktopFooter-main-os">
       <NewsLetter />
@@ -200,7 +213,8 @@ const Footer = () => {
                   <div className="footer-getInTouch-phone-email-os">
                     <div className="footer-getInTouch-phone-whats-app-os">
                       <Link href="tel:+916009160092">+91-60091-60092</Link>
-                      <Link href={""}
+                      <Link
+                        href={""}
                         className="whats-app-icon-os"
                         onClick={openWhatsApp}
                       >
@@ -264,7 +278,9 @@ const Footer = () => {
             <div className="footer-links-heading-os">Cities & States</div>
             <div className="footer-cities-links-list-os">
               <Link href="/vip-mobile-number-in-punjab">Punjab |</Link>&nbsp;
-              <Link href="/vip-mobile-number-in-maharashtra">Maharashtra |</Link>
+              <Link href="/vip-mobile-number-in-maharashtra">
+                Maharashtra |
+              </Link>
               &nbsp;
               <Link href="/fancy-mobile-numbers-in-karnataka">Karnataka |</Link>
               &nbsp;
@@ -274,8 +290,11 @@ const Footer = () => {
               <Link href="/vip-mobile-number-in-haryana">Haryana |</Link>&nbsp;
               <Link href="/fancy-mobile-numbers-in-bangalore">Bangalore |</Link>
               &nbsp;
-              <Link href="/fancy-mobile-numbers-in-chennai">Chennai |</Link>&nbsp;
-              <Link href="/fancy-mobile-number-in-tamil-nadu">Tamil Nadu |</Link>
+              <Link href="/fancy-mobile-numbers-in-chennai">Chennai |</Link>
+              &nbsp;
+              <Link href="/fancy-mobile-number-in-tamil-nadu">
+                Tamil Nadu |
+              </Link>
               &nbsp;
               <Link href="/vip-mobile-number-in-himachal-pradesh">
                 Himachal Pradesh |
@@ -293,7 +312,9 @@ const Footer = () => {
               <Link href="/vip-mobile-number-in-bihar">Bihar |</Link>&nbsp;
               <Link href="/fancy-mobile-number-in-odisha">Odisha |</Link>&nbsp;
               <Link href="/fancy-mobile-number-in-pune">Pune |</Link>&nbsp;
-              <Link href="/vip-mobile-number-in-uttarakhand">Uttarakhand |</Link>
+              <Link href="/vip-mobile-number-in-uttarakhand">
+                Uttarakhand |
+              </Link>
               &nbsp;
               <Link href="/vip-mobile-number-in-uttar-pradesh">
                 Uttar-Pradesh |
@@ -316,7 +337,8 @@ const Footer = () => {
           <div className="container-os">
             <div className="footer-links-heading-os">Telecom Operators</div>
             <div className="footer-cities-links-list-os">
-              <Link href="/airtel-fancy-numbers">Airtel VIP Numbers |</Link>&nbsp;
+              <Link href="/airtel-fancy-numbers">Airtel VIP Numbers |</Link>
+              &nbsp;
               <Link href="/jio-fancy-numbers">Jio VIP Number |</Link>&nbsp;
               <Link href="/bsnl-fancy-numbers">BSNL Fancy Numbers |</Link>&nbsp;
               <Link href="/vi-fancy-number">VI Fancy Number |</Link>&nbsp;

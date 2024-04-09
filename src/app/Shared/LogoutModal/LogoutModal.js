@@ -15,14 +15,14 @@ const LogoutModal = ({
         onCancel={handleCancelLogout} // Function to handle the modal close (by clicking the close icon or mask).
         footer={[
           <Button
-            className={`yes-logout ${handleCancelLogout ? '' : "active"}`}
+            className={`yes-logout ${handleCancelLogout ? "" : "active"}`}
             key="cancel"
             onClick={handleCancelLogout}
           >
             Cancel
           </Button>,
           <Button
-            className={`yes-logout ${handleCancelLogout ? '' : "active"}`}
+            className={`yes-logout ${handleCancelLogout ? "" : "active"}`}
             key="confirm"
             type="primary"
             onClick={handleConfirmLogout}

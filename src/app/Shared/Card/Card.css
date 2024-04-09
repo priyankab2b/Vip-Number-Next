@@ -358,6 +358,12 @@ span.number-card-compareAt-price-os {
 }
 
 @media screen and (max-width: 767px) {
+  .preBook-button-os {
+    font-size: 10px;
+    line-height: 14px;
+    padding: 0px 1rem;
+    height: 30px;
+  }
   .number-card-compareAtPrice-os {
     font-size: 10px;
     line-height: 14px;

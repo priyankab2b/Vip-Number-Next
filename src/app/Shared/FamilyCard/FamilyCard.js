@@ -445,9 +445,6 @@
 
 // export default FamilyCard;
 
-
-
-
 import React, { useState, useEffect, useContext } from "react";
 import "./FamilyCard.css";
 // import { Link, useNavigate } from "react-router-dom";

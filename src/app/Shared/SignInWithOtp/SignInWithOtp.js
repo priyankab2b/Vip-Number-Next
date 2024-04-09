@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React, { useState, useContext, useEffect, useRef } from "react";
 import axios from "axios";
 import "../SignInWithPassword/SignInForm/SignInForm.css";
@@ -15,7 +15,7 @@ import CountrySelector from "../CountrySelector/CountrySelector";
 const SignInWithOtp = () => {
   const ref = useRef();
   const otpRef = useRef();
-  const navigate = useRouter();
+  const Router = useRouter();
   const {
     activeSignInWithPassword,
     setActiveSignInWithPassword,
@@ -24,8 +24,14 @@ const SignInWithOtp = () => {
     activeRegisterForm,
     setActiveRegisterForm,
   } = useContext(MyRegisterSignInContext);
-  const { setUserDetails, redirectTo, setRedirectTo, cartCache, addToCart } =
-    useContext(AppStateContext);
+  const {
+    setUserDetails,
+    redirectTo,
+    setRedirectTo,
+    cartCache,
+    addToCart,
+    user,
+  } = useContext(AppStateContext);
   const [mobile, setMobile] = useState("");
   const [otp, setOtp] = useState("");
   const [mobileError, setMobileError] = useState("");
@@ -35,11 +41,13 @@ const SignInWithOtp = () => {
   const [session, setSession] = useState("");
   const [timer, setTimer] = useState(0);
   const [shouldSendOtp, setShouldSendOtp] = useState(false);
+  // const [selectedCountry, setSelectedCountry] = useState();
 
   const [selectedCountry, setSelectedCountry] = useState({
     value: "India",
     label: "India",
   });
+
   const countryOptions = Country.map((country) => ({
     value: country.name,
     label: country.name,
@@ -123,12 +131,21 @@ const SignInWithOtp = () => {
     if (currMobile?.startsWith("0")) {
       currMobile = currMobile.slice(1, 11);
     }
-  
+
     if (currMobile?.length === 10 && isIndiaSelected) {
       handleVerifyNumber();
     }
-  
   }, [mobile, isIndiaSelected]);
+
+  // counry handle change
+  const handleCountrySelect = (val) => {
+    setSelectedCountry({
+      value: val.value,
+      label: val.label,
+    });
+    console.log("val :", val);
+    console.log("selectedCountry :", selectedCountry);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -179,18 +196,108 @@ const SignInWithOtp = () => {
               addToCart(
                 cartCache,
                 () => {
-                  navigate.push(redirectTo);
+                  Router.push(redirectTo);
                   setRedirectTo(null);
                 },
                 response?.data?.data?.token
               );
             } else {
-              navigate.push(redirectTo);
+              Router.push(redirectTo);
               setRedirectTo(null);
             }
           }
-
           NotificationManager.success("Login successful");
+
+          // Create lead api after login
+          const consoleData = localStorage.getItem("vipcre");
+          const parsedData = JSON.parse(consoleData);
+          // Extracting the token
+          const token = parsedData.token;
+          // Logging the token
+          // console.log("Token:", token);
+          axios.post(
+            "https://admin.leafymango.com/web/lead/create",
+            {
+              mobile_number: mobile,
+              first_name: "Loged-In",
+            },
+            {
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`,
+              },
+            }
+          );
+        } else if (response.data.status === "error") {
+          NotificationManager.error(
+            response?.data?.message || "Incorrect otp or mobile number"
+          );
+        }
+      } catch (error) {
+        setError(error.message);
+        NotificationManager.error(
+          "Login failed No account registered with this number"
+        );
+        console.log("Error:", error.message);
+      }
+    }
+
+    // except india and without otp login
+    if (currMobile !== "" && selectedCountry?.value !== "India") {
+      console.log("Login with country except india");
+      try {
+        const response = await axios.post(
+          "https://admin.leafymango.com/web/login",
+          {
+            mobile: currMobile.toString(),
+            countryValue: selectedCountry,
+            // session_id: session,
+          }
+        );
+
+        if (response.data.status === "success") {
+          setUserDetails(response?.data?.data);
+          setActiveSignInWithOtp(false);
+          console.log("Login with country except india1");
+          localStorage.setItem("vipcre", JSON.stringify(response?.data?.data));
+          localStorage.setItem("mobileNumber", currMobile);
+          if (redirectTo) {
+            if (cartCache) {
+              addToCart(
+                cartCache,
+                () => {
+                  Router.push(redirectTo);
+                  setRedirectTo(null);
+                },
+                response?.data?.data?.token
+              );
+            } else {
+              Router.push(redirectTo);
+              setRedirectTo(null);
+            }
+          }
+          NotificationManager.success("Login successful");
+
+          // Create lead api after login
+          const consoleData = localStorage.getItem("vipcre");
+          const parsedData = JSON.parse(consoleData);
+          // Extracting the token
+          const token = parsedData.token;
+          // Logging the token
+          // console.log("Token:", token);
+          axios.post(
+            "https://admin.leafymango.com/web/lead/create",
+            {
+              mobile_number: mobile,
+              first_name: "Loged-In",
+            },
+            {
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`,
+              },
+            }
+          );
         } else if (response.data.status === "error") {
           NotificationManager.error(
             response?.data?.message || "Incorrect otp or mobile number"
@@ -260,7 +367,8 @@ const SignInWithOtp = () => {
                   <CountrySelector
                     options={countryOptions}
                     value={selectedCountry}
-                    onChange={setSelectedCountry}
+                    // onChange={setSelectedCountry}
+                    onChange={handleCountrySelect}
                   />
                 </div>
 
@@ -288,10 +396,15 @@ const SignInWithOtp = () => {
                 {isIndiaSelected && (
                   <div className="register-input-os">
                     <RegisterLoginInputField
-                      inputType="number"
+                      inputType="text"
                       inputPlaceholder="OTP"
                       value={otp}
-                      onChange={(e) => setOtp(e.target.value)}
+                      onChange={(e) => {
+                        const enteredValue = e.target.value;
+                        if (/^[0-9]*$/.test(enteredValue)) {
+                          setOtp(enteredValue);
+                        }
+                      }}
                       ref={otpRef}
                     />
                     {passwordError && (
