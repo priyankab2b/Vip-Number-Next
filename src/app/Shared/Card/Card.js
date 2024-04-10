@@ -89,10 +89,11 @@ const Card = (props) => {
       }`;
 
       setRtpDate(formattedDate);
-    } else {
-      // Handle the case where rtpDateStr is undefined or empty
-      console.error("comingsoon_date is not set or is empty");
-    }
+    } 
+    // else {
+    //   // Handle the case where rtpDateStr is undefined or empty
+    //   console.error("comingsoon_date is not set or is empty");
+    // }
   }, [props?.comingsoon_date]);
   // console.log("rtpDate :::", rtpDate);
 

@@ -20,7 +20,7 @@ import FeaturedNumber from "./FeaturedNumber/FeaturedNumber";
 import RegisterVipNumber from "./RegisterVipNumber/RegisterVipNumber";
 import Categories from "./Categories/Categories";
 import FamilyPack from "./FamilyPack/FamilyPack";
-import CityHowGetVipNumber from "../Cities/CityPunjab/CityHowGetVipNumber/CityHowGetVipNumber";
+import CityHowGetVipNumber from "../Shared/City/CityHowGetVipNumber/CityHowGetVipNumber";
 import FAQs from "../Shared/FAQs/FAQs";
 import OurCustomers from "../Shared/OurCustomers/OurCustomers";
 import VideoTestimonial from "../Shared/VideoTestimonial/VideoTestimonial";
