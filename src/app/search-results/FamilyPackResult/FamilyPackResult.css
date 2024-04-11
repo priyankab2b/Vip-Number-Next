@@ -1,9 +1,0 @@
-.FamilyPack-heading-os {
-  padding-bottom: 3rem;
-}
-
-@media screen and (max-width: 767px) {
-  .FamilyPack-heading-os {
-    padding-bottom: 2rem;
-  }
-}
