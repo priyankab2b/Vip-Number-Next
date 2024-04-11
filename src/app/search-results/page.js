@@ -16,7 +16,7 @@ import BasicSearch from "./BasicSearch/BasicSearch";
 import AdvanceSearch from "./AdvanceSearch/AdvanceSearch";
 import ExactDigitPlacementSearch from "./ExactDigitPlacementSearch/ExactDigitPlacementSearch";
 import MustContainsSearch from "./MustContainsSearch/MustContainsSearch";
-import SuggestionBanner from "../suggestion/SuggestionBanner/SuggestionBanner";
+import SuggestionBanner from "../suggestion-for-you/SuggestionBanner/SuggestionBanner";
 import { useGetQueryParams } from "../utils";
 import OurCustomers from "../Shared/OurCustomers/OurCustomers";
 import FAQs from "../Shared/FAQs/FAQs";

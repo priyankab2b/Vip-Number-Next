@@ -638,13 +638,13 @@
 // export default Wallet;
 
 // Withdrawal radio buttons changed to input code
-"use client"
+"use client";
 import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import "./Wallet.css";
 import Header from "../Shared/Header/Header";
 import MobileHeader from "../Shared/MobileHeader/MobileHeader";
-import Image from 'next/image'
+import Image from "next/image";
 
 // Images
 import walletIcon from "../Assets/wallet-icon.svg";
@@ -875,6 +875,7 @@ const Wallet = () => {
           bank_account_number: withdrawal.accountNumber,
           amount_requested_remarks: `${user?.user?.mobile} has requested RS.${amountTowithDraw} amount via bank account detail method`,
           amount_requested: amountTowithDraw,
+          action: "Money Requested",
         },
         user?.token
       ).then((res) => {
@@ -906,6 +907,7 @@ const Wallet = () => {
           bank_account_number: withdrawal.accountNumber,
           amount_requested_remarks: `${user?.user?.mobile} has requested RS.${amountTowithDraw} amount via bank account detail method`,
           amount_requested: amountTowithDraw,
+          action: "Money Requested",
         },
         user?.token
       ).then((res) => {
