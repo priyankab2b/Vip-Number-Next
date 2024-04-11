@@ -1,0 +1,187 @@
+.FamilyPack-section-os {
+    padding-bottom: 5rem;
+  }
+  
+  .FamilyPack-plan-list-row-os .slick-slide > div {
+    padding: 2rem 3rem 3rem;
+  }
+  
+  .FamilyPack-section-os .slick-prev {
+    width: 60px;
+    height: 60px;
+    background-image: url("../../Assets/slider-left-arrow.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+    z-index: 1;
+    left: -50px;
+  }
+  
+  .FamilyPack-section-os .slick-next {
+    width: 60px;
+    height: 60px;
+    background-image: url("../../Assets/slider-right-arrow.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+    z-index: 1;
+    right: -50px;
+  }
+  
+  .FamilyPack-section-os .slick-prev:before,
+  .FamilyPack-section-os .slick-next:before {
+    opacity: 1;
+    color: transparent;
+  }
+  
+  .FamilyPack-section-os .slick-prev:before,
+  .FamilyPack-section-os .slick-next:before {
+    opacity: 1;
+    color: transparent;
+  }
+  
+  .FamilyPack-plan-list-row-os {
+    width: 95%;
+    margin: 0 auto;
+  }
+  
+  .FamilyPack-select-variants-row-os {
+    /* width: 90%;
+    margin: 0 auto;
+    padding-bottom: 2rem; */
+  }
+  
+  .FamilyPack-select-variants-col-os select {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17.9573px;
+    line-height: 19px;
+    text-align: center;
+    color: #6019eb;
+    background: #f4f4f9;
+    border-radius: 3.14px;
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    padding: 4px 24px 4px 8px;
+    background-image: url("../../Assets/selectArrow.svg");
+    background-size: 12px 12px;
+    background-repeat: no-repeat;
+    background-position: 80% 50%;
+    position: relative;
+  }
+  
+  .FamilyPack-select-variants-col-os {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17.9573px;
+    line-height: 19px;
+    text-align: center;
+    color: #6019eb;
+    border: 1px solid #6019eb;
+    border-radius: 4px;
+    padding: 12px;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 2rem;
+  }
+  
+  .FamilyPack-variant-selector-os {
+    position: relative;
+  }
+  
+  .FamilyPack-variant-selector-os:before {
+    /* content: "";
+      position: absolute;
+      border-bottom: 3px solid #6019EB;
+      border-left: 3px solid #6019EB;
+      border-top: 3px solid #F4F4F9;
+      border-right: 3px solid #F4F4F9;
+      right: 12px;
+      top: 14px;
+      transform: rotate(-45deg); */
+  }
+  
+  .FamilyPack-plan-row-os {
+    display: flex;
+    justify-content: flex-start;
+    gap: 3.5rem 4%;
+    flex-wrap: wrap;
+  }
+  
+  .FamilyPack-plan-row-os > div {
+    width: 22%;
+  }
+  .FamilyPack-section-os .number-card-timer-data-os {
+    display: none;
+  }
+  .FamilyPack-plan-list-row-os .slick-dots {
+    bottom: 10px;
+  }
+  
+  .FamilyPack-section-os .number-card-timer-data-os {
+    display: none;
+  }
+  
+  @media only screen and (max-width: 1600px) {
+    .FamilyPack-plan-list-row-os .slick-slide > div {
+      padding: 2rem 2rem 3rem;
+    }
+  }
+  
+  @media screen and (max-width: 1300px) {
+    .FamilyPack-plan-row-os > div {
+      width: 31%;
+    }
+    .FamilyPack-plan-row-os {
+      gap: 3.5rem 3.33%;
+    }
+  }
+  
+  @media only screen and (max-width: 991px) {
+    .FamilyPack-plan-list-row-os .slick-slide > div {
+      width: 400px;
+      margin: 0 auto;
+    }
+    .FamilyPack-plan-row-os > div {
+      width: 48%;
+    }
+  }
+  
+  @media only screen and (max-width: 576px) {
+    .FamilyPack-plan-list-row-os .slick-slide > div {
+      width: 100%;
+      padding: 2rem 12px 3rem;
+    }
+  
+    .FamilyPack-plan-list-row-os {
+      width: 100%;
+      padding-bottom: 2rem;
+    }
+  
+    .FamilyPack-select-variants-col-os {
+      font-size: 14px;
+      line-height: 20px;
+      padding: 8px 12px;
+      margin: 0.8rem auto;
+    }
+  
+    .FamilyPack-section-os {
+      padding-bottom: 4rem;
+    }
+    .FamilyPack-select-variants-col-os select {
+      font-size: 14px;
+      line-height: 19px;
+    }
+    .FamilyPack-plan-row-os > div {
+      width: 100%;
+    }
+  }
+  

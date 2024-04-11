@@ -1,0 +1,127 @@
+.homepage-os {
+  position: relative;
+}
+.homepage-call-chat-icon-os a img {
+  width: 50px;
+  height: auto;
+}
+.homepage-call-chat-icon-os .homepage-call-icon-os {
+  border-radius: 30px;
+  display: flex;
+  transform: rotate(-90deg);
+}
+.homepage-call-chat-icon-os .homepage-chat-icon-os {
+  background: #691ede;
+  border: 1.37619px solid #6019eb;
+  border-radius: 30px;
+  display: flex;
+  padding: 12px;
+  transform: rotate(-90deg);
+}
+.homepage-call-chat-icon-os a:hover {
+  opacity: 0.8;
+}
+.homepage-call-chat-icon-os {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: max-content;
+  position: fixed;
+  transform: rotate(90deg);
+  right: 0;
+  bottom: 10%;
+  z-index: 9;
+}
+.homepage-view-cart-col-1-os p {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13.5464px;
+  line-height: 24px;
+  color: #ffffff;
+}
+.homepage-view-cart-col-1-os h3 {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #ffffff;
+  padding-bottom: 4px;
+  display: flex;
+  gap: 4px 12px;
+  flex-wrap: wrap;
+}
+.homepage-view-cart-row {
+  background: linear-gradient(83.65deg, #6019eb 25.36%, #f16c19 125.43%);
+  border-radius: 13.0873px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 3rem;
+}
+.cross-btn-os {
+  color: #fff;
+  position: absolute;
+  top: 0;
+  right: 4px;
+  padding: 8px;
+  display: flex;
+  cursor: pointer;
+}
+.homepage-view-cart-col-1-os {
+  width: 70%;
+}
+.homepage-view-cart-col-2-os {
+  width: 30%;
+}
+.homepage-view-cart-col-2-os a {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 21.3921px;
+  line-height: 24px;
+  color: #ffffff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.homepage-view-cart-col-2-os a:hover {
+  opacity: 0.8;
+}
+
+.homepage-view-cart-os {
+  position: fixed;
+  width: 100%;
+  max-width: 50%;
+  z-index: 9;
+  bottom: 4px;
+  left: 25%;
+}
+
+
+@media screen and (max-width: 991px) {
+  .homepage-view-cart-os {
+    max-width: 60%;
+    left: 20%;
+  }
+}
+@media screen and (max-width: 576px) {
+  .homepage-view-cart-col-1-os h3 {
+    font-size: 16px;
+    line-height: 20px;
+    padding-bottom: 0px;
+  }
+  .homepage-view-cart-os {
+    max-width: 94%;
+    left: 3%;
+  }
+  .homepage-view-cart-row {
+    padding: 12px 1rem;
+  }
+  .homepage-view-cart-col-2-os a {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}

@@ -1,0 +1,50 @@
+.FAQs-row-os {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6rem 4rem;
+  justify-content: center;
+  width: 70%;
+  margin: 5rem auto 0;
+}
+
+.FAQs-BuyNow-Btn-os {
+  padding-top: 4rem;
+}
+
+.FAQs-section-os {
+  background-image: url("../../Assets/faqs-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 5rem 0;
+  margin-bottom: 5rem;
+}
+
+@media screen and (max-width: 1028px) {
+  .FAQs-row-os {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .FAQs-row-os {
+    width: 100%;
+    gap: 3rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .FAQs-section-os {
+    padding: 4rem 0;
+    margin-bottom: 4rem;
+  }
+
+  .FAQs-row-os {
+    margin: 4rem auto 0;
+  }
+
+  .FAQs-BuyNow-Btn-os {
+    padding-top: 3rem;
+  }
+}

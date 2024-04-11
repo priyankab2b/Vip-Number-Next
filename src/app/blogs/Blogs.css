@@ -1,0 +1,9 @@
+.BlogList-row-os {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem 2%;
+  padding-bottom: 5rem;
+}
+.BlogList-col-os {
+  width: 49%;
+}

@@ -1,0 +1,76 @@
+.CityHowGetVipNumber-row-os>div {
+    width: 18%;
+}
+.CityHowGetVipNumber-row-os {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem 2.5%;
+}
+
+.CityHowGetVipNumber-heading-os h3 span:last-child {
+    font-size: 42px;
+    line-height: 48px;
+    color: red;
+}
+.CityHowGetVipNumber-heading-os h3 span:first-child {
+    color: #3d3d3d;
+}
+.CityHowGetVipNumber-heading-os h3 {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 38px;
+    color: #6019EB;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0 12px;
+}
+.CityHowGetVipNumber-heading-os {
+    padding-bottom: 3rem;
+}
+
+@media screen and (max-width:1028px) {
+    .CityHowGetVipNumber-heading-os h3 {
+        font-size: 28px;
+        line-height: 35px;
+    }
+    .CityHowGetVipNumber-heading-os h3 span:last-child {
+        font-size: 38px;
+        line-height: 42px;
+    }
+}
+
+@media screen and (max-width:991px) {
+    .CityHowGetVipNumber-row-os>div {
+        width: 31.6%;
+    }
+}
+@media screen and (max-width:767px) {
+    .CityHowGetVipNumber-row-os>div {
+        width: 48%;
+    }
+    .CityHowGetVipNumber-row-os {
+        gap: 2rem 4%;
+    }
+    .CityHowGetVipNumber-heading-os h3 {
+        font-size: 22px;
+        line-height: 28px;
+    }
+    .CityHowGetVipNumber-heading-os {
+        padding-bottom: 2rem;
+    }
+    .CityHowGetVipNumber-heading-os h3 span:last-child {
+        font-size: 28px;
+        line-height: 32px;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .CityHowGetVipNumber-row-os>div {
+        width: 100%;
+    }
+}

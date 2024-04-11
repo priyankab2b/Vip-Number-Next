@@ -1,0 +1,132 @@
+.WishlistBanner-row-os {
+    background-image: url("../../Assets/suggestionBanner.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 21vw;
+    border-radius: 30px;
+    position: relative;
+}
+
+.WishlistBanner-row-os h1 {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 54.03px;
+    line-height: 63px;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+    text-align: center;
+}
+
+.WishlistBanner-view-morebtn-os {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17.8882px;
+    line-height: 21px;
+    text-align: center;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-decoration: none;
+    padding: 12px 2rem;
+    width: max-content;
+    margin: 0.5rem auto 0;
+    border: 1px solid #fff;
+    border-radius: 30px;
+}
+
+.WishlistBanner-view-morebtn-os:hover {
+    opacity: 0.8;
+}
+
+/* .WishlistBanner-buyNow-os {
+      background: #691EDE;
+      border: 2px solid #FFFFFF;
+      border-radius: 35px 0px 0px 35px;
+      color: #FFFFFF;
+      padding: 0.8rem 0;
+  } */
+.WishlistBanner-wishList-os {
+    /* border-radius: 0 35px 35px 0; */
+}
+
+.WishlistBanner-buyNow-wishlist-button-os a {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17.8882px;
+    line-height: 21px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    background: #eeeeee;
+    color: #424242;
+    border-radius: 35px;
+}
+
+/* .WishlistBanner-buyNow-wishlist-button-os a:hover {
+      opacity: 0.8;
+  } */
+.WishlistBanner-buyNow-wishlist-button-os {
+    display: flex;
+    align-items: center;
+    background: #eeeeee;
+    border: 2px solid #f16c19;
+    border-radius: 35px;
+    position: absolute;
+    bottom: -20px;
+}
+
+.WishlistBanner-wishList-os.active {
+    background: #691ede;
+    border: 2px solid #ffffff;
+    border-radius: 0 35px 35px 0;
+    color: #ffffff;
+}
+
+.WishlistBanner-buyNow-os.active {
+    background: #691ede;
+    border: 2px solid #ffffff;
+    border-radius: 35px 0px 0px 35px;
+    color: #ffffff;
+}
+
+.WishlistBanner-row-os p {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 31px;
+    color: #ffffff;
+    padding-top: 0.5rem;
+    text-align: center;
+}
+
+.WishlistBanner-section-os {
+    padding-bottom: 5rem;
+}
+
+@media screen and (max-width: 991px) {
+    .WishlistBanner-buyNow-wishlist-button-os a {
+        text-decoration: none;
+        padding: 0.5rem 1.5rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .WishlistBanner-section-os {
+        padding-bottom: 4rem;
+    }
+}
