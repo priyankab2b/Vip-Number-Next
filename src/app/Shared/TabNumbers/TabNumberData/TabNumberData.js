@@ -4,10 +4,11 @@ import ViewMoreButton from "../../../Shared/ViewMoreButton/ViewMoreButton";
 import Card from "../../Card/Card";
 import "./TabNumberData.css";
 import "../../../home/FeaturedNumber/FeaturedNumber.css";
+// import Image from "next/image";
 
 // Images
 import crown from "../../../Assets/heading-crown-icon.svg";
-import brandIcon from "../../../Assets/VIP-icon-2.svg";
+// import brandIcon from "../../../Assets/VIP-icon-2.svg";
 
 const TabNumberData = ({ title, data, link, description }) => {
   //   const [isLoading, setIsLoading] = useState(true);
@@ -86,7 +87,7 @@ const TabNumberData = ({ title, data, link, description }) => {
 
         {/* {isLoading ? (
           <div className="loader-os">
-            <img src={brandIcon} alt="" />
+            <Image src={brandIcon} alt="" />
           </div>
         ) : (
           <>

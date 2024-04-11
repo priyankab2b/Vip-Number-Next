@@ -7,6 +7,7 @@ import crown from "../../Assets/heading-crown-icon.svg";
 import Card from "../../Shared/Card/Card";
 import CardSlider from "react-slick";
 import "../../home/FeaturedNumber/FeaturedNumber.css";
+import Image from "next/image";
 
 // Images
 import brandIcon from "../../Assets/VIP-icon-2.svg";
@@ -97,7 +98,7 @@ const VIPNumberSlider = () => {
         <div className="vipNumber-slider-main-row-os">
           {isLoading ? (
             <div className="loader-os">
-              <img src={brandIcon} alt="" />
+              <Image src={brandIcon} alt="" />
             </div>
           ) : (
             <CardSlider

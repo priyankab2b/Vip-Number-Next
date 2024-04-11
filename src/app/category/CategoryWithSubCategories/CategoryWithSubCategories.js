@@ -6,6 +6,7 @@ import ViewMoreButton from "../../Shared/ViewMoreButton/ViewMoreButton";
 import axios from "axios";
 import { useGetQueryParams } from "../../utils";
 import "../../home/FeaturedNumber/FeaturedNumber.css";
+import Image from "next/image";
 
 // Images
 import crownIcon from "../../Assets/crown-icon1.svg";
@@ -117,7 +118,7 @@ const CategoryWithSubCategories = ({
   if (isLoading || !id || !subCategory) {
     return (
       <div className="loader-os">
-        <img src={brandIcon} alt="Loading..." />
+        <Image src={brandIcon} alt="Loading..." />
       </div>
     );
   }

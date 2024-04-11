@@ -6,6 +6,7 @@ import Card from "../../Shared/Card/Card";
 import axios from "axios";
 import BuyNowButton from "../../Shared/BuyNowButton/BuyNowButton";
 import "../../home/FeaturedNumber/FeaturedNumber.css";
+import Image from "next/image";
 
 // Images
 import crownIcon from "../../Assets/crown-icon1.svg";
@@ -49,7 +50,7 @@ const SuggestionRelatedNumber = () => {
   if (loading) {
     return (
       <div className="loader-os">
-        <img src={brandIcon} alt="" />
+        <Image src={brandIcon} alt="" />
       </div>
     );
   }

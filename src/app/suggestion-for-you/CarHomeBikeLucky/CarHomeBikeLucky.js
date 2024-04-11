@@ -8,6 +8,7 @@ import { SearchAPI, getProfile, updateProfile } from "../../Services/Services";
 import { useGetQueryParams } from "../../utils";
 import ViewMoreButton from "../../Shared/ViewMoreButton/ViewMoreButton";
 import "../../home/FeaturedNumber/FeaturedNumber.css";
+import Image from "next/image";
 
 // Images
 import crownIcon from "../../Assets/crown-icon1.svg";
@@ -279,7 +280,7 @@ const CarHomeBikeLucky = ({
         {/* {/ Show loader if loading state is true /} */}
         {loading && (
           <div className="loader-os">
-            <img src={brandIcon} alt="" />
+            <Image src={brandIcon} alt="" />
           </div>
         )}
         {/* Show "Data not found" message if data is empty */}

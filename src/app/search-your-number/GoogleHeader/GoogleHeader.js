@@ -9,6 +9,7 @@ import { MyRegisterSignInContext } from "../../contexts/MyRegisterSignInContext/
 import OutsideClickHandler from "react-outside-click-handler";
 import Avatar from "react-avatar";
 import LogoutModal from "../../Shared/LogoutModal/LogoutModal";
+import Image from "next/image";
 
 // Images
 import BrandIcon from "../../Assets/googleRefference-brand-icon.png";
@@ -64,10 +65,10 @@ const GoogleHeader = () => {
         <div className="GoogleHeader-row-os">
           <div className="GoogleHeader-col-1-os">
             <Link className="GoogleHeader-desktop-brand-os" href={"/"}>
-              <img src={BrandIcon} alt="" />
+              <Image src={BrandIcon} alt="" />
             </Link>
             <Link className="GoogleHeader-mobile-brand-os" href={"/"}>
-              <img src={MobileBrandIcon} alt="" />
+              <Image src={MobileBrandIcon} alt="" />
             </Link>
           </div>
           <div className="GoogleHeader-col-2-os">

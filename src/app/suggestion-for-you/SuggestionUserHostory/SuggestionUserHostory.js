@@ -6,6 +6,7 @@ import { getProfile } from "../../Services/Services";
 import { AppStateContext } from "../../contexts/AppStateContext/AppStateContext";
 import BuyNowButton from "../../Shared/BuyNowButton/BuyNowButton";
 import "../../home/FeaturedNumber/FeaturedNumber.css";
+import Image from "next/image";
 
 // Image
 import brandIcon from "../../Assets/VIP-icon-2.svg";
@@ -70,7 +71,7 @@ const SuggestionUserHostory = () => {
 
         {isLoading ? (
           <div className="loader-os">
-            <img src={brandIcon} alt="" />
+            <Image src={brandIcon} alt="" />
           </div>
         ) : (
           <>

@@ -12,6 +12,7 @@ import { MyRegisterSignInContext } from "../../contexts/MyRegisterSignInContext/
 import { useState } from "react";
 import { useGetQueryParams } from "../../utils";
 import moment from "moment";
+import Image from "next/image";
 
 // Images
 import brandIcon from "../../Assets/VIP-icon-2.svg";
@@ -228,7 +229,7 @@ const PdpProduct = (props) => {
     return (
       <div className="container-os">
         <div className="loader-os">
-          <img src={brandIcon} alt="" />
+          <Image src={brandIcon} alt="" />
         </div>
       </div>
     );

@@ -5,10 +5,11 @@ import "../GoogleReference.css";
 import VipSlider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Link from "next/link";
+import Image from "next/image";
 
 // Images
 import brandIcon from "../../Assets/VIP-icon-2.svg";
-import Link from "next/link";
 
 const GoogleIcons = () => {
   const [images, setImages] = useState([]);
@@ -62,7 +63,7 @@ const GoogleIcons = () => {
           <div className="VipNumberSlider-slider-row-os">
             {isLoading ? (
               <div className="loader-os">
-                <img src={brandIcon} alt="" />
+                <Image src={brandIcon} alt="" />
               </div>
             ) : (
               <VipSlider

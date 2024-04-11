@@ -3,6 +3,7 @@ import axios from "axios";
 import "./FeaturedNumber.css";
 import MainHeading from "../../Shared/MainHeading/MainHeading";
 import CardSlider from "react-slick";
+import Image from "next/image";
 
 // Images
 import crown from "../../Assets/heading-crown-icon.svg";
@@ -198,14 +199,14 @@ const FeaturedNumber = () => {
               })
             ) : (
               <div className="loader-os">
-                <img src={brandIcon} alt="" />
+                <Image src={brandIcon} alt="" />
               </div>
             )}
           </CardSlider>
         </div>
         {isLoading ? (
           <div className="loader-os">
-            <img src={brandIcon} alt="" />
+            <Image src={brandIcon} alt="" />
           </div>
         ) : (
           <>

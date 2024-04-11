@@ -5,6 +5,7 @@ import "../../home/FamilyPack/FamilyPack.css";
 import axios from "axios";
 import FamilyCard from "../../Shared/FamilyCard/FamilyCard";
 import "./FamilyPackResult.css";
+import Image from "next/image";
 
 // Slider
 import FamilyPackSlider from "react-slick";
@@ -125,7 +126,7 @@ const FamilyPack = ({ familyPackParamDigit }) => {
 
           {isLoading ? (
             <div className="loader-os">
-              <img src={brandIcon} alt="" />
+              <Image src={brandIcon} alt="" />
             </div>
           ) : (
             <>

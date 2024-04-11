@@ -6,6 +6,7 @@ import Card from "../../Shared/Card/Card";
 import axios from "axios";
 import ViewMoreButton from "../../Shared/ViewMoreButton/ViewMoreButton";
 import "../../home/FeaturedNumber/FeaturedNumber.css";
+import Image from "next/image";
 
 // Images
 import crownIcon from "../../Assets/crown-icon1.svg";
@@ -100,7 +101,7 @@ const SuggestionFeaturedNumber = () => {
           </div>
         ) : (
           <div className="loader-os">
-            <img src={brandIcon} alt="" />
+            <Image src={brandIcon} alt="" />
           </div>
         )}
       </div>
@@ -114,12 +115,12 @@ const SuggestionFeaturedNumber = () => {
         </div>
       ) : (
         <div className="loader-os">
-          <img src={brandIcon} alt="" />
+          <Image src={brandIcon} alt="" />
         </div>
       )} */}
       {isLoading ? (
         <div className="loader-os">
-          <img src={brandIcon} alt="" />
+          <Image src={brandIcon} alt="" />
         </div>
       ) : (
         <>
