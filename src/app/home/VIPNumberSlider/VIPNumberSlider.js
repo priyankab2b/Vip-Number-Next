@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./VipNumberSlider.css";
+import "./VIPNumberSlider.css";
 import "../FeaturedNumber/FeaturedNumber.css";
 import "../../Shared/ViewMoreButton/ViewMoreButton.css";
 // import MainHeading from "../../Shared/MainHeading/MainHeading";

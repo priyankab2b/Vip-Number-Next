@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import Link from "next/link";
 import CartProductData from "../CartProductData/CartProductData";
-import "../../WishList/WishListNumber/WishListNumber.css";
+import "../../wishlist/WishListNumber/WishListNumber";
 import "./CartProductList.css";
 import { AppStateContext } from "./../../contexts/AppStateContext/AppStateContext";
 

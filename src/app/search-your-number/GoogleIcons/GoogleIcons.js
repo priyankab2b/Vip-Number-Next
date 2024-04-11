@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import MainHeading from "../../Shared/MainHeading/MainHeading";
-import "../../Home/VipNumberShopSlider/VipNumberShopSlider.css";
+// import "../../Home/VipNumberShopSlider/VipNumberShopSlider.css";
+import "../../home/VipNumberShopSlider/VipNumberShopSlider.css";
 import "../GoogleReference.css";
 import VipSlider from "react-slick";
 import "slick-carousel/slick/slick.css";
