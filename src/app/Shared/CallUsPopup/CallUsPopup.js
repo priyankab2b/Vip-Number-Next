@@ -1,13 +1,11 @@
 import React from "react";
 import WhatsApp from "../../Assets/whats-app-icon.svg";
 import callIcon1 from "../../Assets/call-icon.svg";
-import Link from 'next/link'
-import Image from 'next/image'
-import '../MobileHeader/MobileHeader.css';
+import Link from "next/link";
+import Image from "next/image";
+import "../MobileHeader/MobileHeader.css";
 
 const CallUsPopup = ({ contactData }) => {
-
-
   const callPhone = (mobileNumber) => {
     const formattedNumber = mobileNumber.replace(/-/g, "");
     window.location.href = `tel:${formattedNumber}`;

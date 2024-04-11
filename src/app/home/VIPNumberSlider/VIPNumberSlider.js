@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import "./VipNumberSlider.css";
-import '../FeaturedNumber/FeaturedNumber.css'
+import "../FeaturedNumber/FeaturedNumber.css";
 import "../../Shared/ViewMoreButton/ViewMoreButton.css";
-import MainHeading from "../../Shared/MainHeading/MainHeading";
+// import MainHeading from "../../Shared/MainHeading/MainHeading";
 import crown from "../../Assets/heading-crown-icon.svg";
 import Card from "../../Shared/Card/Card";
 import CardSlider from "react-slick";
+import "../../home/FeaturedNumber/FeaturedNumber.css";
+import Image from "next/image";
 
 // Images
 import brandIcon from "../../Assets/VIP-icon-2.svg";
@@ -89,14 +91,14 @@ const VIPNumberSlider = () => {
           {/* <MainHeading MainHeading="VIP Mobile Number" rightImage={crown} /> */}
           <h1>VIP Mobile Number</h1>
           <div className="vipNumber-slider-heading-image-os">
-            <img src={crown} alt='' />
+            <img src={crown} alt="" />
           </div>
         </div>
 
         <div className="vipNumber-slider-main-row-os">
           {isLoading ? (
             <div className="loader-os">
-              <img src={brandIcon} alt="" />
+              <Image src={brandIcon} alt="" />
             </div>
           ) : (
             <CardSlider
@@ -158,6 +160,8 @@ const VIPNumberSlider = () => {
                         seller_type={product.seller_type}
                         rtp_date={product.rtp_date}
                         buttonTitle="Buy Now"
+                        comingsoon={product.comingsoon}
+                        comingsoon_date={product.comingsoon_date}
                       />
                     );
                   })
@@ -223,6 +227,8 @@ const VIPNumberSlider = () => {
                     seller_type={product.seller_type}
                     rtp_date={product.rtp_date}
                     buttonTitle="Buy Now"
+                    comingsoon={product.comingsoon}
+                    comingsoon_date={product.comingsoon_date}
                   />
                 );
               })}

@@ -1,146 +1,139 @@
 .family-card-os .container_checkbox-os .checkmark {
-    position: absolute;
-    top: -4px;
-    left: 0;
-    height: 20px;
-    width: 20px;
-    border: 2px solid #333333;
-    border-radius: 15px;
-    background-color: #fff;
+  position: absolute;
+  top: -4px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  border: 2px solid #333333;
+  border-radius: 15px;
+  background-color: #fff;
 }
-
-.family-card-os .container_checkbox-os:hover input~.checkmark {
-    border-radius: 15px;
+.family-card-os .container_checkbox-os:hover input ~ .checkmark {
+  border-radius: 15px;
 }
-
-.family-card-os .container_checkbox-os input:checked~.checkmark {
-    background-color: #6019eb;
-    border: 1px solid #6019eb;
-    border-radius: 15px;
+.family-card-os .container_checkbox-os input:checked ~ .checkmark {
+  background-color: #6019eb;
+  border: 1px solid #6019eb;
+  border-radius: 15px;
 }
-
 .family-card-os .container_checkbox-os .checkmark:after {
-    left: 7px;
-    top: 3px;
-    width: 4px;
-    height: 10px;
+  left: 7px;
+  top: 3px;
+  width: 4px;
+  height: 10px;
 }
-
 .family-card-os .number-card-price-data-os {
-    border-bottom: 1px dashed #898989;
+  border-bottom: 1px dashed #898989;
+  align-items: center;
+  flex-direction: row-reverse;
 }
-
 .family-card-list-row-os {
-    padding-top: 8px;
-    max-height: 245px;
-    overflow-y: auto;
-    margin-top: 1rem;
+  padding-top: 8px;
+  max-height: 270px;
+  overflow-y: auto;
+  margin-top: 1rem;
 }
-
 .family-card-list-row-os li {
-    padding-left: 1rem;
-    margin: 0 4px 12px;
-    background: #ffffff;
-    box-shadow: 3.25669px 3.25669px 8.14172px rgb(0 0 0 / 13%);
-    border-radius: 8.14172px;
+  padding-left: 1rem;
+  margin: 0 4px 12px;
+  background: #ffffff;
+  box-shadow: 3.25669px 3.25669px 8.14172px rgb(0 0 0 / 13%);
+  border-radius: 8.14172px;
 }
-
 .family-card-list-row-os li:hover {
-    background: #e9deff;
-    box-shadow: 3.25669px 3.25669px 8.14172px rgb(0 0 0 / 13%);
-    border-radius: 8.14172px;
+  background: #e9deff;
+  box-shadow: 3.25669px 3.25669px 8.14172px rgb(0 0 0 / 13%);
+  border-radius: 8.14172px;
 }
-
 .family-card-list-row-os .familyPack-selected-checkbox-os {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding: 1rem 1rem 1rem 2rem;
-    flex-wrap: wrap;
-    gap: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1rem 1rem 2rem;
+  flex-wrap: wrap;
+  gap: 8px;
 }
-
 .family-card-list-row-os .container_checkbox-os .checkmark {
-    position: absolute;
-    top: 25%;
+  position: absolute;
+  top: 25%;
 }
-
 .family-card-list-row-os::-webkit-scrollbar-thumb {
-    background-color: #898989;
+  background-color: #898989;
 }
-
 .family-card-list-row-os::-webkit-scrollbar {
-    width: 2px;
-    background-color: #fff;
+  width: 2px;
+  background-color: #fff;
 }
-
 .family-card-list-row-os::-webkit-scrollbar-track {
-    -webkit-box-shadow: none;
-    background-color: #fff;
+  -webkit-box-shadow: none;
+  background-color: #fff;
 }
-
 .family-card-plan-buyNow-btn-os {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px;
-    background: #ffffff;
-    box-shadow: 3.25669px 3.25669px 8.14172px rgb(0 0 0 / 13%);
-    border-radius: 8.14172px;
-    margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  background: #ffffff;
+  box-shadow: 3.25669px 3.25669px 8.14172px rgb(0 0 0 / 13%);
+  border-radius: 8.14172px;
+  margin-top: 12px;
 }
-
 .family-card-plan-price-os {
-    font-family: "Poppins", sans-serif;;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 24px;
-    color: #6019eb;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  color: #6019eb;
 }
-
 .family-card-plan-by-selector-os {
-    font-family: "Poppins", sans-serif;;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12.2395px;
-    line-height: 16px;
-    display: flex;
-    align-items: center;
-    color: #333333;
-    gap: 4px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12.2395px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  color: #333333;
+  gap: 4px;
 }
-
 .family-card-plan-buyNow-btn-os button {
-    font-family: "Roboto", sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 12.0613px;
-    line-height: 16px;
-    text-align: center;
-    color: #ffffff;
-    background: #6019eb;
-    border: 1.18368px solid #f16c19;
-    border-radius: 3.55103px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    padding: 10px 1.5rem;
-    text-decoration: none;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12.0613px;
+  line-height: 16px;
+  text-align: center;
+  color: #ffffff;
+  background: #6019eb;
+  border: 1.18368px solid #f16c19;
+  border-radius: 3.55103px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 10px 1.5rem;
+  text-decoration: none;
 }
-
 .family-card-plan-buyNow-btn-os a span {
-    display: flex;
+  display: flex;
 }
-
 .family-card-os .number-card-main-row-os {
-    padding-left: 1rem;
-    padding-right: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
-@media only screen and (max-width: 1600px) {}
+@media only screen and (max-width: 1600px) {
+}
 
 .number-card-wishlist-os.active span svg {
-    fill: rgb(133, 71, 254);
+  fill: rgb(133, 71, 254);
+}
+.familyPack-selected-checkbox-col-os-1 {
+  font-weight: 800;
+  font-size: 17px;
+  line-height: 20px;
+}
+.family-card-plan-buyNow-btn-os button[disabled] {
+  opacity: 0.8;
 }

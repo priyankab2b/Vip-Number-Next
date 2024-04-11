@@ -1,0 +1,176 @@
+.OrderDeclined-heading-section-os {
+  background: #691ede;
+}
+.OrderDeclined-heading-section-os h3 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 21.6475px;
+  line-height: 25px;
+  text-align: center;
+  color: #f7f2ff;
+  padding: 2rem 0 10rem;
+}
+
+/* OrderDeclined data starts */
+.OrderDeclined-status-row-os {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 3rem 2rem 1rem;
+}
+.OrderDeclined-payment-row-os {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background: #efefef;
+  border-top: 1px solid #c9c9c9;
+  border-bottom: 1px solid #c9c9c9;
+  gap: 1rem;
+  padding: 2rem;
+}
+.OrderDeclined-main-row-os {
+  background: #ffffff;
+  border: 1px solid #c9c9c9;
+  border-radius: 15px 15px 0 0;
+}
+.OrderDeclined-product-row-os h5 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20.935px;
+  line-height: 25px;
+  color: #d80027;
+  padding-bottom: 1rem;
+}
+.OrderDeclined-product-row-os {
+  padding: 2rem;
+}
+.OrderDeclined-section-os {
+  margin: -8rem 0 5rem;
+}
+.OrderDeclined-status-col-2-os p {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21.6475px;
+  line-height: 25px;
+  color: #d80027;
+}
+.OrderDeclined-status-col-2-os h5 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 21.6475px;
+  line-height: 25px;
+  color: #d80027;
+  padding-bottom: 2px;
+}
+.OrderDeclined-payment-data-os .heading-os {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20.0687px;
+  line-height: 24px;
+  color: #4f5760;
+  padding-bottom: 2px;
+}
+.OrderDeclined-payment-data-os span {
+  display: flex;
+}
+.OrderDeclined-payment-col-1-os {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4rem;
+}
+.OrderDeclined-payment-data-os .subHeading-os {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20.07px;
+  line-height: 24px;
+  color: #6019eb;
+}
+.OrderDeclined-payment-col-2-os {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20.0687px;
+  line-height: 24px;
+  color: #4f5760;
+}
+
+@media screen and (max-width: 991px) {
+  .OrderDeclined-status-col-2-os h5 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .OrderDeclined-status-col-2-os p {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .OrderDeclined-payment-data-os .heading-os {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .OrderDeclined-payment-data-os .subHeading-os {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .OrderDeclined-payment-col-2-os {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .OrderDeclined-payment-col-1-os {
+    gap: 2rem;
+  }
+  .OrderDeclined-product-row-os h5 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .OrderDeclinedOrderCard-section-os .WishListNumber-premium-tag-os {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .OrderDeclined-status-row-os {
+    padding: 2rem 1.5rem 1.5rem;
+  }
+  .OrderDeclined-payment-data-os .heading-os {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .OrderDeclined-payment-data-os .subHeading-os {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .OrderDeclined-payment-col-2-os {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .OrderDeclinedOrderCard-col-2-os a {
+    font-size: 16px;
+    padding: 1rem;
+  }
+  .OrderDeclined-payment-row-os {
+    padding: 1.5rem;
+  }
+  .OrderDeclined-product-row-os {
+    padding: 1.5rem;
+  }
+  .OrderDeclined-section-os {
+    margin: -8rem 0 4rem;
+  }
+  .OrderDeclined-status-col-2-os h5 {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .OrderDeclined-status-col-2-os p {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}

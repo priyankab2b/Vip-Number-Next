@@ -6,6 +6,7 @@ import ViewMoreButton from "../../Shared/ViewMoreButton/ViewMoreButton";
 import axios from "axios";
 import { useGetQueryParams } from "../../utils";
 import "../../home/FeaturedNumber/FeaturedNumber.css";
+import Image from "next/image";
 
 // Images
 import crownIcon from "../../Assets/crown-icon1.svg";
@@ -113,12 +114,11 @@ const CategoryWithSubCategories = ({
       });
   };
   // console.log("filteredDatafilteredData1111", filteredData);
-  
 
   if (isLoading || !id || !subCategory) {
     return (
       <div className="loader-os">
-        <img src={brandIcon} alt="Loading..." />
+        <Image src={brandIcon} alt="Loading..." />
       </div>
     );
   }
@@ -129,7 +129,7 @@ const CategoryWithSubCategories = ({
 
   return (
     <div>
-      <section className="SuggestionFeaturedNumber-section-os">
+      <section className="SuggestionFeaturedNumber-section-os default-section-os">
         <div className="container-os">
           <div className="featured-number-heading-os">
             <MainHeading MainHeading={subCategory} rightImage={crownIcon} />
@@ -167,6 +167,8 @@ const CategoryWithSubCategories = ({
                   card_btn_text={items?.card_btn_text}
                   buttonTitle="Buy Now"
                   compare_at_price={items?.compare_at_price}
+                  comingsoon={items?.comingsoon}
+                  comingsoon_date={items?.comingsoon_date}
                 />
               );
             })}

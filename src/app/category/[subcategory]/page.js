@@ -4,7 +4,7 @@ import Footer from "../../Shared/Footer/Footer";
 import Header from "../../Shared/Header/Header";
 import MobileFooter from "../../Shared/MobileFooter/MobileFooter";
 import MobileHeader from "../../Shared/MobileHeader/MobileHeader";
-import SuggestionBanner from "../../suggestion/SuggestionBanner/SuggestionBanner";
+import SuggestionBanner from "../../suggestion-for-you/SuggestionBanner/SuggestionBanner";
 import Search from "../../Shared/Search/Search";
 import FAQs from "../../Shared/FAQs/FAQs";
 import OurCustomers from "../../Shared/OurCustomers/OurCustomers";

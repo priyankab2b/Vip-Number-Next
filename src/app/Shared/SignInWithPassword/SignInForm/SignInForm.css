@@ -1,108 +1,108 @@
 .signIn-page-login-with-otp-os a {
-    font-family: "Rubik";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 20px;
-    text-align: center;
-    letter-spacing: 0.04em;
-    color: #9b9b9b;
-    display: flex;
-    justify-content: flex-end;
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.04em;
+  color: #9b9b9b;
+  display: flex;
+  justify-content: flex-end;
+}
+.signIn-new-customer-register-os {
+  font-size: 20px;
+  line-height: 24px;
+}
+.signIn-page-main-heading-os {
+  font-size: 24px;
+  line-height: 28px;
+  padding-bottom: 2rem;
+}
+.signIn-page-countrySelector-os .css-13cymwt-control {
+  padding: 0.5rem;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 119.5%;
+  letter-spacing: 0.04em;
+  color: #9b9b9b;
+  background: #ffffff;
+  border-radius: 8px;
+  border: none;
+  width: 100%;
+}
+.signIn-page-countrySelector-os .css-13cymwt-control:hover {
+  border-color: unset;
+}
+.signIn-page-countrySelector-os .css-1xc3v61-indicatorContainer:hover {
+  color: hsl(0, 0%, 50%);
+}
+.signIn-page-heading-os {
+  font-size: 20px;
+  line-height: 24px;
+}
+.signIn-page-row-os {
+  max-width: 600px;
+}
+.loginWith-passwd-opt-os {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 119.5%;
+  text-align: right;
+  letter-spacing: 0.04em;
+  text-decoration-line: underline;
+  color: #9b9b9b;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+.resendOtp-loginWithPass-btn-os {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.resendOtp-btn-os {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 119.5%;
+  text-align: right;
+  letter-spacing: 0.04em;
+  text-decoration-line: underline;
+  color: #9b9b9b;
+  margin-bottom: 12px;
+  border: none;
+}
+
+@media screen and (max-width: 576px) {
+  .signIn-page-row-os {
+    max-width: 100%;
+    padding: 2rem 1rem;
   }
-  .signIn-new-customer-register-os {
-    font-size: 20px;
-    line-height: 24px;
+  .register-form-os {
+    padding: 0 1rem;
   }
   .signIn-page-main-heading-os {
-    font-size: 24px;
-    line-height: 28px;
-    padding-bottom: 2rem;
-  }
-  .signIn-page-countrySelector-os .css-13cymwt-control {
-    padding: 0.5rem;
-font-family: "Roboto", sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 17px;
-    line-height: 119.5%;
-    letter-spacing: 0.04em;
-    color: #9b9b9b;
-    background: #ffffff;
-    border-radius: 8px;
-    border: none;
-    width: 100%;
-  }
-  .signIn-page-countrySelector-os .css-13cymwt-control:hover {
-    border-color: unset;
-  }
-  .signIn-page-countrySelector-os .css-1xc3v61-indicatorContainer:hover {
-    color: hsl(0, 0%, 50%);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
   }
   .signIn-page-heading-os {
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 18px;
+    line-height: 20px;
   }
-  .signIn-page-row-os {
-    max-width: 600px;
-  }
-  .loginWith-passwd-opt-os {
-    font-family: "Rubik";
-    font-style: normal;
-    font-weight: 500;
+  .signIn-page-countrySelector-os .css-13cymwt-control {
+    padding: 0.3rem;
     font-size: 16px;
-    line-height: 119.5%;
-    text-align: right;
+    line-height: 20px;
     letter-spacing: 0.04em;
-    text-decoration-line: underline;
-    color: #9b9b9b;
-    margin-bottom: 12px;
-    cursor: pointer;
   }
-  .resendOtp-loginWithPass-btn-os {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+  .signIn-new-customer-register-os {
+    font-size: 18px;
+    line-height: 20px;
   }
-  .resendOtp-btn-os {
-    font-family: "Rubik";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 119.5%;
-    text-align: right;
-    letter-spacing: 0.04em;
-    text-decoration-line: underline;
-    color: #9b9b9b;
-    margin-bottom: 12px;
-    border: none;
-  }
-  
-  @media screen and (max-width: 576px) {
-    .signIn-page-row-os {
-      max-width: 100%;
-      padding: 2rem 1rem;
-    }
-    .register-form-os {
-      padding: 0 1rem;
-    }
-    .signIn-page-main-heading-os {
-      padding-bottom: 1rem;
-      margin-bottom: 1rem;
-    }
-    .signIn-page-heading-os {
-      font-size: 18px;
-      line-height: 20px;
-    }
-    .signIn-page-countrySelector-os .css-13cymwt-control {
-      padding: 0.3rem;
-      font-size: 16px;
-      line-height: 20px;
-      letter-spacing: 0.04em;
-    }
-    .signIn-new-customer-register-os {
-      font-size: 18px;
-      line-height: 20px;
-    }
-  }  
+}

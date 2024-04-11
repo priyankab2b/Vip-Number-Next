@@ -1,13 +1,13 @@
+"use client"
 import React, { useState, useEffect, useRef, useContext } from "react";
 import "./Search.css";
 import SearchFilterInput from "../SearchFilterInput/SearchFilterInput";
 import SearchFilterButton from "../SearchFilterButton/SearchFilterButton";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
-// import { createSearchParams, useLocation, useNavigate } from "react-router-dom";
+import { createSearchParams } from "react-router-dom";
 import MobileSearch from "../MobileSearch/MobileSearch";
 import { updateProfile } from "../../Services/Services";
 import { AppStateContext } from "../../contexts/AppStateContext/AppStateContext";
-
 
 const Tag = ({ value, onClick }) => {
   return (
@@ -55,11 +55,15 @@ export const AppliedTags = ({ queryParams }) => {
     const route = {
       ...newparams,
     };
-    router.push({
-      pathname: router?.pathname,
-      search: `?${searchParams(route)}`,
-    });
+    // router.push({
+    //   pathname: router?.pathname,
+    //   search: `?${searchParams(route)}`,
+    // });
+
+    const queryString = createSearchParams(route).toString();
+    router.push(`${pathname}?${queryString}`);
   };
+
   if (!Object.keys(curParams || {})?.length) {
     return;
   }
@@ -222,6 +226,7 @@ const Search = ({ queryParams }) => {
   const [showAdvancedWarning, setShowAdvancedWarning] = useState(false);
   const [priceRangeWarning, setPriceRangeWarning] = useState(false);
   const [mustContainedWarning, setmustContainedWarning] = useState(false);
+  const [familyPackValue, setFamilyPackValue] = useState();
   // references
   const filtersRef = useRef(filters);
   const searchByRef = useRef(searchBy);
@@ -230,13 +235,18 @@ const Search = ({ queryParams }) => {
   // auto-focus
   const inputRef = useRef(null);
   const inputRef1 = useRef(null);
-
-  // console.log("queryParamsqueryParams :", queryParams)
-  // console.log("searchParams :", searchParams)
+  
+  // console.log("filters :::", filters);
 
   useEffect(() => {
     inputRef.current.focus();
   }, []);
+
+  useEffect(() => {
+    // Set the initial value from queryParams.fp_total when component rendor
+    setFamilyPackValue(queryParams?.fp_total || "");
+  }, [queryParams?.fp_total]);
+  // console.log("familyPackValuefamilyPackValue :", familyPackValue);
 
   useEffect(() => {}, [priceRangePopup]);
   //Must and not Must contain code
@@ -385,13 +395,15 @@ const Search = ({ queryParams }) => {
     if (!navObj?.min_price) delete navObj.min_price;
     if (!navObj?.max_price) delete navObj.max_price;
 
-    router.push({
-      pathname: "/search-results",
-      search: `?${searchParams(navObj)}`,
-      
-    });
+    
+    const queryString = createSearchParams(navObj).toString();
+    router.push(`/search-results?${queryString}`);
+    // console.log("queryString ::", queryString);
 
-    // router.push("/search-results");
+    // router.push({
+    //   pathname: "/search-results",
+    //   search: `?${searchParams(navObj)}`,
+    // });
   };
 
   const handleFilters = (key, value) => {
@@ -399,7 +411,7 @@ const Search = ({ queryParams }) => {
       ...filters,
       [key]: value,
     });
-    console.log("filtersfiltersfilters : ", value)
+    console.log("filtersfiltersfilters : ", value);
   };
 
   const handleFiltersOnSwitching = (obj) => {
@@ -407,8 +419,8 @@ const Search = ({ queryParams }) => {
     const { min_price = undefined, max_price = undefined } = filters;
     setFilters({
       ...obj,
-      min_price,
-      max_price,
+      // min_price,
+      // max_price,
     });
   };
 
@@ -458,8 +470,8 @@ const Search = ({ queryParams }) => {
     } else if (filters?.type === "advanced") {
       if (
         filters?.contains &&
-        filters?.not_contains &&
-        filters?.not_contains === filters?.contains
+        filters?.not_contain &&
+        filters?.not_contain === filters?.contains
       ) {
         setmustContainedWarning(true);
         return false;
@@ -469,7 +481,7 @@ const Search = ({ queryParams }) => {
         (!filters?.any_where || filters?.any_where === "") &&
         (!filters?.end_with || !filters?.end_with === "") &&
         (!filters?.contains || filters?.contains === "") &&
-        (!filters?.not_contains || filters?.not_contains === "") &&
+        (!filters?.not_contain || filters?.not_contain === "") &&
         (!filters?.total || filters?.total === "") &&
         (!filters?.sum || filters?.sum === "")
       ) {
@@ -523,15 +535,15 @@ const Search = ({ queryParams }) => {
     }
   };
   const handlePriceRange = (value) => {};
+
   const globalhit = () => {
+    console.log("globalhit");
     if (!filters?.number) {
       setPriceWarning(true);
       return;
     }
     setPriceWarning(false);
     setPriceRangePopup(true);
-    router.push("/search-results")
-    // console.log("object")
   };
 
   const basicHit = () => {
@@ -584,6 +596,16 @@ const Search = ({ queryParams }) => {
   const mostHit = () => {
     setPriceRangePopup(true);
   };
+
+  //Family Pack
+  const handleFamilyPack = (e) => {
+    e.preventDefault();
+    setCallCount(callCount + 1);
+    router.push(
+      `/search-results?type=${"family_pack"}&searchBy=${"family_pack"}&fp_total=${familyPackValue}&callCount=${callCount}`
+    );
+    // console.log("Family pack handle", familyPackValue);
+  };
   return (
     <div className="search-section-os-1">
       <section className="search-section-os">
@@ -621,6 +643,7 @@ const Search = ({ queryParams }) => {
                 </span>
                 Search by Digits
               </button>
+
               <button
                 onClick={() => {
                   setSearchBy("price");
@@ -652,7 +675,39 @@ const Search = ({ queryParams }) => {
                 </span>
                 Search by Price
               </button>
+
+              <button
+                onClick={() => {
+                  setFilters({
+                    searchBy: "family_pack",
+                    min_price: 0,
+                  });
+                  setSearchBy("family_pack");
+                }}
+                className={`search-by-familyPack-button-os ${
+                  searchBy === "family_pack"
+                    ? "filter-tab-os active"
+                    : "filter-tab-os"
+                }`}
+              >
+                <span>
+                  <svg
+                    width="23"
+                    height="23"
+                    viewBox="0 0 23 23"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17.5297 4.96188C16.9304 4.96188 16.4172 4.74832 15.9901 4.3212C15.5637 3.89481 15.3505 3.38197 15.3505 2.7827C15.3505 2.18342 15.5637 1.67022 15.9901 1.24311C16.4172 0.816712 16.9304 0.603516 17.5297 0.603516C18.129 0.603516 18.6422 0.816712 19.0693 1.24311C19.4957 1.67022 19.7089 2.18342 19.7089 2.7827C19.7089 3.38197 19.4957 3.89481 19.0693 4.3212C18.6422 4.74832 18.129 4.96188 17.5297 4.96188ZM16.4401 22.3953V13.6786C16.4401 12.9522 16.2542 12.2985 15.8822 11.7173C15.5096 11.1362 15.0327 10.6822 14.4516 10.3553L15.405 7.54965C15.5503 7.09566 15.8183 6.73246 16.2091 6.46006C16.5992 6.18767 17.0394 6.05147 17.5297 6.05147C18.02 6.05147 18.4602 6.18767 18.8503 6.46006C19.2411 6.73246 19.5091 7.09566 19.6544 7.54965L22.4329 15.8578H19.7089V22.3953H16.4401ZM11.537 10.9546C11.083 10.9546 10.6972 10.7955 10.3798 10.4774C10.0616 10.16 9.90257 9.77424 9.90257 9.32024C9.90257 8.86624 10.0616 8.48053 10.3798 8.16309C10.6972 7.84493 11.083 7.68585 11.537 7.68585C11.9909 7.68585 12.3767 7.84493 12.6941 8.16309C13.0123 8.48053 13.1713 8.86624 13.1713 9.32024C13.1713 9.77424 13.0123 10.16 12.6941 10.4774C12.3767 10.7955 11.9909 10.9546 11.537 10.9546ZM3.90982 4.96188C3.31054 4.96188 2.79771 4.74832 2.37132 4.3212C1.9442 3.89481 1.73064 3.38197 1.73064 2.7827C1.73064 2.18342 1.9442 1.67022 2.37132 1.24311C2.79771 0.816712 3.31054 0.603516 3.90982 0.603516C4.50909 0.603516 5.02193 0.816712 5.44832 1.24311C5.87544 1.67022 6.089 2.18342 6.089 2.7827C6.089 3.38197 5.87544 3.89481 5.44832 4.3212C5.02193 4.74832 4.50909 4.96188 3.90982 4.96188ZM1.73064 22.3953V14.7682H0.0962524V8.23065C0.0962524 7.63137 0.309812 7.11818 0.736932 6.69106C1.16332 6.26466 1.67616 6.05147 2.27543 6.05147H5.5442C6.14348 6.05147 6.65631 6.26466 7.08271 6.69106C7.50983 7.11818 7.72339 7.63137 7.72339 8.23065V14.7682H6.089V22.3953H1.73064ZM9.90257 22.3953V18.037H8.81298V13.6786C8.81298 13.2246 8.97206 12.8389 9.29022 12.5215C9.60765 12.2033 9.99337 12.0442 10.4474 12.0442H12.6265C13.0805 12.0442 13.4663 12.2033 13.7837 12.5215C14.1018 12.8389 14.2609 13.2246 14.2609 13.6786V18.037H13.1713V22.3953H9.90257Z"
+                      fill="#333333"
+                    />
+                  </svg>
+                </span>
+                Family Pack
+              </button>
             </div>
+
             <div
               className={`search-filter-data-os ${
                 searchBy === "digit"
@@ -661,7 +716,7 @@ const Search = ({ queryParams }) => {
               }`}
             >
               <div className="search-filter-checkboxes-row-os">
-                {router?.pathname !== "/search-your-number" ? (
+                {location?.pathname !== "/search-your-number" ? (
                   <>
                     <label>
                       <input
@@ -769,7 +824,7 @@ const Search = ({ queryParams }) => {
                       : "search-filter-radio-button-content-1"
                   }`}
                 >
-                  <for className="search-filter-input-data-os">
+                  <div className="search-filter-input-data-os">
                     <div className="search-filter-input-data-col-1-os">
                       <SearchFilterInput
                         inputLabel="Enter Digits Here"
@@ -797,7 +852,7 @@ const Search = ({ queryParams }) => {
                         }}
                       />
                     </div>
-                  </for>
+                  </div>
                 </div>
 
                 <div
@@ -998,7 +1053,7 @@ const Search = ({ queryParams }) => {
                           if (
                             checkForDuplicates(
                               filteredValue,
-                              filters?.not_contains
+                              filters?.not_contain
                             )
                           ) {
                             handleFilters("contains", filteredValue);
@@ -1019,7 +1074,7 @@ const Search = ({ queryParams }) => {
                         inputLabel="Not Contain"
                         inputType="text"
                         placeHolder=""
-                        inputValue={filters?.not_contains}
+                        inputValue={filters?.not_contain}
                         inputOnChange={(e) => {
                           const filteredValue = e.target.value.replace(
                             /[^0-9,\*]/g,
@@ -1028,7 +1083,7 @@ const Search = ({ queryParams }) => {
                           if (
                             checkForDuplicates(filters?.contains, filteredValue)
                           ) {
-                            handleFilters("not_contains", filteredValue);
+                            handleFilters("not_contain", filteredValue);
                             setErrorNotContain("");
                           } else {
                             setErrorNotContain(
@@ -1491,7 +1546,7 @@ const Search = ({ queryParams }) => {
 
             <div
               className={`search-filter-data-os ${
-                searchBy === "family"
+                searchBy === "family_pack"
                   ? "filter-content-os active"
                   : "filter-content-os"
               }`}
@@ -1500,24 +1555,68 @@ const Search = ({ queryParams }) => {
                 How much Similar Numbers do you want for your family or
                 Business?
               </div>
-              <div className="search-filter-input-data-os">
+              <form
+                onSubmit={handleFamilyPack}
+                className="search-filter-input-data-os"
+              >
                 <div className="search-by-familyPack-col-1-os">I Want</div>
                 <div className="search-by-familyPack-col-2-os">
                   <SearchFilterInput
                     inputLabel="Quantity"
-                    inputType="number"
-                    placeHolder=""
+                    inputType="text"
+                    placeHolder="2-9"
+                    inputOnChange={(e) => {
+                      const inputValue = e.target.value;
+                      const numericRegex = /^$|^[2-9]$/; // Allow empty string or a single digit
+
+                      if (numericRegex.test(inputValue)) {
+                        setPriceWarning(false);
+                        setFamilyPackValue(inputValue);
+                        handleFilters(
+                          "family_pack",
+                          parseInt(inputValue) || null
+                        );
+                      } else {
+                        setPriceWarning(true);
+                      }
+                    }}
+                    inputValue={familyPackValue}
+                    ref={inputRef}
                   />
+
+                  {/* <SearchFilterInput
+                    inputLabel="Quantity"
+                    inputType="text"
+                    placeHolder="2-9"
+                    inputOnChange={(e) => {
+                      const inputValue = e.target.value;
+                      const numericRegex = /^$|^[2-9]$/; // Allow empty string or a single digit
+
+                      if (numericRegex.test(inputValue) || inputValue === "") {
+                        setPriceWarning(false);
+                        setFamilyPackValue(inputValue);
+                        handleFilters(
+                          "family_pack",
+                          inputValue === "" ? null : parseInt(inputValue)
+                        );
+                      } else {
+                        setPriceWarning(true);
+                      }
+                    }}
+                    inputValue={familyPackValue}
+                    inputRef={inputRef}
+                  /> */}
                 </div>
                 <div className="search-by-familyPack-col-3-os">
                   SIMILAR VIP MOBILE NUMBER
                 </div>
                 <div className="search-by-familyPack-col-4-os">
                   <SearchFilterButton
-                    onClick={() => handlePriceRange("search-digit-family-os")}
+                    // onClick={() => handlePriceRange("search-digit-family-os")}
+                    onClick={handleFamilyPack}
                   />
                 </div>
-              </div>
+              </form>
             </div>
 
             {/* Search Tags */}

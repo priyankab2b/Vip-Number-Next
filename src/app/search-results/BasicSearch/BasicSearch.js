@@ -4,10 +4,10 @@ import crown from "../../Assets/heading-crown-icon.svg";
 import Card from "../../Shared/Card/Card";
 import { SearchContext } from "../page";
 import ViewMoreButton from "../../Shared/ViewMoreButton/ViewMoreButton";
+import "../../home/FeaturedNumber/FeaturedNumber.css";
 
-const BasicSearch = ({ nextPage }) => {
+const BasicSearch = ({ nextPage, searchNextUrl, nextUrl }) => {
   const { besSeach } = useContext(SearchContext);
-
   return (
     <div className="BasicSearch-section-os">
       {besSeach.length !== 0 && (
@@ -71,12 +71,15 @@ const BasicSearch = ({ nextPage }) => {
                       seller_type={product.seller_type}
                       rtp_date={product.rtp_date}
                       card_btn_text={product.card_btn_text}
+                      compare_at_price={product.compare_at_price}
+                      comingsoon={product.comingsoon}
+                      comingsoon_date={product.comingsoon_date}
                     />
                   );
                 })}
               </div>
             )}
-            {besSeach.length > 0 && nextPage && (
+            {besSeach.length > 0 && nextPage && searchNextUrl && (
               <div className="default-loadMore-button-os">
                 <ViewMoreButton
                   title={"Load more"}

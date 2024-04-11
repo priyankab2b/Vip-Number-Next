@@ -1,0 +1,73 @@
+.CityBanner-data-os {
+  background-image: url("../../../Assets/citybanner.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 35vw;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.CityBanner-data-os h2 {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 63px;
+  line-height: 73px;
+  text-align: center;
+  color: #ffffff;
+  margin: 0 auto;
+  width: 40%;
+  padding-bottom: 2rem;
+}
+.CityBanner-data-os a {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17.8882px;
+  line-height: 21px;
+  text-align: center;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  margin: 0 auto;
+  padding: 0.5rem 4rem;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  text-decoration: none;
+}
+.CityBanner-data-os a:hover {
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 1600px) {
+  .CityBanner-data-os h2 {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 1028px) {
+  .CityBanner-data-os h2 {
+    font-size: 38px;
+    line-height: 42px;
+    padding-bottom: 1rem;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .CityBanner-data-os h2 {
+    font-size: 24px;
+    line-height: 28px;
+  }
+  .CityBanner-data-os a {
+    font-size: 16px;
+    line-height: 20px;
+    padding: 0.5rem 2rem;
+  }
+  .CityBanner-data-os {
+    height: 50vw;
+  }
+}

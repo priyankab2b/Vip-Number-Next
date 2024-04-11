@@ -3,6 +3,7 @@ import axios from "axios";
 import "./FeaturedNumber.css";
 import MainHeading from "../../Shared/MainHeading/MainHeading";
 import CardSlider from "react-slick";
+import Image from "next/image";
 
 // Images
 import crown from "../../Assets/heading-crown-icon.svg";
@@ -129,11 +130,15 @@ const FeaturedNumber = () => {
                   seller_type={product.seller_type}
                   rtp_date={product.rtp_date}
                   buttonTitle="Buy Now"
+                  comingsoon={product.comingsoon}
+                  comingsoon_date={product.comingsoon_date}
                 />
               );
             })}
           </div>
-        ) : ("")}
+        ) : (
+          ""
+        )}
         {/* Mobile slider */}
         <div className="featured-number-mobile-data-os">
           <CardSlider {...cardSliderSettings}>
@@ -187,19 +192,21 @@ const FeaturedNumber = () => {
                     seller_type={product.seller_type}
                     rtp_date={product.rtp_date}
                     buttonTitle="Buy Now"
+                    comingsoon={product.comingsoon}
+                    comingsoon_date={product.comingsoon_date}
                   />
                 );
               })
             ) : (
               <div className="loader-os">
-                <img src={brandIcon} alt="" />
+                <Image src={brandIcon} alt="" />
               </div>
             )}
           </CardSlider>
         </div>
         {isLoading ? (
           <div className="loader-os">
-            <img src={brandIcon} alt="" />
+            <Image src={brandIcon} alt="" />
           </div>
         ) : (
           <>

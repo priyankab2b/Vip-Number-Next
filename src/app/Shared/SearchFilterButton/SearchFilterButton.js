@@ -1,12 +1,9 @@
 import React from "react";
 import "./SearchFilterButton.css";
 
-const SearchFilterButton = (props) => {
+const SearchFilterButton = ({ onClick }) => {
   return (
-    <button
-      type="submit"
-      className="search-filter-btn-os"
-    >
+    <button type="submit" className="search-filter-btn-os" onClick={onClick}>
       <span>
         <svg
           width="19"

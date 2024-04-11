@@ -3,7 +3,6 @@ import Select from "react-select";
 import "./CountrySelector.css";
 
 const CountrySelector = (props) => {
-
   return (
     <div className="main-selector-os">
       <Select

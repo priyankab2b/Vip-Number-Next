@@ -15,6 +15,7 @@ import RegisterVipNumber from "../home/RegisterVipNumber/RegisterVipNumber";
 
 // Image
 import RegisterImg1 from "../Assets/assurance-register-img.svg";
+import FamilyPack from "../home/FamilyPack/FamilyPack";
 
 const ProductDetails = () => {
     return (
@@ -23,6 +24,7 @@ const ProductDetails = () => {
             <Header />
             <MobileHeader />
             <PdpProduct />
+            <FamilyPack />
             <RelatedNumber />
             <FAQs />
             <OurCustomers />

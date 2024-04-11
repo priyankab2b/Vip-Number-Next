@@ -1,0 +1,66 @@
+.BlogListCard-profile-os,
+.BlogListCard-date-os {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.BlogListCard-profile-date-row-os {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-bottom: 0.5rem;
+}
+.BlogListCard-col-os-2 {
+  padding-top: 2rem;
+}
+.BlogListCard-content-os h3 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  color: #333333;
+  margin-bottom: 1rem;
+}
+.BlogListCard-content-os p {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 34px;
+  text-transform: lowercase;
+  color: #333333;
+  padding-bottom: 1rem;
+}
+.BlogListCard-content-os > a > div {
+  background: #fff;
+  width: 100%;
+}
+.BlogListCard-content-os a {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #6019eb;
+  background: linear-gradient(60deg, #6019eb, #ff6219);
+  display: flex;
+  padding: 2px;
+  width: max-content;
+  border-radius: 44.6619px;
+}
+.BlogListCard-content-os > a > div {
+  background: #fff;
+  width: 100%;
+  padding: 0.5rem 2rem;
+  border-radius: 44.6619px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.BlogListCard-col-os-1 img {
+  border-radius: 10px;
+}

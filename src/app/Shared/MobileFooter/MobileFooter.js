@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useState } from "react";
 import "./MobileFooter.css";
 import { NotificationManager } from "react-notifications";
@@ -109,7 +109,9 @@ const MobileFooter = () => {
                 </div>
                 <div className="MobileFooter-gotQuestions-addresses-os">
                   <div className="footer-getInTouch-phone-whats-app-os">
-                    <Link href="tel:+916009160092">+91-60091-60092</Link>
+                    <Link href="tel:+916009160092" onClick={openWhatsApp}>
+                      +91-60091-60092
+                    </Link>
                     <Link href="" className="whats-app-icon-os" onClick={openWhatsApp}>
                       <Image src={WhatsApp} alt="" />
                     </Link>

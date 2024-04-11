@@ -13,7 +13,7 @@ import Country from "../../api/Country.json";
 
 const SignInWithPassword = () => {
   const ref = useRef();
-  const navigate = useRouter();
+  const Router = useRouter();
   const { setUserDetails, redirectTo, setRedirectTo, cartCache, addToCart } =
     useContext(AppStateContext);
   const {
@@ -81,17 +81,39 @@ const SignInWithPassword = () => {
               addToCart(
                 cartCache,
                 () => {
-                  navigate.push(redirectTo);
+                  Router.push(redirectTo);
                   setRedirectTo(null);
                 },
                 response?.data?.data?.token
               );
             } else {
-              navigate.push(redirectTo);
+              Router.push(redirectTo);
               setRedirectTo(null);
             }
           }
           NotificationManager.success("Login successful");
+
+          // Create lead api after login
+          const consoleData = localStorage.getItem("vipcre");
+          const parsedData = JSON.parse(consoleData);
+          // Extracting the token
+          const token = parsedData.token;
+
+          // Logging the token
+          // console.log("Token:", token);
+          axios.post(
+            "https://admin.leafymango.com/web/lead/create",
+            {
+              mobile_number: mobile,
+              first_name: "Loged-In",
+            },
+            {
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`,
+              },
+            }
+          );
         } else if (response.data.status === "error") {
           NotificationManager.error(
             response?.data?.message || "Incorrect password or mobile number"

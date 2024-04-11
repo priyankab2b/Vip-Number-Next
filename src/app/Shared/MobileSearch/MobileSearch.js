@@ -2,15 +2,17 @@ import React, { useState, useEffect, useContext } from "react";
 import SearchFilterInput from "../SearchFilterInput/SearchFilterInput";
 import { MyRegisterSignInContext } from "../../contexts/MyRegisterSignInContext/MyRegisterSignInContext";
 import { AppStateContext } from "../../contexts/AppStateContext/AppStateContext";
-import { useSearchParams, usePathname, useRouter } from 'next/navigation'
-// import { createSearchParams, useNavigate, useLocation } from "react-router-dom";
+import { useSearchParams, usePathname, useRouter } from "next/navigation";
+import { createSearchParams } from "react-router-dom";
 import { AppliedTags } from "../Search/Search";
 import Image from "next/image";
+import "./MobileSearch.css";
 
 // Images
 import icon1 from "../../Assets/mobile-search-icon-1.svg";
 import icon2 from "../../Assets/mobile-search-icon-2.svg";
-import icon4 from "../../Assets/mobile-search-icon-4.svg";
+import icon3 from "../../Assets/mobile-search-icon-3.svg";
+// import icon4 from "../../Assets/mobile-search-icon-4.svg";
 import miniIcon from "../../Assets/seach-with-digits-heading-icon.svg";
 
 const MobileSearch = ({ queryParams }) => {
@@ -23,6 +25,8 @@ const MobileSearch = ({ queryParams }) => {
   const [priceWarning, setPriceWarning] = useState(false);
   const [showError, setShowError] = useState(false);
   const [showCheckboxWarning, setShowCheckboxWarning] = useState(false);
+  const [familyPackValue, setFamilyPackValue] = useState();
+  const [callCount, setCallCount] = useState(0);
   const [searchBy, setSearchBy] = useState("digit");
   const [filters, setFilters] = useState({
     type: "global",
@@ -137,14 +141,21 @@ const MobileSearch = ({ queryParams }) => {
   }, [queryParams]);
 
   const getSearchResultsData = (type = {}) => {
-    pathname({
-      pathname: "/search-results",
-      search: `?${useSearchParams({
-        searchBy,
-        ...filters,
-        ...type,
-      })}`,
-    });
+    // pathname({
+    //   pathname: "/search-results",
+    //   search: `?${useSearchParams({
+    //     searchBy,
+    //     ...filters,
+    //     ...type,
+    //   })}`,
+    // });
+
+    const queryString = createSearchParams({
+      searchBy,
+      ...filters,
+      ...type,
+    }).toString();
+    router.push(`/search-results?${queryString}`);
   };
 
   const handleFiltersResults = (key, value) => {
@@ -369,6 +380,21 @@ const MobileSearch = ({ queryParams }) => {
       e.preventDefault();
     }
   };
+
+  // handle change for family selector
+  const handleChangefamilySelect = (e) => {
+    setFamilyPackValue(e.target.value);
+  };
+
+  //Family Pack
+  const familyPackSubmit = (e) => {
+    e.preventDefault();
+    setCallCount(callCount + 1);
+    router.push(
+      `/search-results?type=${"family_pack"}&searchBy=${"family_pack"}&fp_total=${familyPackValue}&callCount=${callCount}`
+    );
+    // console.log("Family pack handle", familyPackValue);
+  };
   return (
     <div>
       <section id="mobile-search-id-os" className="MobileSearch-section-os">
@@ -408,11 +434,12 @@ const MobileSearch = ({ queryParams }) => {
                 </div>
                 <h4>Search by Price</h4>
               </div>
-              {router?.pathname !== "/search-your-number" ? (
+
+              {/* {location?.pathname !== "/search-your-number" ? (
                 <div
                   onClick={() => {
                     if (getName()) {
-                        pathname("/suggestion-for-you");
+                      navigate("/suggestion-for-you");
                     } else {
                       setActiveSignInWithOtp(true);
                     }
@@ -430,9 +457,27 @@ const MobileSearch = ({ queryParams }) => {
                 </div>
               ) : (
                 <></>
-              )}
+              )} */}
+
+              <div
+                onClick={() => {
+                  handleMobileTab("family_pack");
+                  setSearchBy("family_pack");
+                }}
+                className={
+                  searchBy === "family_pack"
+                    ? "MobileSearch-filter-tabs-col-1-os active"
+                    : "MobileSearch-filter-tabs-col-1-os"
+                }
+              >
+                <div className="MobileSearch-filter-tabs-image-os">
+                  <Image src={icon3} alt="" />
+                </div>
+                <h4>Family Pack</h4>
+              </div>
             </div>
           </div>
+
           {searchBy === "digit" ? (
             <div
               className={
@@ -448,7 +493,7 @@ const MobileSearch = ({ queryParams }) => {
                   </div>
                   Search by Digits
                 </div>
-                {router?.pathname !== "/search-your-number" ? (
+                {location?.pathname !== "/search-your-number" ? (
                   <div className="MobileSearch-filter-search-by-digits-filters-row-os">
                     <button
                       onClick={() => handleMobileFilter("global")}
@@ -737,7 +782,7 @@ const MobileSearch = ({ queryParams }) => {
                               if (
                                 checkForDuplicates(
                                   filteredValue,
-                                  filters?.not_contains
+                                  filters?.not_contain
                                 )
                               ) {
                                 handleFiltersResults("contains", filteredValue);
@@ -760,7 +805,7 @@ const MobileSearch = ({ queryParams }) => {
                             inputLabel="Not Contain"
                             inputType="text"
                             placeHolder=""
-                            inputValue={filters?.not_contains}
+                            inputValue={filters?.not_contain}
                             inputOnChange={(e) => {
                               const filteredValue = e.target.value.replace(
                                 /[^0-9,\*]/g,
@@ -773,7 +818,7 @@ const MobileSearch = ({ queryParams }) => {
                                 )
                               ) {
                                 handleFiltersResults(
-                                  "not_contains",
+                                  "not_contain",
                                   filteredValue
                                 );
                                 setErrorNotContain("");
@@ -1126,7 +1171,10 @@ const MobileSearch = ({ queryParams }) => {
                               "search_string",
                               filteredValue
                             );
-                            handleFiltersResults("search_string", filteredValue);
+                            handleFiltersResults(
+                              "search_string",
+                              filteredValue
+                            );
                           }}
                         />
 
@@ -1239,10 +1287,10 @@ const MobileSearch = ({ queryParams }) => {
             <></>
           )}
 
-          {searchBy === "mobile-tab-3" ? (
+          {searchBy === "family_pack" ? (
             <div
               className={
-                searchBy === "mobile-tab-3"
+                searchBy === "family_pack"
                   ? "MobileSearch-filter-content-data-os active"
                   : "MobileSearch-filter-content-data-os"
               }
@@ -1252,31 +1300,41 @@ const MobileSearch = ({ queryParams }) => {
                 How much Similar Numbers do you want for your family or
                 Business?
               </div>
-              <div className="search-filter-input-data-os">
-                <div className="search-by-familyPack-col-1-os">I Want</div>
-                <div className="search-by-familyPack-col-2-os">
-                  <select name="" id="">
-                    <option value="0">Select</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                  </select>
+              <form
+                onSubmit={familyPackSubmit}
+                className="MobileSearch-filter-familyPack-content-row-os"
+              >
+                <div className="MobileSearch-filter-familyPack-content-col-1-os">
+                  <span>I Want</span>
+                  <div className="">
+                    <select
+                      onChange={handleChangefamilySelect}
+                      value={familyPackValue}
+                    >
+                      <option value="0">Select</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      {/* <option value="10">10</option> */}
+                    </select>
+                  </div>
+                  <span>SIMILAR VIP MOBILE NUMBER</span>
                 </div>
-                <div className="search-by-familyPack-col-3-os">
-                  SIMILAR VIP MOBILE NUMBER
-                </div>
-                <div className="search-by-familyPack-col-4-os">
-                  <button className="search-filter-search-number-btn-os-1">
+
+                <div className="MobileSearch-filter-familyPack-content-col-2-os">
+                  <button
+                    className="search-filter-search-number-btn-os-1"
+                    onClick={familyPackSubmit}
+                  >
                     Search Number
                   </button>
                 </div>
-              </div>
+              </form>
             </div>
           ) : (
             <></>

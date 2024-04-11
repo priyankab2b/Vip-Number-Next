@@ -6,6 +6,7 @@ import "./globals.css";
 import AppStateContextProvider from "./contexts/AppStateContext/AppStateContext";
 import MyRegisterSignInContextProvider from "./contexts/MyRegisterSignInContext/MyRegisterSignInContext";
 import Index from "./index";
+// import { NotificationContainer } from 'react-notifications';
 // import { useRouter, usePathname } from "next/navigation";
 
 // const roboto = Roboto({ subsets: ['latin'], variable: "--font-roboto", weight: ['300', '400', '500', '700', '900'] });
@@ -84,6 +85,8 @@ export default function RootLayout({ children }) {
           <AppStateContextProvider>
             <MyRegisterSignInContextProvider>
               <Index children={children} />
+              {/* {JSON.stringify("Hello boiiiiiiiiii")} */}
+              {/* <NotificationContainer /> */}
             </MyRegisterSignInContextProvider>
           </AppStateContextProvider>
         </div>
