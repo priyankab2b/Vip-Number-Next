@@ -21,8 +21,8 @@ const SignInWithPassword = () => {
     setActiveSignInWithPassword,
     activeSignInWithOtp,
     setActiveSignInWithOtp,
-    activeRegisterForm,
-    setActiveRegisterForm,
+    // activeRegisterForm,
+    // setActiveRegisterForm,
   } = useContext(MyRegisterSignInContext);
   const [mobile, setMobile] = useState("");
   const [password, setPassword] = useState("");
@@ -135,12 +135,12 @@ const SignInWithPassword = () => {
     }
   };
   // Click on Register popup show register popup
-  const handleRegisterPopup = () => {
-    if (activeSignInWithPassword === true && activeRegisterForm === false) {
-      setActiveSignInWithPassword(false);
-      setActiveRegisterForm(true);
-    }
-  };
+  // const handleRegisterPopup = () => {
+  //   if (activeSignInWithPassword === true && activeRegisterForm === false) {
+  //     setActiveSignInWithPassword(false);
+  //     setActiveRegisterForm(true);
+  //   }
+  // };
 
   return (
     <>
@@ -345,10 +345,10 @@ const SignInWithPassword = () => {
                   <SubmitButton buttonTitle="Submit" />
                 </div>
               </form>
-              <div className="already-have-account-os signIn-new-customer-register-os">
+              {/* <div className="already-have-account-os signIn-new-customer-register-os">
                 New Customer?
                 <div onClick={handleRegisterPopup}>Register!</div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

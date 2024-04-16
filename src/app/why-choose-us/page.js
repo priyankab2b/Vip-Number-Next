@@ -160,8 +160,8 @@ const WhyChooseUs = () => {
         image={RegisterImg1}
         heading="Assurance of a refund"
         subHeading="You can get your payment back if we don't meet your expectations with VIP number service. You must first register for it."
-        buttonText={user?.token ? "Suggestions" : "Register"}
-        buttonText1={user?.token ? "Suggestions" : "Register"}
+        buttonText={user?.token ? "Suggestions" : "Login"}
+        buttonText1={user?.token ? "Suggestions" : "Login"}
         // buttonUrl='/register' buttonUrl1='/register'
         onClick={() => {
           !user?.token && setRedirectTo("/suggestion-for-you");

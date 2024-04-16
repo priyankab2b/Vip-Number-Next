@@ -34,8 +34,8 @@ const ProductDetails = () => {
                 image={RegisterImg1}
                 heading="Assurance of a refund"
                 subHeading="You can get your payment back if we don't meet your expectations with VIP number service. You must first register for it."
-                buttonText="Register"
-                buttonText1="Register"
+                buttonText="Login"
+                buttonText1="Login"
                 buttonUrl="/register"
                 buttonUrl1="/register"
             />

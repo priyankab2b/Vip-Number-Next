@@ -21,8 +21,8 @@ const SignInWithOtp = () => {
     setActiveSignInWithPassword,
     activeSignInWithOtp,
     setActiveSignInWithOtp,
-    activeRegisterForm,
-    setActiveRegisterForm,
+    // activeRegisterForm,
+    // setActiveRegisterForm,
   } = useContext(MyRegisterSignInContext);
   const {
     setUserDetails,
@@ -322,12 +322,12 @@ const SignInWithOtp = () => {
   };
 
   // Click on Register popup show register popup
-  const handleRegisterPopup = () => {
-    if (activeSignInWithOtp === true && activeRegisterForm === false) {
-      setActiveSignInWithOtp(false);
-      setActiveRegisterForm(true);
-    }
-  };
+  // const handleRegisterPopup = () => {
+  //   if (activeSignInWithOtp === true && activeRegisterForm === false) {
+  //     setActiveSignInWithOtp(false);
+  //     setActiveRegisterForm(true);
+  //   }
+  // };
 
   return (
     <>
@@ -451,10 +451,10 @@ const SignInWithOtp = () => {
                   <SubmitButton buttonTitle="Submit" />
                 </div>
               </form>
-              <div className="already-have-account-os signIn-new-customer-register-os">
+              {/* <div className="already-have-account-os signIn-new-customer-register-os">
                 New Customer?
                 <div onClick={handleRegisterPopup}>Register!</div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

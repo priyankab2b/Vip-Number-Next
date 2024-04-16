@@ -34,9 +34,10 @@ import AnnouncementBar from "../AnnouncementBar/AnnouncementBar";
 const MobileHeader = () => {
   const Router = useRouter();
   const Pathname = usePathname();
-  const { setActiveRegisterForm, setActiveSignInWithOtp } = useContext(
-    MyRegisterSignInContext
-  );
+  const {
+    // setActiveRegisterForm,
+    setActiveSignInWithOtp,
+  } = useContext(MyRegisterSignInContext);
   const { user, categoriesData, userProfile, cartItems, wishListItem } =
     useContext(AppStateContext);
   const [category, setCategory] = useState();
@@ -432,14 +433,14 @@ const MobileHeader = () => {
                         >
                           Login &nbsp;
                         </span>
-                        / &nbsp;
+                        {/* / &nbsp;
                         <span
                           onClick={() => {
                             setActiveRegisterForm(true);
                           }}
                         >
                           Register
-                        </span>
+                        </span> */}
                       </div>
                     )}
                   </div>
