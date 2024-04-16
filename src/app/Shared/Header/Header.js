@@ -22,9 +22,10 @@ const Header = () => {
   const [wBalance, setWBalance] = useState(0);
   const navigate = useRouter();
   // register popup context
-  const { setActiveRegisterForm, setActiveSignInWithOtp } = useContext(
-    MyRegisterSignInContext
-  );
+  const {
+    // setActiveRegisterForm,
+    setActiveSignInWithOtp,
+  } = useContext(MyRegisterSignInContext);
   const {
     cartItems,
     wishListItem,
@@ -272,14 +273,14 @@ const Header = () => {
                       >
                         Login
                       </span>
-                      /
+                      {/* /
                       <span
                         onClick={() => {
                           setActiveRegisterForm(true);
                         }}
                       >
                         Register
-                      </span>
+                      </span> */}
                     </div>
                   )}
                 </div>

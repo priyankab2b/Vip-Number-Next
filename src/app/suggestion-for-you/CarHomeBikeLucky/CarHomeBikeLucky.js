@@ -21,6 +21,7 @@ const SearchFilterInput = (props) => {
       <label>{props.inputLabel}</label>
       <input
         onChange={props.inputOnChange || event}
+        onFocus={props.onFocus}
         type={props.inputType}
         placeholder={props.placeHolder}
         defaultValue={props.defaultValue || ""}
@@ -71,7 +72,8 @@ const CarHomeBikeLucky = ({
           res?.contact_cf?.car_number === "" &&
           res?.contact_cf?.house_number === "" &&
           res?.contact_cf?.lucky_number === "" &&
-          res?.contact_cf?.date_of_anniversary === ""
+          res?.contact_cf?.date_of_anniversary === "" &&
+          res?.contactsubdetails?.date_of_birth === ""
         ) {
           setLoading(false); // Hide loader if there are no suggestion values
           return;
@@ -81,6 +83,7 @@ const CarHomeBikeLucky = ({
           house_number: res?.contact_cf?.house_number,
           lucky_number: res?.contact_cf?.lucky_number,
           date_of_anniversary: res?.contact_cf?.date_of_anniversary,
+          date_of_birth: res?.contactsubdetails?.date_of_birth,
         });
         const endWithValues = [
           res?.contact_cf?.car_number,
@@ -111,18 +114,24 @@ const CarHomeBikeLucky = ({
   }, [user, queryParams]);
 
   const updateUserProfile = () => {
-    const { car_number, house_number, lucky_number, date_of_anniversary } =
-      suggestion;
+    const {
+      car_number,
+      house_number,
+      lucky_number,
+      date_of_anniversary,
+      date_of_birth,
+    } = suggestion;
     const { mobile, lastname, firstname, email } = userDetails;
     // Prepare the updated profile data
     const updatedProfile = {
-      full_name: firstname + " " + lastname || "", // Include the pre-filled value or an empty string
-      mobile: mobile || "", // Include the pre-filled value or an empty string
-      email: email || "", // Include the pre-filled value or an empty string
-      car_number: car_number[0] || "", // Include the updated car_number value
-      house_number: house_number[0] || "", // Include the updated house_number value
-      lucky_number: lucky_number[0] || "", // Include the updated lucky_number value
-      date_of_anniversary: date_of_anniversary[0] || "", // Include the updated date_of_anniversary value
+      full_name: firstname + " " + lastname || "",
+      mobile: mobile || "",
+      email: email || "",
+      car_number: car_number.toString() || "",
+      house_number: house_number.toString() || "",
+      lucky_number: lucky_number.toString() || "",
+      date_of_anniversary: formatDate(date_of_anniversary) || "",
+      date_of_birth: formatDate(date_of_birth) || "",
     };
 
     // Send the updated profile data to the server
@@ -237,15 +246,17 @@ const CarHomeBikeLucky = ({
                       <SearchFilterInput
                         inputLabel="Birth Date"
                         inputType="text"
-                        defaultValue={profile?.date_of_anniversary}
+                        // defaultValue={profile?.date_of_birth}
+                        defaultValue={suggestion?.date_of_birth}
                         placeHolder="e.g: 3456"
-                        inputValue={suggestion?.date_of_anniversary}
+                        inputValue={suggestion?.date_of_birth}
+                        onFocus={(e) => (e.target.type = "date")}
                         inputOnChange={(e) => {
                           const filteredValue = e.target.value.replace(
                             /[^0-9,]/g,
                             ""
                           );
-                          handleValues("date_of_anniversary", filteredValue);
+                          handleValues("date_of_birth", filteredValue);
                         }}
                       />
                     </div>
@@ -257,7 +268,6 @@ const CarHomeBikeLucky = ({
                         placeHolder="e.g: 3456"
                         defaultValue={profile?.date_of_anniversary}
                         // defaultValue={profile?.date_of_anniversary || ""}
-
                         inputValue={suggestion?.date_of_anniversary}
                         inputOnChange={(e) => {
                           const filteredValue = e.target.value.replace(

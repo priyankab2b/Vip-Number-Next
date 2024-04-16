@@ -23,9 +23,10 @@ const GoogleHeader = () => {
   const { email, firstname, lastname, mobile } = user?.user || {};
   const Router = useRouter();
   // register popup context
-  const { setActiveRegisterForm, setActiveSignInWithOtp } = useContext(
-    MyRegisterSignInContext
-  );
+  const {
+    // setActiveRegisterForm,
+    setActiveSignInWithOtp,
+  } = useContext(MyRegisterSignInContext);
 
   const getName = () => {
     if (!user) {
@@ -109,14 +110,14 @@ const GoogleHeader = () => {
                     >
                       Login
                     </span>
-                    /
+                    {/* /
                     <span
                       onClick={() => {
                         setActiveRegisterForm(true);
                       }}
                     >
                       Register
-                    </span>
+                    </span> */}
                   </div>
                 )}
               </div>

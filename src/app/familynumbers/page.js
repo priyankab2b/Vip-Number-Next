@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 // import OurCustomers from "../Shared/OurCustomers/OurCustomers";
 import Header from "../Shared/Header/Header";
@@ -39,8 +39,8 @@ const FamilyNumbers = () => {
         image={RegisterImg1}
         heading="Assurance of a refund"
         subHeading="You can get your payment back if we don't meet your expectations with VIP number service. You must first register for it."
-        buttonText="Register"
-        buttonText1="Register"
+        buttonText="Login"
+        buttonText1="Login"
         buttonUrl="/register"
         buttonUrl1="/register"
       />
