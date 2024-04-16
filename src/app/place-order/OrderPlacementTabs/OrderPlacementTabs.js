@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import "./OrderPlacementTabs.css";
+import Image from "next/image";
 // Images
 import Payment2 from "../../Assets/payment2.svg";
 import Payment3 from "../../Assets/payment3.svg";
@@ -2114,7 +2115,7 @@ const OrderPlacementTabs = (props) => {
               <div className="OrderPlacement-paymentInfo-content-row-os">
                 <div className="OrderPlacement-paymentInfo-method-row-os">
                   <div
-                    disabled={total > 500000}
+                    // disabled={total > 500000}
                     className="OrderPlacement-paymentInfo-method-col-1-os"
                   >
                     <label>
@@ -2122,7 +2123,7 @@ const OrderPlacementTabs = (props) => {
                         type="radio"
                         name="payment"
                         value=""
-                        disabled={total > 500000}
+                        // disabled={total > 500000}
                         onClick={handleRzpClick}
                         onChange={() => {
                           setActiveRadioBtn("radio6-os");
@@ -2147,7 +2148,7 @@ const OrderPlacementTabs = (props) => {
                   </div>
 
                   <div
-                    disabled={total > 500000}
+                    // disabled={total > 500000}
                     className="OrderPlacement-paymentInfo-method-col-1-os"
                   >
                     <label>
@@ -2155,7 +2156,7 @@ const OrderPlacementTabs = (props) => {
                         type="radio"
                         name="payment"
                         value=""
-                        disabled={total > 500000}
+                        // disabled={total > 500000}
                         onChange={() => {
                           setActivePayRadio(true);
                           setActiveRadioBtn("radio3-os");
@@ -2172,7 +2173,7 @@ const OrderPlacementTabs = (props) => {
                           }
                         >
                           <span className="upi-payment-img-os">
-                            <img src={Payment3} alt="" />
+                            <Image src={Payment3} alt="" />
                           </span>
                         </div>
                       </span>
@@ -2180,7 +2181,7 @@ const OrderPlacementTabs = (props) => {
                   </div>
 
                   <div
-                    disabled={total > 500000}
+                    // disabled={total > 500000}
                     className="OrderPlacement-paymentInfo-method-col-1-os"
                   >
                     <label>
@@ -2188,7 +2189,7 @@ const OrderPlacementTabs = (props) => {
                         type="radio"
                         name="payment"
                         value=""
-                        disabled={total > 500000}
+                        // disabled={total > 500000}
                         onChange={() => {
                           setActivePayRadio(true);
                           setActiveRadioBtn("radio2-os");
@@ -2206,7 +2207,7 @@ const OrderPlacementTabs = (props) => {
                           }
                         >
                           <span className="upi-payment-img-os">
-                            <img src={Payment2} alt="" />
+                            <Image src={Payment2} alt="" />
                           </span>
                         </div>
                       </span>
@@ -2214,7 +2215,7 @@ const OrderPlacementTabs = (props) => {
                   </div>
 
                   <div
-                    disabled={total > 500000}
+                    // disabled={total > 500000}
                     className="OrderPlacement-paymentInfo-method-col-1-os"
                   >
                     <label>
@@ -2222,7 +2223,7 @@ const OrderPlacementTabs = (props) => {
                         type="radio"
                         name="payment"
                         value=""
-                        disabled={total > 500000}
+                        // disabled={total > 500000}
                         onChange={() => {
                           setActivePayRadio(true);
                           setActiveRadioBtn("radio1-os");
@@ -2240,7 +2241,7 @@ const OrderPlacementTabs = (props) => {
                           }
                         >
                           <span className="credit-debit-image-os">
-                            <img src={Payment6} alt="" />
+                            <Image src={Payment6} alt="" />
                           </span>
                         </div>
                       </span>
@@ -2248,7 +2249,7 @@ const OrderPlacementTabs = (props) => {
                   </div>
 
                   <div
-                    disabled={total > 500000}
+                    // disabled={total > 500000}
                     className="OrderPlacement-paymentInfo-method-col-1-os"
                   >
                     <label>
@@ -2256,7 +2257,7 @@ const OrderPlacementTabs = (props) => {
                         type="radio"
                         name="payment"
                         value=""
-                        disabled={total > 500000}
+                        // disabled={total > 500000}
                         onChange={() => {
                           setActivePayRadio(true);
                           setActiveRadioBtn("radio4-os");
@@ -2274,7 +2275,7 @@ const OrderPlacementTabs = (props) => {
                           }
                         >
                           <span className="upi-payment-img-os">
-                            <img src={Payment4} alt="" />
+                            <Image src={Payment4} alt="" />
                           </span>
                         </div>
                       </span>
@@ -2282,7 +2283,7 @@ const OrderPlacementTabs = (props) => {
                   </div>
 
                   <div
-                    disabled={total > 500000}
+                    // disabled={total > 500000}
                     className="OrderPlacement-paymentInfo-method-col-1-os"
                   >
                     <label>
@@ -2290,7 +2291,7 @@ const OrderPlacementTabs = (props) => {
                         type="radio"
                         name="payment"
                         value=""
-                        disabled={total > 500000}
+                        // disabled={total > 500000}
                         onClick={handleRzpClick}
                         // onChange={() => {
                         //   setActivePayRadio(true);
@@ -2308,7 +2309,7 @@ const OrderPlacementTabs = (props) => {
                           }
                         >
                           <span className="upi-payment-img-os">
-                            <img src={Payment5} alt="" />
+                            <Image src={Payment5} alt="" />
                           </span>
                         </div>
                       </span>
@@ -2356,7 +2357,7 @@ const OrderPlacementTabs = (props) => {
             <div className="QR-code-popup-all-data-row-os">
               <div className="QR-code-popup-row-os">
                 <div className="QR-code-image-os">
-                  <img src={QRImg} alt="" />
+                  <Image src={QRImg} alt="" />
 
                   {activePayRadio && (
                     <div className="left-time-countdown-os">
@@ -2427,7 +2428,7 @@ const OrderPlacementTabs = (props) => {
             <div className="QR-code-popup-all-data-row-os">
               <div className="QR-code-popup-row-os">
                 <div className="QR-code-image-os">
-                  <img src={QRImg1} alt="" />
+                  <Image src={QRImg1} alt="" />
 
                   {activePayRadio && (
                     <div className="left-time-countdown-os">
@@ -2499,7 +2500,7 @@ const OrderPlacementTabs = (props) => {
             <div className="QR-code-popup-all-data-row-os">
               <div className="QR-code-popup-row-os">
                 <div className="QR-code-image-os">
-                  <img src={QRImg2} alt="" />
+                  <Image src={QRImg2} alt="" />
 
                   {activePayRadio && (
                     <div className="left-time-countdown-os">
@@ -2571,7 +2572,7 @@ const OrderPlacementTabs = (props) => {
             <div className="QR-code-popup-all-data-row-os">
               <div className="QR-code-popup-row-os">
                 <div className="QR-code-image-os">
-                  <img src={QRImg3} alt="" />
+                  <Image src={QRImg3} alt="" />
 
                   {activePayRadio && (
                     <div className="left-time-countdown-os">
@@ -2642,7 +2643,7 @@ const OrderPlacementTabs = (props) => {
             <div className="QR-code-popup-all-data-row-os">
               <div className="QR-code-popup-row-os">
                 <div className="QR-code-image-os">
-                  <img src={QRImg4} alt="" />
+                  <Image src={QRImg4} alt="" />
 
                   {activePayRadio && (
                     <div className="left-time-countdown-os">
